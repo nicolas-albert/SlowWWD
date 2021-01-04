@@ -1,0 +1,58 @@
+<ion-content class="class1599824871715" padding>
+<div class="class1599825036455">
+<div class="class1599825036461">
+<ng-container class="class1599825036467" *ngFor="let i = index;let item of let item1599825036467 of this.local?.tree">
+<ng-container class="class1599825036470" *ngIf="this.local.index == i else ElseBlock_1599825036551">
+<div class="class1599825036473" [ngStyle]="this.local.styleDragOverPAge == i ? {'border-left': 'solid'} : {}">
+<ion-icon class="class1599825937790" color="convertigo" name="folder">
+</ion-icon>
+{{this.removeUnderscores((item.name.indexOf('forms_') == 0 || item.name.indexOf('formssource_') == 0)  ?  item.name.substring(6) : item.name)}}
+</div>
+</ng-container>
+<ng-template class="class1599825036551" #ElseBlock_1599825036551>
+<div class="class1599825036554" (click)="ATS1599825036572({root: {scope:merge({}, {ElseBlock_1599825036551: ElseBlock_1599825036551, item1599825036467: item1599825036467, item: item, i:i}), in:{}, out:$event}})" [ngStyle]="this.local.styleDragOverPAge == i ? {'border-left': 'solid'} : {}">
+<ion-icon class="class1599825893108" color="convertigo" name="folder">
+</ion-icon>
+{{this.removeUnderscores((item.name.indexOf('forms_') == 0 || item.name.indexOf('formssource_') == 0)  ?  item.name.substring(6) : item.name)}}
+</div>
+</ng-template>
+</ng-container>
+</div>
+</div>
+<div class="class1599826589193" [innerHtml]="this.getHtmlComment(this.local.tree[this.local.index].comment)">
+</div>
+<div class="class1599826780353">
+<ion-grid class="class1600876695357">
+<ion-row class="class1600876698911">
+<ng-container class="class1600876718937" *ngFor="let i = index;let item of let item1600876718937 of this.local.tree[this.local.index].sequences">
+<ion-col class="class1600876689488" col-md-4 col-lg-3 col-6 col-sm-6 col-xl-3 align-self-start align-self-baseline [ngStyle]="this?.global?.platform?.name['0'] == 'mobile' ? {'height': '10rem !important;'} : {'height': '20rem !important;'}">
+<div class="class1600876689491" [ngClass]="{'shadow3': this.local.indexSequence == undefined ? (this.local.tree != undefined && this.local?.item?.actions != undefined && this.local.index != undefined) ? this.local.item.actions[this.local.tree[this.local.index].name + '.' + item.name] != undefined ? this.local.item.actions[this.local.tree[this.local.index].name + '.' + item.name].enabled : false: false : this.local.indexSequence == i ? true : false}" (click)="CTS1600876689647(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1600876689647'}), {stack:{root: {scope:merge({}, {item1600876718937: item1600876718937, item: item, i:i}), in:{}, out:$event}}}),{i: i}, $event)">
+<div class="class1600876689542">
+<img class="class1600876985102" width="" [src]="'assets/images/svg/component/icn_flash.svg'" height=""/>
+</div>
+<div class="class1600876689608" text-center text-wrap>
+<h3 class="class1600877702671">
+{{this.removeUnderscores((item.name.indexOf('forms_') == 0 || item.name.indexOf('formssource_') == 0)  ?  item.name.substring(6) : item.name)}}
+</h3>
+<p class="class1600877394238" [innerHTML]="this.getHtmlComment(item.comment)">
+</p>
+</div>
+</div>
+</ion-col>
+</ng-container>
+</ion-row>
+</ion-grid>
+</div>
+</ion-content>
+
+<ion-footer class="class1599830132421" *ngIf="!this.global.enabledTemp">
+<ion-buttons class="class1599830132427" right>
+<button class="class1599830132430" type="button" ion-button item-left (click)="resolveError(actionBeans.CloseModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CloseModal', actionFunction: 'CloseModalAction', data: null}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+{{'Cancel' | translate}}
+</button>
+<button class="class1599830132445" type="button" ion-button item-right (click)="ATS1599830132457({root: {scope:{}, in:{}, out:$event}})">
+{{'Save' | translate}}
+</button>
+</ion-buttons>
+</ion-footer>
+

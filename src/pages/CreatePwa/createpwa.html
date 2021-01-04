@@ -1,0 +1,89 @@
+<ion-content class="class1603800553816" padding>
+<button class="class1603880720943" clear icon-end type="button" icon-only ion-button large (click)="resolveError(actionBeans.CloseModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CloseModal', actionFunction: 'CloseModalAction', data: null}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+<ion-icon class="class1603880720946" name="close">
+</ion-icon>
+</button>
+<ng-container class="class1603807348592" *ngIf="this.pwa != undefined">
+<ion-grid class="class1603804083537">
+<ion-row class="class1603804090879">
+<ion-col class="class1603804094922" col-md-3 col-3 col-lg-3 col-12 col-sm-12 col-xl-3>
+<div class="class1603819151178">
+<div class="class1603800885985">
+<ng-container class="class1603800886024" *ngIf="(this.pwa._id != undefined && this.local.updatedImg != true) else ElseBlock_1603808476027">
+<img class="class1603800886027" width="" [src]="getAttachmentUrl(this.pwa._id, 'icon', 'assets/images/category.png', 'C8Oforms.c8oforms_fs')" height="" (click)="ATS1603882432356({root: {scope:{}, in:{}, out:$event}})"/>
+</ng-container>
+<ng-template class="class1603808476027" #ElseBlock_1603808476027>
+<img class="class1603808539173" width="" [src]="this.pwa?.img?.url" height="" (click)="ATS1606903357173({root: {scope:merge({}, {ElseBlock_1603808476027: ElseBlock_1603808476027}), in:{}, out:$event}})"/>
+</ng-template>
+</div>
+</div>
+</ion-col>
+<ion-col class="class1603804096879">
+<ion-item class="class1603801682352">
+<ion-label class="class1603802392857" stacked>
+{{ 'name' | translate }}
+</ion-label>
+<ion-input class="class1603802354868" [(ngModel)]="this.pwa.name">
+</ion-input>
+</ion-item>
+<ion-item class="class1603803008189">
+<ion-label class="class1603803008195" stacked>
+{{ 'short_name' | translate }}
+</ion-label>
+<ion-input class="class1603803008204" value="{{this.form?.name}}" [(ngModel)]="this.pwa.shortName">
+</ion-input>
+</ion-item>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-grid class="class1603803301541">
+<ion-row class="class1603803312553">
+<ion-col class="class1603803315844">
+<div class="class1603815900988">
+{{ 'background_color' | translate }}
+</div>
+<div class="class1603815913689" (click)="resolveError(actionBeans.PopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'Popover', actionFunction: 'PopoverAction', data: {item:this.pwa, path: 'backgroundColor', type: 'export'}, cssClass: null, showBackdrop: true, page: 'C8Oforms.MobileApplication.Application.colorPage', enableBackdropDismiss: true, event: (event == undefined ? $event : event)}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" [ngStyle]="{'background-color': this.pwa.backgroundColor}">
+</div>
+</ion-col>
+<ion-col class="class1603803317434">
+<div class="class1603816675481">
+{{ 'theme_color' | translate }}
+</div>
+<div class="class1603816675490" (click)="resolveError(actionBeans.PopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'Popover', actionFunction: 'PopoverAction', data: {item:this.pwa, path: 'themeColor', type: 'export'}, cssClass: null, showBackdrop: true, page: 'C8Oforms.MobileApplication.Application.colorPage', enableBackdropDismiss: true, event: (event == undefined ? $event : event)}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" [ngStyle]="{'background-color': this.pwa.themeColor}">
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="class1603879675950">
+<ion-col class="class1603879675953">
+<ion-item class="class1603879675968" no-lines>
+<ion-label class="class1603879675971" stacked>
+{{ 'require_auth_form' | translate }}
+</ion-label>
+<ion-checkbox class="class1603879697307" [(ngModel)]="this.pwa.notAnonymous">
+</ion-checkbox>
+</ion-item>
+</ion-col>
+</ion-row>
+<ion-row class="class1603877686087">
+<ion-col class="class1603877691810">
+<ion-item class="class1603878206174">
+<ion-label class="class1603878214701" stacked>
+{{ 'define_default_values_for_forms_element' | translate }}
+</ion-label>
+<ion-input class="class1603878239061" [(ngModel)]="this.pwa.querystr">
+</ion-input>
+</ion-item>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-container>
+</ion-content>
+
+<ion-footer class="class1603878579067">
+<ion-buttons class="class1603878579070" right>
+<button class="class1603878579091" type="button" ion-button item-right (click)="ATS1603878579103({root: {scope:{}, in:{}, out:$event}})">
+{{ 'generate_pwa' | translate }}
+</button>
+</ion-buttons>
+</ion-footer>
+

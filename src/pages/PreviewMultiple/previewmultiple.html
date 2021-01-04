@@ -1,0 +1,113 @@
+<!-- ====== SHARED TEMPLATES ====== -->
+<!-- 'sharedLabelElem' shared component template -->
+<ng-template #sc1573663157513 let-params1573663157513="params1573663157513" >
+<ng-container class="class1584637011695" *ngIf="params1573663157513.item.config.personalized">
+<ng-container class="class1604062070855" *ngIf="params1573663157513.item.config.mandatory && params1573663157513.item.config.disabled == false">
+<span class="class1604063068535" [duration]="3000" topOffset="0" arrow tooltip="{{'the' | translate }} {{'field' | translate }} {{'is' | translate}} {{ 'mandatory' | translate}}" leftOffset="-50" event="hover" positionV="top" positionH="right">
+<span class="class1604062070861">
+{{ '_' | translate }}
+</span>
+</span>
+</ng-container>
+<div class="class1584637011698" [innerHTML]="this.router.sanitizer.bypassSecurityTrustHtml(params1573663157513.item.config.html)">
+</div>
+</ng-container>
+<ng-container class="class1584637011710" *ngIf="!params1573663157513.item.config.personalized">
+<ion-label class="class1584637028208" [attr.stacked]="(params1573663157513.item.config.position == 'stacked')?'':null" [attr.floating]="(params1573663157513.item.config.position == 'floating')?'':null" [attr.fixed]="(params1573663157513.item.config.position == 'fixed')?'':null" [style.color]="(params1573663157513.item.config.label_color != 'unset')? params1573663157513.item.config.label_color : null" text-wrap *ngIf="params1573663157513.item.config.disabled ==false">
+<ng-container class="class1584637028235" *ngIf="params1573663157513.item.config.mandatory && params1573663157513.item.config.disabled == false">
+<span class="class1604063918030" [duration]="3000" topOffset="0" arrow tooltip="{{'the' | translate }} {{'field' | translate }} {{'is' | translate}} {{ 'mandatory' | translate}}" leftOffset="-50" event="hover" positionV="top" positionH="right">
+<span class="class1604063918033">
+{{ '_' | translate }}
+</span>
+</span>
+</ng-container>
+<ng-container class="class1584637028223" *ngIf="params1573663157513.item.config.disabled == false">
+{{params1573663157513.item.config.label}}
+</ng-container>
+</ion-label>
+</ng-container>
+</ng-template >
+<!-- 'itemCheckboxGroupViewer' shared component template -->
+<ng-template #sc1575885462526 let-params1575885462526="params1575885462526" >
+<div class="class1575885462535" #divtext [ngClass]="(this.redList != undefined ) ?  this.redList[params1575885462526.item.name] == true ? 'styledivred': (this.local.redListTwoSameColumn != undefined ? this.local.redListTwoSameColumn[params1575885462526.item.name] == true ? 'styledivred': 'styledivnormal' : 'styledivnormal') : (this.local.redListTwoSameColumn != undefined ? this.local.redListTwoSameColumn[params1575885462526.item.name] == true ? 'styledivred': 'styledivnormal' : 'styledivnormal')" [attr.id]="params1575885462526.item.name">
+<ng-container class="class1575885689135" *ngIf="params1575885462526.item.config.mandatory && params1575885462526.item.config.disabled">
+<span class="class1575885689141">
+{{ '_' | translate }}
+</span>
+</ng-container>
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1575885462526.item}),{scope:merge(merge({}, params1575885462526.scope), {divtext: divtext, params1575885462526: params1575885462526})})}"></ng-container>
+<div class="class1575885814894" (scroll)="CTS1588597563598(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'setStyleOnscroll', actionFunction: 'CTS1588597563598'}), {stack:{root: {scope:merge(merge({}, params1575885462526.scope), {divtext: divtext, params1575885462526: params1575885462526}), in:{}, out:$event}}}),{name: params1575885462526.item.name}, $event)">
+<div class="class1588257810806">
+<div class="class1588257810812">
+<div class="class1588257810818" [ngStyle]="this?.local?.gridAndCheckboxStyleOnScroll[params1575885462526.item.name] == true ? {'box-shadow': '5px 0 5px -1px #ffffff'} : {}">
+</div>
+<ng-container class="class1588257810824" *ngFor="let item1588257810824 of let parent of params1575885462526.item.children;let k = index">
+<div class="class1588257810827">
+{{parent.value}}
+</div>
+</ng-container>
+</div>
+<ng-container class="class1588257810836" *ngFor="let item1588257810836 of let line of params1575885462526.item.lines;let k = index">
+<div class="class1588257810839">
+<div class="class1588257810845" [ngStyle]="this?.local?.gridAndCheckboxStyleOnScroll[params1575885462526.item.name] == true ? {'box-shadow': '5px 0 5px -1px #ffffff'} : {}">
+{{line.title}}
+</div>
+<ng-container class="class1588257810854" *ngFor="let item1588257810854 of let child of params1575885462526.item.children;let j = index">
+<div class="class1588257810857">
+<ion-item class="class1588257810863" no-lines>
+<ion-checkbox class="class1588257810869" color="{{params1575885462526.item.config.color}}" [(ngModel)]="params1575885462526['model']['children'][line.title][j]['selected']" *ngIf="!params1575885462526.disabled" (click)="resolveError(actionBeans.STS1596618881610(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1596618881610'}), {stack:{root: {scope:merge(merge({}, params1575885462526.scope), {item1588257810854: item1588257810854, item1588257810836: item1588257810836, divtext: divtext, params1575885462526: params1575885462526}), in:{}, out:$event}}}),{item: params1575885462526.item, line: line, child: child, canExec: true}, $event))">
+</ion-checkbox>
+<ion-checkbox class="class1588257810884" color="{{params1575885462526.item.config.color}}" disabled="{{true}}" *ngIf="params1575885462526.disabled">
+</ion-checkbox>
+</ion-item>
+</div>
+</ng-container>
+</div>
+<div class="class1588261156605">
+<ng-container class="class1588602729983" *ngFor="let item1588602729983 of let child of params1575885462526.item.children;let j = index">
+<div class="class1588602729986">
+</div>
+</ng-container>
+<div class="class1588602835757">
+</div>
+</div>
+</ng-container>
+</div>
+</div>
+<ng-container class="class1575885462784" *ngIf="this.redList != null ? this.redList[params1575885462526.item.name] == true : false">
+<ion-item class="class1575900607157">
+{{'repMandartory_group'| translate}}
+</ion-item>
+</ng-container>
+<ng-container class="class1575888312129" *ngIf="this.local.redListTwoSameColumn != null ?  this.local.redListTwoSameColumn[params1575885462526.item.name] : false">
+<ion-item class="class1575888312132">
+{{'repMandartory_group_column'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- ============================== -->
+
+<ion-content class="class1596119915543" padding>
+<ion-grid class="class1596119915546">
+<ion-row class="class1596119915549">
+<ion-col class="class1596119915552">
+<ng-container class="class1596119961091" *ngIf="this.navParams.data?.current?.val1?.type == 'checkbox_group'">
+<ng-container *ngTemplateOutlet="sc1575885462526;context:{params1575885462526: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: this.navParams.data.item, model: this.local.value[this.navParams.data.item.name], redList: null, disabled: false}),{scope:{}})}"></ng-container>
+</ng-container>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
+
+<ion-footer class="class1596119915924">
+<ion-buttons class="class1596119915927" right>
+<button class="class1596119915930" type="button" ion-button item-left (click)="resolveError(actionBeans.CloseModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CloseModal', actionFunction: 'CloseModalAction', data: null}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+{{'Cancel' | translate}}
+</button>
+<button class="class1596119915945" type="button" ion-button item-right (click)="ATS1596119915960({root: {scope:{}, in:{}, out:$event}})">
+{{'Save' | translate}}
+</button>
+</ion-buttons>
+</ion-footer>
+

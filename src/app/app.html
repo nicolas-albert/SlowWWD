@@ -1,0 +1,287 @@
+<!-- ====== SHARED TEMPLATES ====== -->
+<!-- 'menuVersion' shared component template -->
+<ng-template #sc1582106107923 let-params1582106107923="params1582106107923" >
+<div class="class1582106107929" text-center>
+<p class="class1582106107932">
+{{'version_c8o' | translate}}
+</p>
+</div>
+</ng-template >
+<!-- 'footerMenuVersion' shared component template -->
+<ng-template #sc1582105855735 let-params1582105855735="params1582105855735" >
+<ion-footer class="class1582105868587">
+<ng-container *ngTemplateOutlet="sc1582106107923;context:{params1582106107923: merge(merge({},{}),{scope:merge(merge({}, params1582105855735.scope), {params1582105855735: params1582105855735})})}"></ng-container>
+</ion-footer>
+</ng-template >
+<!-- ============================== -->
+
+<ion-menu class="class1500890597895" swipeEnabled="false" id="Menu" [content]="content">
+<ion-header class="class1500890727582">
+<ng-container class="class1602863446140" *ngIf="this.global.settings != undefined else ElseBlock_1602690082828">
+<ng-container class="class1602863446143" [ngSwitch]="this.global?.settings?.provider">
+<ng-container class="class1602863446146" *ngSwitchCase="'google'">
+<ion-item class="class1602863446149" no-lines>
+<ion-avatar class="class1602863446152" item-left>
+<img class="class1602863446155" width="" [src]="this.global?.settings?.picture" height=""/>
+</ion-avatar>
+<h2 class="class1602863446167">
+{{this.global.settings.displayName}}
+</h2>
+<p class="class1602863446176">
+{{this.global.settings.mail}}
+</p>
+</ion-item>
+</ng-container>
+<ng-container class="class1602863446182" *ngSwitchCase="'forms'">
+<ion-item class="class1602863446188" no-lines>
+<ion-avatar class="class1602863446191" item-left>
+<img class="class1602863446194" width="" [src]="'assets/images/forms.png'" height=""/>
+</ion-avatar>
+<p class="class1602863446215">
+{{this.global.settings.mail}}
+</p>
+</ion-item>
+</ng-container>
+<ng-container class="class1602863446221" *ngSwitchCase="'ad'">
+<img class="class1602863446224" width="" [src]="'assets/images/ad.png'" height=""/>
+<ion-item class="class1602863446227" no-lines>
+<ion-avatar class="class1602863446230" item-left>
+<img class="class1602863446233" width="" [src]="'/assets/images/activeDirectory.png'" height=""/>
+</ion-avatar>
+<h2 class="class1602863446242">
+{{this.global.settings.displayName}}
+</h2>
+<p class="class1602863446251">
+{{this.global.settings.mail}}
+</p>
+</ion-item>
+</ng-container>
+<ng-container class="class1602863446257" *ngSwitchCase="'azuread'">
+<ion-item class="class1602863446260" no-lines>
+<img class="class1602863446263" width="" [src]="'assets/images/svg/login/microsoft-logo.svg'" height="" item-start/>
+<h2 class="class1602863446272">
+{{this.global.settings.displayName}}
+</h2>
+<p class="class1602863446281">
+{{this.global.settings.mail}}
+</p>
+</ion-item>
+</ng-container>
+</ng-container>
+</ng-container>
+<ng-template class="class1602863446299" #ElseBlock_1602690082828>
+<ion-toolbar class="class1602863446302">
+<ion-title class="class1602863446305">
+{{ 'Menu' | translate }}
+</ion-title>
+</ion-toolbar>
+</ng-template>
+</ion-header>
+<ion-content class="class1500890742326" padding>
+<ng-container class="class1547667602640" *ngIf="this.global?.platform?.name != undefined ? this.global?.platform?.name[0] != 'mobile' : false">
+<button class="class1542912534233" ion-item menuClose="Menu" (click)="openPageWithName('selectorPage')">
+<ion-icon name="home" item-left></ion-icon>
+{{'homePage' | translate}}
+</button>
+<ng-container class="class1601367994729" *ngIf="(this.global?.settings?.editing_rights != undefined && this.global?.settings?.editing_rights == 'true') || this.global?.settings?.editing_rights == undefined">
+<button class="class1573639773089" type="button" ion-item (click)="ATS1573639773110({root: {scope:{}, in:{}, out:$event}})">
+<ion-icon class="class1573639773092" name="build" item-left>
+</ion-icon>
+{{'formedit' | translate}}
+</button>
+</ng-container>
+<button class="class1573640264508" type="button" ion-item (click)="ATS1573640264523({root: {scope:{}, in:{}, out:$event}})">
+<ion-icon class="class1573640264511" name="eye" item-left>
+</ion-icon>
+{{'viewer_form' | translate}}
+</button>
+<button class="class1542912598111" ion-item menuClose="Menu" (click)="openPageWithName('settingsPage')">
+<ion-icon name="settings" item-left></ion-icon>
+{{'settings' | translate}}
+</button>
+<button class="class1572448634060" type="button" ion-item (click)="ATS1572448634081({root: {scope:{}, in:{}, out:$event}})">
+<ion-icon class="class1572448634063" name="log-out" item-left>
+</ion-icon>
+{{'logout' | translate}}
+</button>
+</ng-container>
+<ng-container class="class1547667748044" *ngIf="this.global?.platform?.name != undefined ? this.global?.platform?.name[0] == 'mobile' : false">
+<button class="class1573640687170" ion-item menuClose="Menu" (click)="openPageWithName('selectorPage')">
+<ion-icon name="home" item-left></ion-icon>
+{{'homePage' | translate}}
+</button>
+<button class="class1573640687173" type="button" ion-item (click)="ATS1573640687188({root: {scope:{}, in:{}, out:$event}})">
+<ion-icon class="class1573640687176" name="eye" item-left>
+</ion-icon>
+{{'viewer' | translate}}
+</button>
+<button class="class1547667748093" ion-item menuClose="Menu" (click)="openPageWithName('settingsPage')">
+<ion-icon name="settings" item-left></ion-icon>
+{{'settings' | translate}}
+</button>
+<button class="class1604485779684" type="button" ion-item (click)="ATS1604485779699({root: {scope:{}, in:{}, out:$event}})">
+<ion-icon class="class1604485779687" name="log-out" item-left>
+</ion-icon>
+{{'logout' | translate}}
+</button>
+</ng-container>
+</ion-content>
+<ion-footer class="class1582105899322">
+<div class="class1582105899325" text-center>
+<p class="class1582105899328">
+{{'version_c8o' | translate}}
+</p>
+</div>
+</ion-footer>
+</ion-menu>
+
+<ion-menu class="class1543518219237" swipeEnabled="false" id="MenuLogin" [content]="content">
+<ion-header class="class1543518219248">
+<ion-toolbar class="class1543518219258">
+<ion-title class="class1543518219268">
+{{ 'Menu' | translate }}
+</ion-title>
+</ion-toolbar>
+</ion-header>
+<ion-footer class="class1582105895836">
+<div class="class1582105895839" text-center>
+<p class="class1582105895842">
+{{'version_c8o' | translate}}
+</p>
+</div>
+</ion-footer>
+</ion-menu>
+
+<ion-menu class="class1543518260629" swipeEnabled="false" id="MenuSelector" [content]="content">
+<ion-header class="class1543518260645">
+<ng-container class="class1602690297729" *ngIf="this.global.settings != undefined else ElseBlock_1602690082828">
+<ng-container class="class1602749565274" [ngSwitch]="this.global?.settings?.provider">
+<ng-container class="class1602749574658" *ngSwitchCase="'google'">
+<ion-item class="class1602749174426" no-lines>
+<ion-avatar class="class1602749180933" item-left>
+<img class="class1602856936297" width="" [src]="this.global?.settings?.picture" height=""/>
+</ion-avatar>
+<h2 class="class1602857113444">
+{{this.global.settings.displayName}}
+</h2>
+<p class="class1602857113453">
+{{this.global.settings.mail}}
+</p>
+</ion-item>
+</ng-container>
+<ng-container class="class1602749608588" *ngSwitchCase="'forms'">
+<ion-item class="class1602863302253" no-lines>
+<ion-avatar class="class1602863302256" item-left>
+<img class="class1602863302259" width="" [src]="'assets/images/forms.png'" height=""/>
+</ion-avatar>
+<p class="class1602863302280">
+{{this.global.settings.mail}}
+</p>
+</ion-item>
+</ng-container>
+<ng-container class="class1602749624187" *ngSwitchCase="'ad'">
+<img class="class1602749682316" width="" [src]="'assets/images/ad.png'" height=""/>
+<ion-item class="class1602862983327" no-lines>
+<ion-avatar class="class1602862983330" item-left>
+<img class="class1602862983333" width="" [src]="'/assets/images/activeDirectory.png'" height=""/>
+</ion-avatar>
+<h2 class="class1602862983345">
+{{this.global.settings.displayName}}
+</h2>
+<p class="class1602862983354">
+{{this.global.settings.mail}}
+</p>
+</ion-item>
+</ng-container>
+<ng-container class="class1602749638272" *ngSwitchCase="'azuread'">
+<ion-item class="class1602860977137" no-lines>
+<img class="class1602749684270" width="" [src]="'assets/images/svg/login/microsoft-logo.svg'" height="" item-start/>
+<h2 class="class1602860969934">
+{{this.global.settings.displayName}}
+</h2>
+<p class="class1602860969943">
+{{this.global.settings.mail}}
+</p>
+</ion-item>
+</ng-container>
+</ng-container>
+</ng-container>
+<ng-template class="class1602690297735" #ElseBlock_1602690082828>
+<ion-toolbar class="class1602690297738">
+<ion-title class="class1602690297741">
+{{ 'Menu' | translate }}
+</ion-title>
+</ion-toolbar>
+</ng-template>
+</ion-header>
+<ion-content class="class1543518260687" padding>
+<ng-container class="class1543518329322" *ngIf="this.global?.formSelected?._id != undefined && this.global['platform']['name'][0] != 'mobile' ">
+<button class="class1572258733362" type="button" ion-item (click)="resolveError(actionBeans.PushPageAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'PushPage', actionFunction: 'PushPageAction', animate_duration: 250, data: {debug: false, published:false}, page: 'C8Oforms.MobileApplication.Application.selectorPage', animate: 'true'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+<ion-icon class="class1572258752105" name="home" item-left>
+</ion-icon>
+{{'homePage' | translate}}
+</button>
+<ng-container class="class1601369807279" *ngIf="(this.global?.settings?.editing_rights != undefined && this.global?.settings?.editing_rights == 'true') || this.global?.settings?.editing_rights == undefined">
+<button class="class1572259538914" type="button" ion-item (click)="resolveError(actionBeans.PushPageAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'PushPage', actionFunction: 'PushPageAction', animate_duration: 250, data: {formId:this.global.formSelected._id}, page: 'C8Oforms.MobileApplication.Application.editorPage', animate: 'true'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event));">
+<ion-icon class="class1572259538917" name="build" item-left>
+</ion-icon>
+{{'formedit' | translate}}
+</button>
+</ng-container>
+<button class="class1572368215748" type="button" ion-item (click)="resolveError(actionBeans.PushPageAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'PushPage', actionFunction: 'PushPageAction', animate_duration: 250, data: {formId:this.global.formSelected._id}, page: 'C8Oforms.MobileApplication.Application.viewerPage', animate: 'true'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event));">
+<ion-icon class="class1572368215751" name="eye" item-left>
+</ion-icon>
+{{'viewer_form' | translate}}
+</button>
+<button class="class1543518260725" ion-item menuClose="MenuSelector" (click)="openPageWithName('settingsPage')">
+<ion-icon name="settings" item-left></ion-icon>
+{{'settings' | translate}}
+</button>
+<button class="class1572449137222" type="button" ion-item (click)="ATS1572449137246({root: {scope:{}, in:{}, out:$event}})">
+<ion-icon class="class1572449137225" name="log-out" item-left>
+</ion-icon>
+{{'logout' | translate}}
+</button>
+</ng-container>
+<ng-container class="class1547667502657" *ngIf="this.global?.formSelected?._id != undefined && this.global['platform']['name'][0] == 'mobile' ">
+<button class="class1573641141162" type="button" ion-item (click)="resolveError(actionBeans.PushPageAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'PushPage', actionFunction: 'PushPageAction', animate_duration: 250, data: {debug: false, published:false}, page: 'C8Oforms.MobileApplication.Application.selectorPage', animate: 'true'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+<ion-icon class="class1573641141165" name="home" item-left>
+</ion-icon>
+{{'homePage' | translate}}
+</button>
+<button class="class1573641132908" type="button" ion-item (click)="resolveError(actionBeans.PushPageAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'PushPage', actionFunction: 'PushPageAction', animate_duration: 250, data: {formId:this.global.formSelected._id}, page: 'C8Oforms.MobileApplication.Application.viewerPage', animate: 'true'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event));">
+<ion-icon class="class1573641132911" name="eye" item-left>
+</ion-icon>
+{{'viewer_form' | translate}}
+</button>
+<button class="class1547667502710" ion-item menuClose="MenuSelector" (click)="openPageWithName('settingsPage')">
+<ion-icon name="settings" item-left></ion-icon>
+{{'settings' | translate}}
+</button>
+<button class="class1572449144484" type="button" ion-item (click)="ATS1572449144508({root: {scope:{}, in:{}, out:$event}})">
+<ion-icon class="class1572449144487" name="log-out" item-left>
+</ion-icon>
+{{'logout' | translate}}
+</button>
+</ng-container>
+<ng-container class="class1572270727155" *ngIf="this.global?.formSelected?._id == undefined">
+<button class="class1573641164612" type="button" ion-item (click)="resolveError(actionBeans.PushPageAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'PushPage', actionFunction: 'PushPageAction', animate_duration: 250, data: {debug: false, published:false}, page: 'C8Oforms.MobileApplication.Application.selectorPage', animate: 'true'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+<ion-icon class="class1573641164615" name="home" item-left>
+</ion-icon>
+{{'homePage' | translate}}
+</button>
+<button class="class1572270727164" ion-item menuClose="MenuSelector" (click)="openPageWithName('settingsPage')">
+<ion-icon name="settings" item-left></ion-icon>
+{{'settings' | translate}}
+</button>
+<button class="class1572449149421" type="button" ion-item (click)="ATS1572449149445({root: {scope:{}, in:{}, out:$event}})">
+<ion-icon class="class1572449149424" name="log-out" item-left>
+</ion-icon>
+{{'logout' | translate}}
+</button>
+</ng-container>
+</ion-content>
+<ng-container *ngTemplateOutlet="sc1582105855735;context:{params1582105855735: merge(merge({},{}),{scope:{}})}"></ng-container>
+</ion-menu>
+
+<ion-nav [root]="rootPage" main #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,212 @@
+<!-- ====== SHARED TEMPLATES ====== -->
+<!-- 'sharedHeaderButtonMenu' shared component template -->
+<ng-template #sc1571075804071 let-params1571075804071="params1571075804071" >
+<button class="class1571156177325" clear type="false" menuToggle color="dark" icon-only ion-button item-start>
+<ion-icon class="class1571156177328" name="menu">
+</ion-icon>
+</button>
+</ng-template >
+<!-- 'sharedHeaderWeb' shared component template -->
+<ng-template #sc1571069820644 let-params1571069820644="params1571069820644" >
+<ng-container class="class1571069818074" *ngIf="!params1571069820644.mobile">
+<ion-grid class="class1571075719551">
+<ion-row class="class1571075719554">
+<ion-col class="class1571075719560">
+<ng-container *ngTemplateOutlet="sc1571075804071;context:{params1571075804071: merge(merge({},{}),{scope:merge(merge({}, params1571069820644.scope), {params1571069820644: params1571069820644})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571075899569;context:{params1571075899569: merge(merge({},{}),{scope:merge(merge({}, params1571069820644.scope), {params1571069820644: params1571069820644})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571075984554;context:{params1571075984554: merge(merge({},{}),{scope:merge(merge({}, params1571069820644.scope), {params1571069820644: params1571069820644})})}"></ng-container>
+<ng-container class="class1601542183777" *ngIf="params1571069820644.showbuttonsright == true">
+<button class="class1603903405770" clear icon-start type="button" color="dark" icon-only ion-button (click)="ATS1603918107963({root: {scope:merge(merge({}, params1571069820644.scope), {params1571069820644: params1571069820644}), in:{}, out:$event}})">
+<ion-icon class="class1603903491790" name="ios-notifications-outline">
+</ion-icon>
+<ng-container class="class1603925095760" *ngIf="listen(['fs://c8oforms_fs.view#viewNotifsNew'])?.rows?.length > 0">
+<ion-badge class="class1603903985013">
+{{listen(['fs://c8oforms_fs.view#viewNotifsNew'])?.rows?.length}}
+</ion-badge>
+</ng-container>
+</button>
+</ng-container>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-container>
+</ng-template >
+<!-- 'sharedHeader' shared component template -->
+<ng-template #sc1571069560308 let-params1571069560308="params1571069560308" >
+<ion-grid class="class1571069604422">
+<ion-row class="class1571069604425" style="height:100%">
+<ion-col class="class1571069604428" col-xl-1>
+</ion-col>
+<ion-col class="class1571069604437" col-md-12 col-lg-12 col-12 col-sm-12 col-xl-10>
+<ng-container *ngTemplateOutlet="sc1571069818059;context:{params1571069818059: merge(merge({mobile: this.global?.mobilePlat, showbuttonsright: true},{mobile: this.global?.mobilePlat, showbuttonsright: params1571069560308.showbuttonsright}),{scope:merge(merge({}, params1571069560308.scope), {params1571069560308: params1571069560308})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571069820644;context:{params1571069820644: merge(merge({mobile: this.global?.mobilePlat, showbuttonsright: true},{mobile: this.global?.mobilePlat, showbuttonsright: params1571069560308.showbuttonsright}),{scope:merge(merge({}, params1571069560308.scope), {params1571069560308: params1571069560308})})}"></ng-container>
+</ion-col>
+<ion-col class="class1571069604809" col-xl-1>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-template >
+<!-- 'sharedHeaderTextFormBuilder' shared component template -->
+<ng-template #sc1571075984554 let-params1571075984554="params1571075984554" >
+<ng-container class="class1600691673886" *ngIf="window.document.body.clientWidth > 302">
+<div class="class1571156193490">
+{{ 'Form_Builder' | translate }}
+</div>
+</ng-container>
+</ng-template >
+<!-- 'sharedHeaderImageConvertigo' shared component template -->
+<ng-template #sc1571075899569 let-params1571075899569="params1571075899569" >
+<img class="class1571075937119" width="" [src]="'assets/images/svg/logo/logo_convertigo_blue.svg'" height=""/>
+</ng-template >
+<!-- 'sharedHeaderMobile' shared component template -->
+<ng-template #sc1571069818059 let-params1571069818059="params1571069818059" >
+<ng-container class="class1571069818365" *ngIf="params1571069818059.mobile">
+<ion-grid class="class1571075747739">
+<ion-row class="class1571075747742" style="height:100%">
+<ion-col class="class1571075747748" align-self-baseline>
+<ion-grid class="class1571075747751">
+<ion-row class="class1571075747754" style="height:100%">
+<ion-col class="class1571075747757">
+<div class="class1571075747760">
+<ng-container *ngTemplateOutlet="sc1571075804071;context:{params1571075804071: merge(merge({},{}),{scope:merge(merge({}, params1571069818059.scope), {params1571069818059: params1571069818059})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571075899569;context:{params1571075899569: merge(merge({},{}),{scope:merge(merge({}, params1571069818059.scope), {params1571069818059: params1571069818059})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571075984554;context:{params1571075984554: merge(merge({},{}),{scope:merge(merge({}, params1571069818059.scope), {params1571069818059: params1571069818059})})}"></ng-container>
+<ng-container class="class1601542263765" *ngIf="params1571069818059.showbuttonsright != false">
+<button class="class1606995382480" clear icon-start type="button" color="dark" icon-only ion-button (click)="ATS1606995382489({root: {scope:merge(merge({}, params1571069818059.scope), {params1571069818059: params1571069818059}), in:{}, out:$event}})">
+<ion-icon class="class1606995382495" name="ios-notifications-outline">
+</ion-icon>
+<ng-container class="class1606995382501" *ngIf="listen(['fs://c8oforms_fs.view#viewNotifsNew'])?.rows?.length > 0">
+<ion-badge class="class1606995382504">
+{{listen(['fs://c8oforms_fs.view#viewNotifsNew'])?.rows?.length}}
+</ion-badge>
+</ng-container>
+</button>
+</ng-container>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-container>
+</ng-template >
+<!-- ============================== -->
+
+<ion-header class="class1539697882623">
+<ng-container *ngTemplateOutlet="sc1571069560308;context:{params1571069560308: merge(merge({showbuttonsright: true},{showbuttonsright: false}),{scope:{}})}"></ng-container>
+</ion-header>
+
+<ion-content class="class1539697883741" padding>
+<ion-grid class="class1587717632339">
+<ion-row class="class1587717632342" style="height:100%">
+<ion-col class="class1587717632345" col-md-1 col-lg-2 col-xl-3>
+</ion-col>
+<ion-col class="class1587717632348" col-md-10 col-lg-8 col-12 col-sm-12 col-xl-6>
+<ng-container class="class1587717673167" *ngIf="!this.local.spinner; else elseBlock_1587717591928">
+<ion-card class="class1587717673182">
+<ion-card-header class="class1601544114760">
+<ion-item class="class1601544238672">
+<div class="class1601544238675" text-uppercase text-center>
+{{ 'settings' | translate }}
+</div>
+</ion-item>
+</ion-card-header>
+<ion-card-content class="class1587717673185">
+<div class="class1587717673191" [ngClass]="'styledivnormal'">
+<ion-item class="class1601544478038">
+<div class="class1601544478041" text-uppercase>
+{{ 'general' | translate }}
+</div>
+</ion-item>
+<ion-list class="class1587717673194">
+<ion-item class="class1587717673206" [ngClass]="'stylegenericcheckboxnormal'">
+<ion-label class="class1587717673209">
+<div class="class1587717673212" text-capitalize>
+{{'language' | translate}}
+</div>
+</ion-label>
+<ion-select class="class1587717673221" interface="popover" (ionChange)="ATS1587717673245({root: {scope:{}, in:{}, out:$event}})" [(ngModel)]="this.global.language">
+<ion-option class="class1587717673224" [value]="'fr'">
+{{'fr'|translate}}
+</ion-option>
+<ion-option class="class1587717673230" [value]="'en'">
+{{'en' | translate}}
+</ion-option>
+<ion-option class="class1587717673236" [value]="'es'">
+{{'es' | translate}}
+</ion-option>
+<ion-option class="class1587717673263" [value]="'it'">
+{{'it' | translate}}
+</ion-option>
+</ion-select>
+</ion-item>
+<ng-container class="class1601304776527" *ngIf="(this.global?.settings?.editing_rights != undefined && this.global?.settings?.editing_rights == 'true') || this.global?.settings?.editing_rights == undefined">
+<ion-item class="class1601543680520" [ngClass]="'stylegenericcheckboxnormal'">
+<ion-label class="class1601543680523">
+<div class="class1601543680526" text-capitalize>
+{{'homePage' | translate}}
+</div>
+</ion-label>
+<ion-select class="class1601543680535" interface="popover" [ngModel]="this.global.published_First" (ngModelChange)="ATS1601543806339({root: {scope:{}, in:{}, out:$event}})">
+<ion-option class="class1601543680538" [value]="false">
+{{'Vue_des_projets' | translate}}
+</ion-option>
+<ion-option class="class1601543680544" [value]="'true'">
+{{'Vue_Publication' | translate}}
+</ion-option>
+</ion-select>
+</ion-item>
+</ng-container>
+</ion-list>
+</div>
+<div class="class1601544736565" [ngClass]="'styledivnormal'">
+<ion-item class="class1601544736568">
+<div class="class1601544736571" text-uppercase>
+{{ 'advanced' | translate }}
+</div>
+</ion-item>
+<ion-list class="class1601544736583">
+<ion-item class="class1601544736727" [ngClass]="'stylegenericcheckboxnormal'">
+<ion-label class="class1601544736730">
+<div class="class1601544736733" text-capitalize>
+{{'log_level' | translate}}
+</div>
+</ion-label>
+<ion-select class="class1601544736742" interface="popover" (ionChange)="CTS1601544736766(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'setLogLevel', actionFunction: 'CTS1601544736766'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)" [(ngModel)]="this.global['log_level']">
+<ion-option class="class1601544736745" [value]="'FATAL'">
+{{'FATAL'}}
+</ion-option>
+<ion-option class="class1601544736751" [value]="'ERROR'">
+{{'ERROR'}}
+</ion-option>
+<ion-option class="class1601544736757" [value]="'WARN'">
+{{'WARN'}}
+</ion-option>
+<ion-option class="class1601544736772" [value]="'INFO'">
+{{'INFO'}}
+</ion-option>
+<ion-option class="class1601544736778" [value]="'DEBUG'">
+{{'DEBUG'}}
+</ion-option>
+<ion-option class="class1601544736784" [value]="'TRACE'">
+{{'TRACE'}}
+</ion-option>
+</ion-select>
+</ion-item>
+</ion-list>
+</div>
+</ion-card-content>
+</ion-card>
+</ng-container>
+<ng-template class="class1587717591928" #elseBlock_1587717591928>
+<div class="class1587717728988">
+<div  class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+</ng-template>
+</ion-col>
+<ion-col class="class1587717632573" col-md-1 col-lg-2 col-xl-3>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
+

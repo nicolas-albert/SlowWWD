@@ -1,0 +1,18 @@
+<ion-content class="class1586163444912" padding>
+<ion-grid class="class1586165376162">
+<ion-row class="class1586165378762" style="height:100%">
+<ion-col class="class1586165381154">
+<div class="class1586164766907">
+<ion-slides class="animated zoomIn class1586164766910" [loop]="'true'" [speed]="'300'" [parallax]="'false'" [spaceBetween]="'0'" [pager]="'true'" [zoom]="'false'" [paginationType]="'bullets'" [effect]="'slide'" [initialSlide]="this.global.indexwall" [slidesPerView]="'1'" [direction]="'horizontal'" (ionSlideDidChange)="CTS1586164766943(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'SaveProperties', actionFunction: 'CTS1586164766943'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)" #slides>
+<ng-container class="class1586164766913" *ngFor="let item1586164766913 of let url of this.global.urls">
+<ion-slide class="class1586164766916" id="{{url.substring(url.lastIndexOf('/')+1)}}">
+<img class="class1586164766919" #imgTpl width="false" [src]="url" height="100px"/>
+</ion-slide>
+</ng-container>
+</ion-slides>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
+

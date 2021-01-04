@@ -1,0 +1,980 @@
+<!-- ====== SHARED TEMPLATES ====== -->
+<!-- 'sharedHeaderButtonMenu' shared component template -->
+<ng-template #sc1571075804071 let-params1571075804071="params1571075804071" >
+<button class="class1571156177325" clear type="false" menuToggle color="dark" icon-only ion-button item-start>
+<ion-icon class="class1571156177328" name="menu">
+</ion-icon>
+</button>
+</ng-template >
+<!-- 'sharedHeaderMobileViewer' shared component template -->
+<ng-template #sc1571848151552 let-params1571848151552="params1571848151552" >
+<ng-container class="class1571848151558" *ngIf="params1571848151552.mobile">
+<ion-grid class="class1571848151561">
+<ion-row class="class1571848151564" style="height:100%">
+<ion-col class="class1571848151570" align-self-baseline>
+<ion-grid class="class1571848151573">
+<ion-row class="class1571848151576" style="height:100%">
+<ion-col class="class1571848151579">
+<div class="class1571848151582">
+<ng-container *ngTemplateOutlet="sc1571075804071;context:{params1571075804071: merge(merge({},{}),{scope:merge(merge({}, params1571848151552.scope), {params1571848151552: params1571848151552})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571075984554;context:{params1571075984554: merge(merge({},{}),{scope:merge(merge({}, params1571848151552.scope), {params1571848151552: params1571848151552})})}"></ng-container>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-container>
+</ng-template >
+<!-- 'itemCardViewer' shared component template -->
+<ng-template #sc1570527222903 let-params1570527222903="params1570527222903" >
+<div class="class1586266078531" [ngClass]="['card', 'card-md']" no-padding>
+<ng-container class="class1586266130220" *ngIf="params1570527222903.item.config.title != null">
+<ion-card-header class="class1586266130223">
+<div class="class1586266130226" [ngClass]="'styledivnormal'">
+<ng-container *ngTemplateOutlet="sc1572009834372;context:{params1572009834372: merge(merge({config: ''},{config: params1570527222903.item.config.title}),{scope:merge(merge({}, params1570527222903.scope), {params1570527222903: params1570527222903})})}"></ng-container>
+</div>
+</ion-card-header>
+</ng-container>
+<div class="class1586266078543" [ngClass]="['styledivnormal']">
+<ng-container class="class1586266149368" *ngFor="let item1586266149368 of let child of params1570527222903.item.children;let j = index">
+<ion-row class="class1586266149371" id="{{'@prefixc8oitem'+child.name+'@prefixc8otype'+child.type+'c8o_child'}}" *ngIf="child.conditions != undefined  ? this.eval(this.evaluateConditions(child.conditions)): true">
+<ion-col class="class1586266149374">
+<div class="class1586266149377">
+<ng-container class="class1588846782999" [ngSwitch]="child.type">
+<ng-container class="class1588846780615" *ngSwitchCase="'text'">
+<ng-container *ngTemplateOutlet="sc1570455165983;context:{params1570455165983: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: child, this: params1570527222903.this, model: params1570527222903.model.children[child['name']], redList: params1570527222903.redList[child['name']], disabled: false}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780618" *ngSwitchCase="'ion-title'">
+<ng-container *ngTemplateOutlet="sc1570465481624;context:{params1570465481624: merge(merge({item: item},{item: child, this: params1570527222903.this, model: params1570527222903.model.children[child['name']], redList: params1570527222903.redList[child['name']]}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780621" *ngSwitchCase="'ion-label'">
+<ng-container *ngTemplateOutlet="sc1570474765064;context:{params1570474765064: merge(merge({item: item},{item: child, model: params1570527222903.model.children[child['name']]}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780624" *ngSwitchCase="'checkbox'">
+<ng-container *ngTemplateOutlet="sc1570465415178;context:{params1570465415178: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: child, this: params1570527222903.this, model: params1570527222903.model.children[child['name']], redList: params1570527222903.redList[child['name']]}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780627" *ngSwitchCase="'radio'">
+<ng-container *ngTemplateOutlet="sc1570521386137;context:{params1570521386137: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: child, this: params1570527222903.this, model: params1570527222903.model.children[child['name']], redList: params1570527222903.redList[child['name']]}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780630" *ngSwitchCase="'slider'">
+<ng-container *ngTemplateOutlet="sc1570487961899;context:{params1570487961899: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: child, this: params1570527222903.this, model: params1570527222903.model.children[child['name']], redList: this.redList[child['name']]}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780633" *ngSwitchCase="'select'">
+<ng-container *ngTemplateOutlet="sc1570521148238;context:{params1570521148238: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: child, this: params1570527222903.this, model: params1570527222903.model.children[child['name']], redList: params1570527222903.redList[child['name']]}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780636" *ngSwitchCase="'datetime'">
+<ng-container *ngTemplateOutlet="sc1570476357007;context:{params1570476357007: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: child, this: params1570527222903.this, model: params1570527222903.model.children[child['name']], redList: params1570527222903.redList[child['name']]}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780639" *ngSwitchCase="'time'">
+<ng-container *ngTemplateOutlet="sc1571411661277;context:{params1571411661277: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: child, this: params1570527222903.this, model: params1570527222903.model.children[child['name']], redList: params1570527222903.redList[child['name']]}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780642" *ngSwitchCase="'img'">
+<ng-container *ngTemplateOutlet="sc1570455192839;context:{params1570455192839: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: child, this: params1570527222903.this, model: params1570527222903.model.children[child['name']], redList: this.redList[child['name']]}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780645" *ngSwitchCase="'barcode'">
+<ng-container *ngTemplateOutlet="sc1570487126259;context:{params1570487126259: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: child, this: params1570527222903.this, model: params1570527222903.model.children[child['name']], redList: this.redList[child['name']]}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780648" *ngSwitchCase="'file'">
+<ng-container *ngTemplateOutlet="sc1570521387467;context:{params1570521387467: merge(merge({idFiles: null, item: item, model: {}, redList: null, disabled: false},{item: child, this: params1570527222903.this, model: params1570527222903.model.children[child['name']], redList: this.redList[child['name']], idFiles: this.idFiles, disabled: false}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780651" *ngSwitchCase="'signature'">
+<ng-container *ngTemplateOutlet="sc1570477969257;context:{params1570477969257: merge(merge({item: item, model: {}, redList: null, disabled: false, parentname: null, color: 'black'},{item: child, this: params1570527222903.this, model: params1570527222903.model.children[child['name']], redList: this.redList[child['name']], parentname: params1570527222903.item.name}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780654" *ngSwitchCase="'radio_group'">
+<ng-container *ngTemplateOutlet="sc1574980433028;context:{params1574980433028: merge(merge({item: item, model: {}, redList: null, disabled: false},{ix: j, item: child, model: params1570527222903.model.children[child['name']], redList: this.redList[child['name']]}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846780657" *ngSwitchCase="'checkbox_group'">
+<ng-container *ngTemplateOutlet="sc1575885462526;context:{params1575885462526: merge(merge({item: item, model: {}, redList: null, disabled: false},{ix: j, item: child, model: params1570527222903.model.children[child['name']], redList: this.redList[child['name']]}),{scope:merge(merge({}, params1570527222903.scope), {item1586266149368: item1586266149368, params1570527222903: params1570527222903})})}"></ng-container>
+</ng-container>
+</ng-container>
+</div>
+</ion-col>
+</ion-row>
+</ng-container>
+</div>
+</div>
+</ng-template >
+<!-- 'sharedHeaderTextFormBuilder' shared component template -->
+<ng-template #sc1571075984554 let-params1571075984554="params1571075984554" >
+<ng-container class="class1600691673886" *ngIf="window.document.body.clientWidth > 302">
+<div class="class1571156193490">
+{{ 'Form_Builder' | translate }}
+</div>
+</ng-container>
+</ng-template >
+<!-- 'itemLabelViewver' shared component template -->
+<ng-template #sc1570474765064 let-params1570474765064="params1570474765064" >
+<div class="class1570475438029" [ngClass]="'styledivnormal'">
+<ion-item class="class1570475438032" no-lines [ngClass]="'stylegenericcheckboxnormal'">
+<ion-label class="class1570475438038" [style.color]="(params1570474765064.item.config.label_color != 'unset')?params1570474765064.item.config.label_color:null" [attr.stacked]="(params1570474765064.item.config.position == 'stacked')?'':null" [attr.floating]="(params1570474765064.item.config.position == 'floating')?'':null" [attr.fixed]="(params1570474765064.item.config.position == 'fixed')?'':null" text-wrap>
+{{params1570474765064.item.config.text}}
+</ion-label>
+</ion-item>
+</div>
+</ng-template >
+<!-- 'itemRadioViewver' shared component template -->
+<ng-template #sc1570521386137 let-params1570521386137="params1570521386137" >
+<div class="class1588840102115" #divtext [ngClass]="this.redList != undefined ?  this.redList[params1570521386137.item.name] == true ? 'styledivred': 'styledivnormal': 'styledivnormal'" [attr.id]="params1570521386137.item.name">
+<ion-list class="class1588840102133" radio-group [ngClass]="(params1570521386137.item.config.mandatory && params1570521386137.item.config.disabled == true) ? ['requiredgregoryv', 'stylegenericcheckboxnormal'] : 'stylegenericcheckboxnormal'" [(ngModel)]="params1570521386137.model.value" (ngModelChange)="CTS1588840102217(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CorrectValues', actionFunction: 'CTS1588840102217'}), {stack:{root: {scope:merge(merge({}, params1570521386137.scope), {divtext: divtext, params1570521386137: params1570521386137}), in:{}, out:$event}}}),{item: params1570521386137.item, model: params1570521386137.model}, $event)">
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1570521386137.item}),{scope:merge(merge({}, params1570521386137.scope), {divtext: divtext, params1570521386137: params1570521386137})})}"></ng-container>
+<ng-container class="class1588840102142" *ngFor="let item1588840102142 of let child of params1570521386137.item.children;let j = index">
+<ion-row class="class1588840102145" id="{{'@prefixc8oitem'+child.name+'@prefixc8otype'+child.type+'c8o_child1'}}" *ngIf="child.other == null">
+<div class="class1588840102148" id="{{'c8o'+child.name}}">
+<div class="class1588840102151">
+<ion-item class="class1588840102154" text-wrap>
+<ion-label class="class1588840102157" [color]="(child.label_color != 'unset')?child.label_color:null" [attr.stacked]="(child.position == 'stacked')?'':null" [attr.fixed]="(child.position == 'fixed')?'':null" [attr.floating]="(child.position == 'floating')?'':null">
+{{child.value}}
+</ion-label>
+<ion-radio class="class1588840102175" disabled="{{params1570521386137.disabled}}" value="{{child.value}}" item-left (click)="resolveError(actionBeans.STS1596618881610(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1596618881610'}), {stack:{root: {scope:merge(merge({}, params1570521386137.scope), {item1588840102142: item1588840102142, divtext: divtext, params1570521386137: params1570521386137}), in:{}, out:$event}}}),{item: params1570521386137.item, line: null, child: child, j: j}, $event))">
+</ion-radio>
+</ion-item>
+</div>
+</div>
+</ion-row>
+</ng-container>
+<ng-container class="class1588840102226" *ngFor="let item1588840102226 of let child of params1570521386137.item.children;let j = index">
+<ion-row class="class1588840102229" *ngIf="child.other">
+<div class="class1588840102289">
+<ion-item class="class1588840102292">
+<ion-label class="class1588840102295" [color]="(child.label_color != 'unset')?child.label_color:null" [attr.stacked]="(child.position == 'stacked')?'':null" [attr.fixed]="(child.position == 'fixed')?'':null" [attr.floating]="(child.position == 'floating')?'':null">
+{{('Other'|translate) + ' :'}}
+</ion-label>
+<ion-radio class="class1588840102313" disabled="{{params1570521386137.disabled}}" value="{{'__c8o__unique_other'}}" item-left>
+</ion-radio>
+</ion-item>
+</div>
+<div class="class1588840102328" *ngIf="child.other" (click)="CTS1588840102385(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'setCheckboxSelected', actionFunction: 'CTS1588840102385'}), {stack:{root: {scope:merge(merge({}, params1570521386137.scope), {item1588840102226: item1588840102226, divtext: divtext, params1570521386137: params1570521386137}), in:{}, out:$event}}}),{params: params1570521386137, j: j}, $event)">
+<ion-item class="class1588840102331" no-lines>
+<ion-input class="class1588840102334" type="text" [(ngModel)]="this.local[params1570521386137['item'].name+'_other']" *ngIf="params1570521386137.disabled == false" (click)="CTS1588840102352(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1588840102352'}), {stack:{root: {scope:merge(merge({}, params1570521386137.scope), {item1588840102226: item1588840102226, divtext: divtext, params1570521386137: params1570521386137}), in:{}, out:$event}}}),{params: params1570521386137}, $event)">
+</ion-input>
+<ion-input class="class1588840102361" type="text" [disabled]="true" *ngIf="params1570521386137.disabled == true">
+</ion-input>
+</ion-item>
+</div>
+</ion-row>
+</ng-container>
+</ion-list>
+<ng-container class="class1588840102394" *ngIf="this.redList != null ? this.redList[params1570521386137.item.name] : false">
+<ion-item class="class1588840102397">
+{{'repMandartory'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'itemFileViewver' shared component template -->
+<ng-template #sc1570521387467 let-params1570521387467="params1570521387467" >
+<div class="class1570521491673" #divtext [ngClass]="this.redList != undefined ?  this.redList[params1570521387467.item.name] == true ? (params1570521387467.item.config.mandatory && params1570521387467.item.config.disabled == true) ? ['requiredgregoryvpadding', 'styledivred'] : 'styledivred': (params1570521387467.item.config.mandatory && params1570521387467.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal': (params1570521387467.item.config.mandatory && params1570521387467.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal'" [attr.id]="params1570521387467.item.name">
+<ng-container class="class1570521491676" *ngIf="params1570521387467.idFiles != null ? this.global[params1570521387467.idFiles][params1570521387467.item.id].length > 0 : false">
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1570521387467.item}),{scope:merge(merge({}, params1570521387467.scope), {divtext: divtext, params1570521387467: params1570521387467})})}"></ng-container>
+<ion-item class="class1570521491679" no-lines [class.item-label-stacked]="true" [ngClass]="'stylegenericcheckboxnormal'">
+<ion-label class="class1570521491721" (click)="ATS1582117588705({root: {scope:merge(merge({}, params1570521387467.scope), {divtext: divtext, params1570521387467: params1570521387467}), in:{}, out:$event}})" *ngIf="params1570521387467.item.config.multiple == true">
+{{params1570521387467.item.config.placeholder}}
+</ion-label>
+</ion-item>
+<ion-grid class="class1570521491805">
+<ion-row class="class1570521491808">
+<ng-container class="class1570521491811" *ngFor="let i = index;let item1570521491811 of this.global[params1570521387467.idFiles][params1570521387467.item.id];let i = index">
+<ion-col class="class1570521491814" col-md-4 col-6 col-12 col-sm-6 col-xl-6>
+<ion-card class="class1570521491817">
+<ion-item class="class1570521491820">
+<ion-icon class="class1570521491823" color="primary" name="document" item-left>
+</ion-icon>
+<ion-label class="class1570521491826">
+{{item1570521491811?.name}}
+</ion-label>
+<button class="class1570521491832" clear icon-start type="false" color="dark" ion-button small (click)="ATS1571666926300({root: {scope:merge(merge({}, params1570521387467.scope), {item1570521491811: item1570521491811, i:i, divtext: divtext, params1570521387467: params1570521387467}), in:{}, out:$event}});" item-end>
+<ion-icon class="class1570521491835" name="close">
+</ion-icon>
+</button>
+</ion-item>
+</ion-card>
+</ion-col>
+</ng-container>
+</ion-row>
+</ion-grid>
+</ng-container>
+<ng-container class="class1570521491856" *ngIf="params1570521387467.idFiles != null ? this.global[params1570521387467.idFiles][params1570521387467.item.id].length == 0 : true">
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1570521387467.item}),{scope:merge(merge({}, params1570521387467.scope), {divtext: divtext, params1570521387467: params1570521387467})})}"></ng-container>
+<ion-item class="class1570521491859" no-lines [class.item-label-stacked]="true" [ngClass]="'stylegenericcheckboxnormal'">
+<ion-label class="class1570521491898" (click)="ATS1573724391281({root: {scope:merge(merge({}, params1570521387467.scope), {divtext: divtext, params1570521387467: params1570521387467}), in:{}, out:$event}})" *ngIf="params1570521387467.item.config.multiple == true">
+{{params1570521387467.item.config.placeholder}}
+</ion-label>
+<ion-label class="class1570521491943" (click)="ATS1571666998509({root: {scope:merge(merge({}, params1570521387467.scope), {divtext: divtext, params1570521387467: params1570521387467}), in:{}, out:$event}})" *ngIf="params1570521387467.item.config.multiple == false">
+{{params1570521387467.item.config.placeholder}}
+</ion-label>
+</ion-item>
+</ng-container>
+<ng-container class="class1570521492000" *ngIf="params1570521387467.redList != null ?
+params1570521387467.redList[params1570521387467.item.name] == true : false">
+<ion-item class="class1570521492003">
+{{'repMandartory'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'itemSignatureViewver' shared component template -->
+<ng-template #sc1570477969257 let-params1570477969257="params1570477969257" >
+<div class="class1570478039567" #divtext [attr.id]="params1570477969257.item.name" [ngClass]="this.redList != undefined ?  this.redList[params1570477969257.item.name] == true ? (params1570477969257.item.config.mandatory && params1570477969257.item.config.disabled == true) ? ['requiredgregoryvpadding', 'styledivred'] : 'styledivred': (params1570477969257.item.config.mandatory && params1570477969257.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal': (params1570477969257.item.config.mandatory && params1570477969257.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal'">
+<ion-grid class="class1571755071219">
+<ion-row class="class1571755101577">
+<ion-col class="class1571755109994" col-6>
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1570477969257.item}),{scope:merge(merge({}, params1570477969257.scope), {divtext: divtext, params1570477969257: params1570477969257})})}"></ng-container>
+</ion-col>
+<ion-col class="class1571755120715" col-6>
+<ion-buttons class="class1571676240357" right>
+<button class="class1571676240381" clear type="button" color="btLight" ion-button (click)="ATS1571676268818({root: {scope:merge(merge({}, params1570477969257.scope), {divtext: divtext, params1570477969257: params1570477969257}), in:{}, out:$event}})">
+<i class="fa fa-trash-o fa-lg class1571676240384" aria-hidden="true">
+</i>
+</button>
+</ion-buttons>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-card class="class1586594744598">
+<ion-item class="class1570478039588" [ngClass]="['stylegenericcheckboxnormal']">
+<c8o-signature class="class1592918840886" [options]="{dotSize: null, minWidth: null, maxWidth: null, canvasWidth: null, canvasHeight: null, throttle: null, backgroundColor: 'rgb(255,255,255)', penColor: params1570477969257.color, velocityFilterWeight: null}" [(ngModel)]="params1570477969257.model['value']" (ngModelChange)="CTS1592918840895(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckFilled', actionFunction: 'CTS1592918840895'}), {stack:{root: {scope:merge(merge({}, params1570477969257.scope), {divtext: divtext, params1570477969257: params1570477969257}), in:{}, out:$event}}}),{item: params1570477969257.item, redList: params1570477969257.redList}, $event);resolveError(actionBeans.STS1596618881610(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1596618881610'}), {stack:{root: {scope:merge(merge({}, params1570477969257.scope), {divtext: divtext, params1570477969257: params1570477969257}), in:{}, out:$event}}}),{item: params1570477969257.item, line: null, child: null, canExec: true}, $event))">
+</c8o-signature>
+</ion-item>
+</ion-card>
+<ng-container class="class1570478039618" *ngIf="params1570477969257.redList">
+<ion-item class="class1570478039621">
+{{'repMandartory'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'itemDateTimeViewver' shared component template -->
+<ng-template #sc1570476357007 let-params1570476357007="params1570476357007" >
+<div class="class1570476475337" #divtext [attr.id]="params1570476357007.item.name" [ngClass]="this.redList != undefined ?  this.redList[params1570476357007.item.name] == true ? (params1570476357007.item.config.mandatory && params1570476357007.item.config.disabled == true) ? ['requiredgregoryvpadding', 'styledivred'] : 'styledivred': (params1570476357007.item.config.mandatory && params1570476357007.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal': (params1570476357007.item.config.mandatory && params1570476357007.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal'">
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1570476357007.item}),{scope:merge(merge({}, params1570476357007.scope), {divtext: divtext, params1570476357007: params1570476357007})})}"></ng-container>
+<ion-item class="class1570476475340" no-lines [class.item-label-stacked]="true" [ngClass]="params1570476357007.redList ? 'stylegenerictextred': 'stylegenerictextnormal'">
+<ion-datetime class="class1570476475379" placeholder="{{params1570476357007.item.config.display_format}}" [(ngModel)]="params1570476357007.model['value']" [displayFormat]="params1570476357007.item.config.display_format" [max]="params1570476357007.item.config.max_datetime" [min]="params1570476357007.item.config.min_datetime" [pickerFormat]="params1570476357007.item.config.picker_format" (ngModelChange)="CTS1570476475409(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckFilled', actionFunction: 'CTS1570476475409'}), {stack:{root: {scope:merge(merge({}, params1570476357007.scope), {divtext: divtext, params1570476357007: params1570476357007}), in:{}, out:$event}}}),{item: params1570476357007.item, redList: params1570476357007.redList}, $event);resolveError(actionBeans.STS1596618881610(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1596618881610'}), {stack:{root: {scope:merge(merge({}, params1570476357007.scope), {divtext: divtext, params1570476357007: params1570476357007}), in:{}, out:$event}}}),{item: params1570476357007.item, line: null, child: null, canExec: true}, $event))" [disabled]="params1570476357007.disabled">
+<ion-input class="class1570476475415" placeholder="{{params1570476357007.item.config.display_format}}" type="{{params1570476357007.item.config.type}}" readonly="true" clearOnEdit="false" [(ngModel)]="params1570476357007.model['value']" (ngModelChange)="CTS1570476475424(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckFilled', actionFunction: 'CTS1570476475424'}), {stack:{root: {scope:merge(merge({}, params1570476357007.scope), {divtext: divtext, params1570476357007: params1570476357007}), in:{}, out:$event}}}),{item: params1570476357007.item, redList: params1570476357007.redList}, $event)">
+</ion-input>
+</ion-datetime>
+</ion-item>
+<ng-container class="class1570476475433" *ngIf="this.redList != null ? this.redList[params1570476357007.item.name] : false">
+<ion-item class="class1570476475436">
+{{'repMandartory'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'itemCheckboxGroupViewer' shared component template -->
+<ng-template #sc1575885462526 let-params1575885462526="params1575885462526" >
+<div class="class1575885462535" #divtext [ngClass]="(this.redList != undefined ) ?  this.redList[params1575885462526.item.name] == true ? 'styledivred': (this.local.redListTwoSameColumn != undefined ? this.local.redListTwoSameColumn[params1575885462526.item.name] == true ? 'styledivred': 'styledivnormal' : 'styledivnormal') : (this.local.redListTwoSameColumn != undefined ? this.local.redListTwoSameColumn[params1575885462526.item.name] == true ? 'styledivred': 'styledivnormal' : 'styledivnormal')" [attr.id]="params1575885462526.item.name">
+<ng-container class="class1575885689135" *ngIf="params1575885462526.item.config.mandatory && params1575885462526.item.config.disabled">
+<span class="class1575885689141">
+{{ '_' | translate }}
+</span>
+</ng-container>
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1575885462526.item}),{scope:merge(merge({}, params1575885462526.scope), {divtext: divtext, params1575885462526: params1575885462526})})}"></ng-container>
+<div class="class1575885814894" (scroll)="CTS1588597563598(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'setStyleOnscroll', actionFunction: 'CTS1588597563598'}), {stack:{root: {scope:merge(merge({}, params1575885462526.scope), {divtext: divtext, params1575885462526: params1575885462526}), in:{}, out:$event}}}),{name: params1575885462526.item.name}, $event)">
+<div class="class1588257810806">
+<div class="class1588257810812">
+<div class="class1588257810818" [ngStyle]="this?.local?.gridAndCheckboxStyleOnScroll[params1575885462526.item.name] == true ? {'box-shadow': '5px 0 5px -1px #ffffff'} : {}">
+</div>
+<ng-container class="class1588257810824" *ngFor="let item1588257810824 of let parent of params1575885462526.item.children;let k = index">
+<div class="class1588257810827">
+{{parent.value}}
+</div>
+</ng-container>
+</div>
+<ng-container class="class1588257810836" *ngFor="let item1588257810836 of let line of params1575885462526.item.lines;let k = index">
+<div class="class1588257810839">
+<div class="class1588257810845" [ngStyle]="this?.local?.gridAndCheckboxStyleOnScroll[params1575885462526.item.name] == true ? {'box-shadow': '5px 0 5px -1px #ffffff'} : {}">
+{{line.title}}
+</div>
+<ng-container class="class1588257810854" *ngFor="let item1588257810854 of let child of params1575885462526.item.children;let j = index">
+<div class="class1588257810857">
+<ion-item class="class1588257810863" no-lines>
+<ion-checkbox class="class1588257810869" color="{{params1575885462526.item.config.color}}" [(ngModel)]="params1575885462526['model']['children'][line.title][j]['selected']" *ngIf="!params1575885462526.disabled" (click)="resolveError(actionBeans.STS1596618881610(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1596618881610'}), {stack:{root: {scope:merge(merge({}, params1575885462526.scope), {item1588257810854: item1588257810854, item1588257810836: item1588257810836, divtext: divtext, params1575885462526: params1575885462526}), in:{}, out:$event}}}),{item: params1575885462526.item, line: line, child: child, canExec: true}, $event))">
+</ion-checkbox>
+<ion-checkbox class="class1588257810884" color="{{params1575885462526.item.config.color}}" disabled="{{true}}" *ngIf="params1575885462526.disabled">
+</ion-checkbox>
+</ion-item>
+</div>
+</ng-container>
+</div>
+<div class="class1588261156605">
+<ng-container class="class1588602729983" *ngFor="let item1588602729983 of let child of params1575885462526.item.children;let j = index">
+<div class="class1588602729986">
+</div>
+</ng-container>
+<div class="class1588602835757">
+</div>
+</div>
+</ng-container>
+</div>
+</div>
+<ng-container class="class1575885462784" *ngIf="this.redList != null ? this.redList[params1575885462526.item.name] == true : false">
+<ion-item class="class1575900607157">
+{{'repMandartory_group'| translate}}
+</ion-item>
+</ng-container>
+<ng-container class="class1575888312129" *ngIf="this.local.redListTwoSameColumn != null ?  this.local.redListTwoSameColumn[params1575885462526.item.name] : false">
+<ion-item class="class1575888312132">
+{{'repMandartory_group_column'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'itemImgViewer' shared component template -->
+<ng-template #sc1570455192839 let-params1570455192839="params1570455192839" >
+<div class="class1570464402040" #divtext [ngClass]="this.redList != undefined ?  this.redList[params1570455192839.item.name] == true ? (params1570455192839.item.config.mandatory && params1570455192839.item.config.disabled == true) ? ['requiredgregoryv', 'styledivred'] : 'styledivred': (params1570455192839.item.config.mandatory && params1570455192839.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal': (params1570455192839.item.config.mandatory && params1570455192839.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal'" [attr.id]="params1570455192839.item.name">
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1570455192839.item}),{scope:merge(merge({}, params1570455192839.scope), {divtext: divtext, params1570455192839: params1570455192839})})}"></ng-container>
+<ion-item class="class1570464402058" no-lines [ngClass]="'stylegenericcheckboxnormal'">
+<img class="class1570464402061" width="{{params1570455192839.item.config.width}}" alt="{{params1570455192839.item.config.alt}}" [src]="params1570455192839.item.config.src" height="{{params1570455192839.item.config.height}}" title="{{params1570455192839.item.config.alt}}" [style.max-width]="params1570455192839.item.config.width+'px'"/>
+<ion-icon class="class1570464402070" name="camera" item-right (click)="ATS1571652709134({root: {scope:merge(merge({}, params1570455192839.scope), {divtext: divtext, params1570455192839: params1570455192839}), in:{}, out:$event}})">
+</ion-icon>
+</ion-item>
+<ng-container class="class1570464402103" *ngIf="params1570455192839.redList == true">
+<ion-item class="class1570464402106">
+{{'repMandartory'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'itemTextViewer' shared component template -->
+<ng-template #sc1570455165983 let-params1570455165983="params1570455165983" >
+<div class="class1570455241193" #divtext [ngClass]="this.redList != undefined ?  this.redList[params1570455165983.item.name] == true ? (params1570455165983.item.config.mandatory && params1570455165983.item.config.disabled == true) ? ['requiredgregoryvpadding', 'styledivred'] : 'styledivred': (params1570455165983.item.config.mandatory && params1570455165983.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal': (params1570455165983.item.config.mandatory && params1570455165983.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal'" [attr.id]="params1570455165983.item.name">
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1570455165983.item}),{scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983})})}"></ng-container>
+<ion-item class="class1574876151893" no-lines [class.item-label-stacked]="(params1570455165983.item.config.position == 'stacked')" [class.item-label-floating]="(params1570455165983.item.config.position == 'floating')" [class.item-label-fixed]="(params1570455165983.item.config.position == 'fixed')" [ngClass]="this.redList != undefined ?  this.redList[params1570455165983.item.name] == true ? 'stylegenerictextred': 'stylegenerictextnormal': 'stylegenerictextnormal'" *ngIf="params1570455165983.disabled == false">
+<ion-input class="class1574876151944" placeholder="{{params1570455165983.item.config.placeholder}}" type="{{params1570455165983.item.config.type}}" clearInput="{{params1570455165983.item.config.clearInput}}" [(ngModel)]="params1570455165983.model['value']" (ionBlur)="CTS1574876151956(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckNotEmpty', actionFunction: 'CTS1574876151956'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item, redList: this.redList}, $event);resolveError(actionBeans.STS1596618881610(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1596618881610'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item, line: null, child: null, canExec: true}, $event))" (ngModelChange)="CTS1574876151968(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckFilled', actionFunction: 'CTS1574876151968'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item, redList: this.redList[params1570455165983.item.name]}, $event)" *ngIf="params1570455165983.item.config.short == true" (keypress)="CTS1574876151986(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1574876151986'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item.name, enable: params1570455165983.item.config.type == 'number'}, $event)" step="any" (paste)="CTS1574950702436(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1574950702436'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item.name, enable: params1570455165983.item.config.type == 'number'}, $event)">
+</ion-input>
+<ion-textarea class="class1574876152010" placeholder="{{params1570455165983.item.config.placeholder}}" cols="40" rows="3" [(ngModel)]="params1570455165983.model['value']" (ionBlur)="CTS1574876152019(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckNotEmpty', actionFunction: 'CTS1574876152019'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item, redList: this.redList}, $event);resolveError(actionBeans.STS1596618881610(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1596618881610'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item, line: null, child: null, canExec: true}, $event))" (ngModelChange)="CTS1574876152028(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckFilled', actionFunction: 'CTS1574876152028'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item, redList: this.redList[params1570455165983.item.name]}, $event)" *ngIf="params1570455165983.item.config.short == false" (keypress)="CTS1574951903886(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1574951903886'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item.name, enable: params1570455165983.item.config.type == 'number'}, $event)" (paste)="CTS1574951903898(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1574951903898'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item.name, enable: params1570455165983.item.config.type == 'number'}, $event)" step="any">
+</ion-textarea>
+</ion-item>
+<ion-item class="class1574876152058" no-lines [class.item-label-stacked]="(params1570455165983.item.config.position == 'stacked')" [class.item-label-floating]="(params1570455165983.item.config.position == 'floating')" [class.item-label-fixed]="(params1570455165983.item.config.position == 'fixed')" [ngClass]="this.redList != undefined ?  this.redList[params1570455165983.item.name] == true ? 'stylegenerictextred': 'stylegenerictextnormal': 'stylegenerictextnormal'" attr="value" *ngIf="params1570455165983.disabled == true">
+<ion-input class="class1574876152151" placeholder="{{params1570455165983.item.config.placeholder}}" type="{{params1570455165983.item.config.type}}" clearInput="{{params1570455165983.item.config.clearInput}}" (ionBlur)="CTS1574876152163(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckNotEmpty', actionFunction: 'CTS1574876152163'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item, redList: this.redList}, $event)" (ngModelChange)="CTS1574876152175(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckFilled', actionFunction: 'CTS1574876152175'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item, redList: this.redList[params1570455165983.item.name]}, $event)" *ngIf="params1570455165983.item.config.short == true" ondragover="event.preventDefault()" ondrop="event.preventDefault()">
+</ion-input>
+<ion-textarea class="class1574876152205" placeholder="{{params1570455165983.item.config.placeholder}}" cols="40" rows="3" (ionBlur)="CTS1574876152214(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckNotEmpty', actionFunction: 'CTS1574876152214'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item}, $event)" (ngModelChange)="CTS1574876152223(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckFilled', actionFunction: 'CTS1574876152223'}), {stack:{root: {scope:merge(merge({}, params1570455165983.scope), {divtext: divtext, params1570455165983: params1570455165983}), in:{}, out:$event}}}),{item: params1570455165983.item, redList: this.redList[params1570455165983.item.name]}, $event)" *ngIf="params1570455165983.item.config.short == false">
+</ion-textarea>
+</ion-item>
+<ng-container class="class1570455241277" *ngIf="this.redList != null ? this.redList[params1570455165983.item.name] : false">
+<ion-item class="class1570455241280">
+{{'repMandartory'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'itemTitleViewver' shared component template -->
+<ng-template #sc1570465481624 let-params1570465481624="params1570465481624" >
+<div class="class1570474784701" [ngClass]="'styledivnormal'">
+<ng-container *ngTemplateOutlet="sc1572009834372;context:{params1572009834372: merge(merge({config: ''},{config: params1570465481624.item.config}),{scope:merge(merge({}, params1570465481624.scope), {params1570465481624: params1570465481624})})}"></ng-container>
+</div>
+</ng-template >
+<!-- 'sharedLabelElem' shared component template -->
+<ng-template #sc1573663157513 let-params1573663157513="params1573663157513" >
+<ng-container class="class1584637011695" *ngIf="params1573663157513.item.config.personalized">
+<ng-container class="class1604062070855" *ngIf="params1573663157513.item.config.mandatory && params1573663157513.item.config.disabled == false">
+<span class="class1604063068535" [duration]="3000" topOffset="0" arrow tooltip="{{'the' | translate }} {{'field' | translate }} {{'is' | translate}} {{ 'mandatory' | translate}}" leftOffset="-50" event="hover" positionV="top" positionH="right">
+<span class="class1604062070861">
+{{ '_' | translate }}
+</span>
+</span>
+</ng-container>
+<div class="class1584637011698" [innerHTML]="this.router.sanitizer.bypassSecurityTrustHtml(params1573663157513.item.config.html)">
+</div>
+</ng-container>
+<ng-container class="class1584637011710" *ngIf="!params1573663157513.item.config.personalized">
+<ion-label class="class1584637028208" [attr.stacked]="(params1573663157513.item.config.position == 'stacked')?'':null" [attr.floating]="(params1573663157513.item.config.position == 'floating')?'':null" [attr.fixed]="(params1573663157513.item.config.position == 'fixed')?'':null" [style.color]="(params1573663157513.item.config.label_color != 'unset')? params1573663157513.item.config.label_color : null" text-wrap *ngIf="params1573663157513.item.config.disabled ==false">
+<ng-container class="class1584637028235" *ngIf="params1573663157513.item.config.mandatory && params1573663157513.item.config.disabled == false">
+<span class="class1604063918030" [duration]="3000" topOffset="0" arrow tooltip="{{'the' | translate }} {{'field' | translate }} {{'is' | translate}} {{ 'mandatory' | translate}}" leftOffset="-50" event="hover" positionV="top" positionH="right">
+<span class="class1604063918033">
+{{ '_' | translate }}
+</span>
+</span>
+</ng-container>
+<ng-container class="class1584637028223" *ngIf="params1573663157513.item.config.disabled == false">
+{{params1573663157513.item.config.label}}
+</ng-container>
+</ion-label>
+</ng-container>
+</ng-template >
+<!-- 'itemSliderViewver' shared component template -->
+<ng-template #sc1570487961899 let-params1570487961899="params1570487961899" >
+<div class="class1570487990753" #divtext [attr.id]="params1570487961899.item.name" [ngClass]="this.redList != undefined ?  this.redList[params1570487961899.item.name] == true ? (params1570487961899.item.config.mandatory && params1570487961899.item.config.disabled == true) ? ['requiredgregoryvpadding', 'styledivred'] : 'styledivred': (params1570487961899.item.config.mandatory && params1570487961899.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal': (params1570487961899.item.config.mandatory && params1570487961899.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal'">
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1570487961899.item}),{scope:merge(merge({}, params1570487961899.scope), {divtext: divtext, params1570487961899: params1570487961899})})}"></ng-container>
+<ion-item class="class1570487990774" no-lines [ngClass]="'stylegenericcheckboxnormal'">
+<ion-range class="class1570487990780" [ngModel]="params1570487961899.model.value != '' ? params1570487961899.model.value : params1570487961899.item.config.defaultvalue" dualKnobs="{{false}}" min="{{params1570487961899.item.config.min}}" pin="{{params1570487961899.item.config.pin}}" max="{{params1570487961899.item.config.max}}" debounce="{{params1570487961899.item.config.debounce}}" step="{{params1570487961899.item.config.step}}" snaps="{{params1570487961899.item.config.snaps}}" [(ngModel)]="params1570487961899.model.value" (ngModelChange)="CTS1570487990789(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckFilled', actionFunction: 'CTS1570487990789'}), {stack:{root: {scope:merge(merge({}, params1570487961899.scope), {divtext: divtext, params1570487961899: params1570487961899}), in:{}, out:$event}}}),{item: params1570487961899.item, redList: params1570487961899.redList}, $event)" [disabled]="params1570487961899.disabled" [ngClass]="this.local?.sliderMoved == true ? 'rangeSLiderActivated': ''" (ionBlur)="resolveError(actionBeans.STS1596618881610(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1596618881610'}), {stack:{root: {scope:merge(merge({}, params1570487961899.scope), {divtext: divtext, params1570487961899: params1570487961899}), in:{}, out:$event}}}),{item: params1570487961899.item, line: null, child: null, canExec: true}, $event))">
+<ion-label class="class1599221501699" range-left>
+<ng-container class="class1602779395294" *ngIf="params1570487961899.item.config.sliderLeftLabel == ''">
+{{params1570487961899.item.config.min}}
+</ng-container>
+<ng-container class="class1602779608019" *ngIf="params1570487961899.item.config.sliderLeftLabel != ''">
+{{params1570487961899.item.config.sliderLeftLabel}}
+</ng-container>
+</ion-label>
+<ion-label class="class1599221529659" range-right>
+<ng-container class="class1602779668494" *ngIf="params1570487961899.item.config.sliderRightLabel == ''">
+{{params1570487961899.item.config.max}}
+</ng-container>
+<ng-container class="class1602779668500" *ngIf="params1570487961899.item.config.sliderRightLabel != ''">
+{{params1570487961899.item.config.sliderRightLabel}}
+</ng-container>
+</ion-label>
+</ion-range>
+</ion-item>
+<ng-container class="class1570487990807" *ngIf="params1570487961899.redList">
+<ion-item class="class1570487990810">
+{{'repMandartory'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'itemBarcodeViewver' shared component template -->
+<ng-template #sc1570487126259 let-params1570487126259="params1570487126259" >
+<div class="class1570487160451" #divtext [attr.id]="params1570487126259.item.name" [ngClass]="this.redList != undefined ?  this.redList[params1570487126259.item.name] == true ? (params1570487126259.item.config.mandatory && params1570487126259.item.config.disabled == true) ? ['requiredgregoryvpadding', 'styledivred'] : 'styledivred': (params1570487126259.item.config.mandatory && params1570487126259.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal': (params1570487126259.item.config.mandatory && params1570487126259.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal'">
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1570487126259.item}),{scope:merge(merge({}, params1570487126259.scope), {divtext: divtext, params1570487126259: params1570487126259})})}"></ng-container>
+<ion-item class="class1605795649058" no-lines [class.item-label-stacked]="(params1570487126259.item.config.position == 'stacked')" [class.item-label-floating]="(params1570487126259.item.config.position == 'floating')" [class.item-label-fixed]="(params1570487126259.item.config.position == 'fixed')" [ngClass]="this.redList != undefined ?  this.redList[params1570487126259.item.name] == true ? 'stylegenerictextred': 'stylegenerictextnormal': 'stylegenerictextnormal'">
+<ion-input class="class1605795649067" placeholder="{{params1570487126259.item.config.placeholder}}" ondragstart="event.preventDefault();event.stopPropagation();" ondragover="event.preventDefault()" ondrop="event.preventDefault()" [attr.draggable]="'false'" (ionBlur)="CTS1605805836316(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckNotEmpty', actionFunction: 'CTS1605805836316'}), {stack:{root: {scope:merge(merge({}, params1570487126259.scope), {divtext: divtext, params1570487126259: params1570487126259}), in:{}, out:$event}}}),{item: params1570487126259.item, redList: this.redList}, $event)" (ngModelChange)="CTS1605805836328(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckFilled', actionFunction: 'CTS1605805836328'}), {stack:{root: {scope:merge(merge({}, params1570487126259.scope), {divtext: divtext, params1570487126259: params1570487126259}), in:{}, out:$event}}}),{item: params1570487126259.item, redList: this.redList[params1570487126259.item.name]}, $event)" [(ngModel)]="params1570487126259.model['value']">
+</ion-input>
+<ion-icon class="class1605795649073" name="barcode" item-right (click)="ATS1605806257007({root: {scope:merge(merge({}, params1570487126259.scope), {divtext: divtext, params1570487126259: params1570487126259}), in:{}, out:$event}})">
+</ion-icon>
+<ion-icon class="class1605795649118" name="image" item-right (click)="ATS1605880187050({root: {scope:merge(merge({}, params1570487126259.scope), {divtext: divtext, params1570487126259: params1570487126259}), in:{}, out:$event}})">
+</ion-icon>
+</ion-item>
+<ng-container class="class1570487160538" *ngIf="params1570487126259.redList">
+<ion-item class="class1570487160541">
+{{'repMandartory'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'itemRadioGroupViewver' shared component template -->
+<ng-template #sc1574980433028 let-params1574980433028="params1574980433028" >
+<div class="class1574980433043" #divtext [ngClass]="(this.redList != undefined ) ?  this.redList[params1574980433028.item.name] == true ? 'styledivred': (this.local.redListTwoSameColumn != undefined ? this.local.redListTwoSameColumn[params1574980433028.item.name] == true ? 'styledivred': 'styledivnormal' : 'styledivnormal') : (this.local.redListTwoSameColumn != undefined ? this.local.redListTwoSameColumn[params1574980433028.item.name] == true ? 'styledivred': 'styledivnormal' : 'styledivnormal')" [attr.id]="params1574980433028.item.name">
+<ng-container class="class1574980433046" *ngIf="params1574980433028.item.config.mandatory && params1574980433028.item.config.disabled">
+<span class="class1574980433052">
+{{ '_' | translate }}
+</span>
+</ng-container>
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1574980433028.item}),{scope:merge(merge({}, params1574980433028.scope), {divtext: divtext, params1574980433028: params1574980433028})})}"></ng-container>
+<div class="class1588581199582" (scroll)="CTS1588603023037(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'setStyleOnscroll', actionFunction: 'CTS1588603023037'}), {stack:{root: {scope:merge(merge({}, params1574980433028.scope), {divtext: divtext, params1574980433028: params1574980433028}), in:{}, out:$event}}}),{name: params1574980433028.item.name}, $event)">
+<div class="class1588581199588">
+<div class="class1588581199613">
+<div class="class1588581199619" [ngStyle]="this?.local?.gridAndCheckboxStyleOnScroll[params1574980433028.item.name] == true ? {'box-shadow': '5px 0 5px -1px #ffffff'} : {}">
+</div>
+<ng-container class="class1588581199625" *ngFor="let item1588581199625 of let parent of params1574980433028.item.children;let k = index">
+<div class="class1588581199628">
+{{parent.value}}
+</div>
+</ng-container>
+</div>
+<ng-container class="class1588585138544" *ngIf="params1574980433028.model != undefined else Else_block1588585373861">
+<ng-container class="class1588585485169" *ngFor="let item1588585485169 of let line of params1574980433028.item.lines;let k = index">
+<div class="class1588585485307" radio-group [(ngModel)]="params1574980433028.model['children'][line.title]">
+<div class="class1588585485313" [ngStyle]="this?.local?.gridAndCheckboxStyleOnScroll[params1574980433028.item.name] == true ? {'box-shadow': '5px 0 5px -1px #ffffff'} : {}">
+{{line.title}}
+</div>
+<ng-container class="class1588585485322" *ngFor="let item1588585485322 of let child of params1574980433028.item.children;let j = index">
+<div class="class1588585485325">
+<ion-item class="class1588585485331" no-lines>
+<ion-radio class="class1588585485370" value="{{child.value}}" (click)="resolveError(actionBeans.STS1596618881610(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1596618881610'}), {stack:{root: {scope:merge(merge({}, params1574980433028.scope), {item1588585485322: item1588585485322, item1588585485169: item1588585485169, divtext: divtext, params1574980433028: params1574980433028}), in:{}, out:$event}}}),{item: params1574980433028.item, child: child, line: line}, $event))">
+</ion-radio>
+</ion-item>
+</div>
+</ng-container>
+</div>
+<div class="class1588585485391">
+<ng-container class="class1588603337301" *ngFor="let item1588603337301 of let child of params1574980433028.item.children;let j = index">
+<div class="class1588603337304">
+</div>
+</ng-container>
+<div class="class1588603337310">
+</div>
+</div>
+</ng-container>
+</ng-container>
+<ng-template class="class1588585373861" #Else_block1588585373861>
+<ng-container class="class1588585492061" *ngFor="let item1588585492061 of let line of params1574980433028.item.lines;let k = index">
+<div class="class1588585492199" radio-group>
+<div class="class1588585492205">
+{{line.title}}
+</div>
+<ng-container class="class1588585492214" *ngFor="let item1588585492214 of let child of params1574980433028.item.children;let j = index">
+<div class="class1588585492217">
+<ion-item class="class1588585492223" no-lines>
+<ion-radio class="class1588585492262" disabled="{{params1574980433028.disabled}}" value="{{child.value}}">
+</ion-radio>
+</ion-item>
+</div>
+</ng-container>
+</div>
+<div class="class1588585492283">
+</div>
+</ng-container>
+</ng-template>
+</div>
+</div>
+<ng-container class="class1574980433262" *ngIf="this.redList != null ? this.redList[params1574980433028.item.name] : false">
+<ion-item class="class1574980433265">
+{{'repMandartory_group'| translate}}
+</ion-item>
+</ng-container>
+<ng-container class="class1575628984127" *ngIf="this.local.redListTwoSameColumn != null ?  this.local.redListTwoSameColumn[params1574980433028.item.name] : false">
+<ion-item class="class1575628984130">
+{{'repMandartory_group_column'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'itemDescriptionViewer' shared component template -->
+<ng-template #sc1604668853717 let-params1604668853717="params1604668853717" >
+<div class="class1604669451601" [innerHTML]="params1604668853717.item.config.html != '' ? this.router.sanitizer.bypassSecurityTrustHtml(params1604668853717.item.config.html) : this.router.sanitizer.bypassSecurityTrustHtml(this.translate.instant('common_desc'))" [ngClass]="['styledivnormal']" [ngStyle]="{'margin-bottom': '6px'}">
+</div>
+</ng-template >
+<!-- 'ItemTitleSub' shared component template -->
+<ng-template #sc1572009834372 let-params1572009834372="params1572009834372" >
+<ng-container class="class1601481898664" *ngIf="params1572009834372.config.personalized else ElseBlock_1601481898679">
+<div class="class1601481898667" [ngClass]="['styledivnormal']" [innerHTML]="this.router.sanitizer.bypassSecurityTrustHtml(params1572009834372.config.html)">
+</div>
+</ng-container>
+<ng-template class="class1601481898679" #ElseBlock_1601481898679>
+<ng-container class="class1600247011947" *ngIf="params1572009834372.config.text != ''">
+<ion-item class="class1572011175704" no-lines [ngClass]="'stylegenericcheckboxnormal'">
+<div class="class1572011175716" [style.text-align]="params1572009834372.config.position == 'text-center' ? 'center' : params1572009834372.config.position == 'text-left' ? 'left' : params1572009834372.config.position == 'text-right' ? 'right' : 'text-center'">
+<ng-container class="class1572009863202" *ngIf="params1572009834372.config.size == 'H1'">
+<h1 class="class1572009863205" [ngStyle]="{'color': params1572009834372.config.label_color}">
+{{params1572009834372.config.text}}
+</h1>
+</ng-container>
+<ng-container class="class1572009863214" *ngIf="params1572009834372.config.size == 'H2'">
+<h2 class="class1572009863217" [ngStyle]="{'color': params1572009834372.config.label_color}">
+{{params1572009834372.config.text}}
+</h2>
+</ng-container>
+<ng-container class="class1572009863226" *ngIf="params1572009834372.config.size == 'H3'">
+<h3 class="class1572009863229" [ngStyle]="{'color': params1572009834372.config.label_color}">
+{{params1572009834372.config.text}}
+</h3>
+</ng-container>
+<ng-container class="class1572009863238" *ngIf="params1572009834372.config.size == 'H4'">
+<h4 class="class1572009863241" [ngStyle]="{'color': params1572009834372.config.label_color}">
+{{params1572009834372.config.text}}
+</h4>
+</ng-container>
+<ng-container class="class1572009863250" *ngIf="params1572009834372.config.size == 'H5'">
+<h5 class="class1572009863253" [ngStyle]="{'color': params1572009834372.config.label_color}">
+{{params1572009834372.config.text}}
+</h5>
+</ng-container>
+<ng-container class="class1572009863262" *ngIf="params1572009834372.config.size == 'H6'">
+<h6 class="class1572009863265" [ngStyle]="{'color': params1572009834372.config.label_color}">
+{{params1572009834372.config.text}}
+</h6>
+</ng-container>
+</div>
+</ion-item>
+</ng-container>
+</ng-template>
+</ng-template >
+<!-- 'itemSelectViewver' shared component template -->
+<ng-template #sc1570521148238 let-params1570521148238="params1570521148238" >
+<div class="class1573566997768" #divtext [ngClass]="this.redList != undefined ?  this.redList[params1570521148238.item.name] == true ? (params1570521148238.item.config.mandatory && params1570521148238.item.config.disabled == true) ? ['requiredgregoryvpadding', 'styledivred'] : 'styledivred': (params1570521148238.item.config.mandatory && params1570521148238.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal': (params1570521148238.item.config.mandatory && params1570521148238.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal'" [attr.id]="params1570521148238.item.name" (click)="ATS1599148773099({root: {scope:merge(merge({}, params1570521148238.scope), {divtext: divtext, params1570521148238: params1570521148238}), in:{}, out:$event}})">
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1570521148238.item}),{scope:merge(merge({}, params1570521148238.scope), {divtext: divtext, params1570521148238: params1570521148238})})}"></ng-container>
+<ng-container class="class1599134749315" *ngIf="params1570521148238.item?.config?.sourceEnabled && params1570521148238.disabled != true else ElseBlock_1599061441923">
+<ng-container class="class1599139812070" *ngIf="this.local.sourceValue != undefined else ElseBlock_1599139847651">
+<ng-container *ngTemplateOutlet="sc1599133889431;context:{params1599133889431: merge(merge({placeholder: 'placeholder', value: '', elems: '', model: ''},{placeholder: params1570521148238.item.config.placeholder, value: '', elems: params1570521148238.item.name, model: params1570521148238.model}),{scope:merge(merge({}, params1570521148238.scope), {divtext: divtext, params1570521148238: params1570521148238})})}"></ng-container>
+</ng-container>
+<ng-template class="class1599139847651" #ElseBlock_1599139847651>
+</ng-template>
+</ng-container>
+<ng-template class="class1599134772543" #ElseBlock_1599061441923>
+<ion-item class="class1573567027278" no-lines [ngClass]="'stylegenericcheckboxnormal'">
+<ion-select class="class1573567027284" #select cancelText="{{params1570521148238.item?.config?.cancelText}}" placeholder="{{params1570521148238.item?.config?.placeholder}}" interface="{{params1570521148238.item?.config?.type != undefined ? params1570521148238.item?.config?.type : 'popover'}}" okText="{{params1570521148238.item?.config?.okText}}" [(ngModel)]="params1570521148238.model.value" (ngModelChange)="ATS1573567027305({root: {scope:merge(merge({}, params1570521148238.scope), {select: select, ElseBlock_1599061441923: ElseBlock_1599061441923, divtext: divtext, params1570521148238: params1570521148238}), in:{}, out:$event}})" *ngIf="params1570521148238.disabled == false" [selectOptions]="{title:params1570521148238.item?.config?.label}">
+<ng-container class="class1573567027287" *ngFor="let item1573567027287 of let child of params1570521148238.item.children">
+<ion-option class="class1573567027290" [value]="child.value" (click)="resolveError(actionBeans.STS1596618881610(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1596618881610'}), {stack:{root: {scope:merge(merge({}, params1570521148238.scope), {item1573567027287: item1573567027287, select: select, ElseBlock_1599061441923: ElseBlock_1599061441923, divtext: divtext, params1570521148238: params1570521148238}), in:{}, out:$event}}}),{item: params1570521148238.item, line: null, child: child, canExec: true}, $event))">
+{{child.value}}
+</ion-option>
+</ng-container>
+</ion-select>
+<ion-select class="class1573567027323" cancelText="{{params1570521148238.item?.config?.cancelText}}" placeholder="{{params1570521148238.item?.config?.placeholder}}" interface="{{params1570521148238.item?.config?.type != undefined ? params1570521148238.item?.config?.type : 'popover'}}" okText="{{params1570521148238.item?.config?.okText}}" (ngModelChange)="CTS1573567027344(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CorrectValues', actionFunction: 'CTS1573567027344'}), {stack:{root: {scope:merge(merge({}, params1570521148238.scope), {ElseBlock_1599061441923: ElseBlock_1599061441923, divtext: divtext, params1570521148238: params1570521148238}), in:{}, out:$event}}}),{item: params1570521148238.item, model: params1570521148238.model}, $event)" *ngIf="params1570521148238.disabled == true" [disabled]="'true'">
+<ng-container class="class1573567027326" *ngFor="let item1573567027326 of let child of params1570521148238.item.children">
+<ion-option class="class1573567027329" [value]="child.value" [selected]="child.selected">
+{{child.value}}
+</ion-option>
+</ng-container>
+</ion-select>
+</ion-item>
+</ng-template>
+<ng-container class="class1573567032066" *ngIf="this.redList != null ? this.redList[params1570521148238.item.name] : false">
+<ion-item class="class1573567032069">
+{{'repMandartory'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'itemTimeViewver' shared component template -->
+<ng-template #sc1571411661277 let-params1571411661277="params1571411661277" >
+<div class="class1571411661283" #divtext [attr.id]="params1571411661277.item.name" [ngClass]="this.redList != undefined ?  this.redList[params1571411661277.item.name] == true ? (params1571411661277.item.config.mandatory && params1571411661277.item.config.disabled == true) ? ['requiredgregoryvpadding', 'styledivred'] : 'styledivred': (params1571411661277.item.config.mandatory && params1571411661277.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal': (params1571411661277.item.config.mandatory && params1571411661277.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal'">
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1571411661277.item}),{scope:merge(merge({}, params1571411661277.scope), {divtext: divtext, params1571411661277: params1571411661277})})}"></ng-container>
+<ion-item class="class1571411661286" no-lines [class.item-label-stacked]="true" [ngClass]="params1571411661277.redList ? 'stylegenerictextred': 'stylegenerictextnormal'">
+<ion-datetime class="class1571411661325" placeholder="{{params1571411661277.item.config.display_format}}" [(ngModel)]="params1571411661277.model['value']" [displayFormat]="params1571411661277.item.config.display_format" [pickerFormat]="params1571411661277.item.config.picker_format" (ngModelChange)="CTS1571411661355(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckFilled', actionFunction: 'CTS1571411661355'}), {stack:{root: {scope:merge(merge({}, params1571411661277.scope), {divtext: divtext, params1571411661277: params1571411661277}), in:{}, out:$event}}}),{item: params1571411661277.item, redList: params1571411661277.redList}, $event);resolveError(actionBeans.STS1596618881610(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1596618881610'}), {stack:{root: {scope:merge(merge({}, params1571411661277.scope), {divtext: divtext, params1571411661277: params1571411661277}), in:{}, out:$event}}}),{item: params1571411661277.item, line: null, child: null, canExec: true}, $event))" [disabled]="params1571411661277.disabled">
+<ion-input class="class1571411661364" placeholder="{{params1571411661277.item.config.display_format}}" type="{{params1571411661277.item.config.type}}" readonly="true" clearOnEdit="false" [(ngModel)]="params1571411661277.model['value']" (ngModelChange)="CTS1571411661373(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CheckFilled', actionFunction: 'CTS1571411661373'}), {stack:{root: {scope:merge(merge({}, params1571411661277.scope), {divtext: divtext, params1571411661277: params1571411661277}), in:{}, out:$event}}}),{item: params1571411661277.item, redList: params1571411661277.redList}, $event);resolveError(actionBeans.STS1596618881610(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1596618881610'}), {stack:{root: {scope:merge(merge({}, params1571411661277.scope), {divtext: divtext, params1571411661277: params1571411661277}), in:{}, out:$event}}}),{item: params1571411661277.item, line: null, child: null, canExec: true}, $event))">
+</ion-input>
+</ion-datetime>
+</ion-item>
+<ng-container class="class1571411661388" *ngIf="params1571411661277.redList">
+<ion-item class="class1571411661391">
+{{'repMandartory'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'sharedHeaderImageConvertigo' shared component template -->
+<ng-template #sc1571075899569 let-params1571075899569="params1571075899569" >
+<img class="class1571075937119" width="" [src]="'assets/images/svg/logo/logo_convertigo_blue.svg'" height=""/>
+</ng-template >
+<!-- 'itemCheckboxViewer' shared component template -->
+<ng-template #sc1570465415178 let-params1570465415178="params1570465415178" >
+<div class="class1588839517681" #divtext [ngClass]="this.redList != undefined ?  this.redList[params1570465415178.item.name] == true ? (params1570465415178.item.config.mandatory && params1570465415178.item.config.disabled == true) ? ['requiredgregoryvpadding', 'styledivred'] : 'styledivred': (params1570465415178.item.config.mandatory && params1570465415178.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal': (params1570465415178.item.config.mandatory && params1570465415178.item.config.disabled == true) ? ['requiredgregoryv', 'styledivnormal'] : 'styledivnormal'" [attr.id]="params1570465415178.item.name">
+<ng-container *ngTemplateOutlet="sc1573663157513;context:{params1573663157513: merge(merge({item: ''},{item: params1570465415178.item}),{scope:merge(merge({}, params1570465415178.scope), {divtext: divtext, params1570465415178: params1570465415178})})}"></ng-container>
+<ion-list class="class1588839517687">
+<ng-container class="class1588839517696" *ngFor="let item1588839517696 of let child of params1570465415178.item.children;let j = index">
+<ion-item class="class1588839517699" no-lines [ngClass]="'stylegenericcheckboxnormal'" *ngIf="!child.other" text-wrap>
+<ion-label class="class1588839517702" [color]="(params1570465415178.item.config.label_color != 'unset')?params1570465415178.item.config.label_color:null">
+{{child.value}}
+</ion-label>
+<ion-checkbox class="class1588839517729" color="{{params1570465415178.item.config.color}}" [(ngModel)]="params1570465415178['model']['children'][j]['selected']" *ngIf="!params1570465415178.disabled" (click)="resolveError(actionBeans.STS1596618881610(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1596618881610'}), {stack:{root: {scope:merge(merge({}, params1570465415178.scope), {item1588839517696: item1588839517696, divtext: divtext, params1570465415178: params1570465415178}), in:{}, out:$event}}}),{item: params1570465415178.item, line: null, child: child, canExec: true}, $event))">
+</ion-checkbox>
+<ion-checkbox class="class1588839517756" color="{{params1570465415178.item.config.color}}" disabled="{{true}}" [(ngModel)]="params1570465415178.item.children[j].selected" *ngIf="params1570465415178.disabled">
+</ion-checkbox>
+</ion-item>
+</ng-container>
+<ng-container class="class1588839517774" *ngFor="let item1588839517774 of let child of params1570465415178.item.children;let j = index">
+<ion-item class="class1588839517777" *ngIf="child.other" [ngClass]="'stylegenericcheckboxnormal'">
+<div class="class1588839517780">
+<ion-item class="class1588839517792" no-lines [ngClass]="'stylegenericcheckboxnormal'">
+<ion-checkbox class="class1588839517798" color="{{params1570465415178.item.config.color}}" disabled="{{params1570465415178.item.config.disabled}}" [(ngModel)]="params1570465415178['model']['children'][j]['selected']" *ngIf="!params1570465415178.disabled">
+</ion-checkbox>
+<ion-checkbox class="class1588839517822" color="{{params1570465415178.item.config.color}}" disabled="{{true}}" [(ngModel)]="params1570465415178.item.children[j].selected" *ngIf="params1570465415178.disabled">
+</ion-checkbox>
+</ion-item>
+</div>
+<div class="class1588839517837" *ngIf="child.other" (click)="CTS1588839517855(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'setCheckboxSelected', actionFunction: 'CTS1588839517855'}), {stack:{root: {scope:merge(merge({}, params1570465415178.scope), {item1588839517774: item1588839517774, divtext: divtext, params1570465415178: params1570465415178}), in:{}, out:$event}}}),{params: params1570465415178, j: j}, $event)">
+<ion-item class="class1588839517846">
+{{('Other'|translate) + ' :'}}
+</ion-item>
+</div>
+<div class="class1588839517864" *ngIf="child.other" (click)="CTS1588839517939(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'setCheckboxSelected', actionFunction: 'CTS1588839517939'}), {stack:{root: {scope:merge(merge({}, params1570465415178.scope), {item1588839517774: item1588839517774, divtext: divtext, params1570465415178: params1570465415178}), in:{}, out:$event}}}),{params: params1570465415178, j: j}, $event)">
+<ion-item class="class1588839517867" no-lines>
+<ion-input class="class1588839517870" type="text" [(ngModel)]="params1570465415178['model']['children'][j]['value']" *ngIf="!params1570465415178.disabled">
+</ion-input>
+<ion-input class="class1588839517918" type="text" *ngIf="params1570465415178.disabled" [disabled]="'true'">
+</ion-input>
+</ion-item>
+</div>
+</ion-item>
+</ng-container>
+</ion-list>
+<ng-container class="class1588839517957" *ngIf="this.redList != null ? this.redList[params1570465415178.item.name] == true : false">
+<ion-item class="class1588839517960">
+{{'repMandartory'| translate}}
+</ion-item>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'sharedHeaderWebViewer' shared component template -->
+<ng-template #sc1571848275886 let-params1571848275886="params1571848275886" >
+<ng-container class="class1571848275892" *ngIf="!params1571848275886.mobile">
+<ion-grid class="class1571848275895">
+<ion-row class="class1571848275898">
+<ion-col class="class1571848275904" col-auto>
+<ng-container *ngTemplateOutlet="sc1571075804071;context:{params1571075804071: merge(merge({},{}),{scope:merge(merge({}, params1571848275886.scope), {params1571848275886: params1571848275886})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571075899569;context:{params1571075899569: merge(merge({},{}),{scope:merge(merge({}, params1571848275886.scope), {params1571848275886: params1571848275886})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571075984554;context:{params1571075984554: merge(merge({},{}),{scope:merge(merge({}, params1571848275886.scope), {params1571848275886: params1571848275886})})}"></ng-container>
+</ion-col>
+<ion-col class="class1571848275916" col-auto>
+<button class="class1592830180047" clear type="button" ion-button small (click)="resolveError(actionBeans.RootPageAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'RootPage', actionFunction: 'RootPageAction', animate_duration: 250, data: null, page: 'C8Oforms.MobileApplication.Application.selectorPage', animate: 'true'}), {stack:{root: {scope:merge(merge({}, params1571848275886.scope), {params1571848275886: params1571848275886}), in:{}, out:$event}}}),{}, $event))">
+<img class="class1592830180053" width="" [src]="'assets/images/svg/icon/icn_home.svg'" height=""/>
+</button>
+<button class="class1571856576236" icon-start type="button" round ion-button small (click)="resolveError(actionBeans.RootPageAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'RootPage', actionFunction: 'RootPageAction', animate_duration: 250, data: {formId : this.local.formId}, page: 'C8Oforms.MobileApplication.Application.editorPage', animate: 'true'}), {stack:{root: {scope:merge(merge({}, params1571848275886.scope), {params1571848275886: params1571848275886}), in:{}, out:$event}}}),{}, $event))">
+{{'editView2' | translate}}
+<svg class="class1571856576248" width="14px" height="10px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Form" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="03b_form_admin_display_view_next-" transform="translate(-986.000000, -29.000000)" fill="#048EAE">
+            <g id="Header">
+                <g id="dropdown-view" transform="translate(877.000000, 16.000000)">
+                    <path d="M111.529027,16.5631456 L111.436854,16.4709728 L117.344682,10.5631456 L118.563146,11.7816096 L113.78161,16.5631456 L118.563146,21.3446816 L117.344682,22.5631456 L111.436854,16.6553184 L111.529027,16.5631456 Z" id="arrow-copy-2" transform="translate(115.000000, 16.563146) scale(1, -1) rotate(90.000000) translate(-115.000000, -16.563146) "></path>
+                </g>
+            </g>
+        </g>
+    </g></svg>
+</button>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-container>
+</ng-template >
+<!-- 'sharedHeaderViewer' shared component template -->
+<ng-template #sc1571848248991 let-params1571848248991="params1571848248991" >
+<ion-grid class="class1571848248994">
+<ion-row class="class1571848248997" style="height:100%">
+<ion-col class="class1571848249000" col-lg-auto col-xl-1>
+</ion-col>
+<ion-col class="class1571848249003" col-md-12 col-lg-12 col-12 col-sm-12 col-xl-10>
+<ng-container *ngTemplateOutlet="sc1571848151552;context:{params1571848151552: merge(merge({mobile: this.global?.platform?.name['0'] == 'mobile' ? true : false},{}),{scope:merge(merge({}, params1571848248991.scope), {params1571848248991: params1571848248991})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571848275886;context:{params1571848275886: merge(merge({mobile: this.global?.platform?.name['0'] == 'mobile' ? true : false},{}),{scope:merge(merge({}, params1571848248991.scope), {params1571848248991: params1571848248991})})}"></ng-container>
+</ion-col>
+<ion-col class="class1571848249012" col-xl-1>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-template >
+<!-- 'searchableSelect' shared component template -->
+<ng-template #sc1599133889431 let-params1599133889431="params1599133889431" >
+<div class="class1599133954777" (focusout)="CTS1599133954834(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1599133954834'}), {stack:{root: {scope:merge(merge({}, params1599133889431.scope), {params1599133889431: params1599133889431}), in:{}, out:$event}}}),{}, $event)">
+<button class="class1599133954780" type="button" ion-item no-lines (click)="CTS1599133954819(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1599133954819'}), {stack:{root: {scope:merge(merge({}, params1599133889431.scope), {params1599133889431: params1599133889431}), in:{}, out:$event}}}),{}, $event)" [ngClass]="'styleselectnormal'">
+<ng-container class="class1599133954783" *ngIf="(params1599133889431.model.value == '' || params1599133889431.model.value == null) else ElseBlock_1599133070874">
+<div class="class1599133954786">
+{{params1599133889431.placeholder}}
+</div>
+</ng-container>
+<ng-template class="class1599133954795" #ElseBlock_1599133070874>
+<div class="class1599133954798">
+{{params1599133889431.model.value}}
+</div>
+</ng-template>
+<ion-icon class="class1599133954807" name="arrow-dropdown" item-right>
+</ion-icon>
+</button>
+<div class="class1599133954837" *ngIf="this.local['selectSearchableC8o'+params1599133889431.model['name']] == true">
+<ion-list class="class1599133954846">
+<ion-searchbar class="class1599133954849" autocorrect="off" debounce="250" autocomplete="off" spellcheck="false" placeholder="Search" type="search" cancelButtonText="Cancel" showCancelButton="false" (ionInput)="CTS1599136683020(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1599136683020'}), {stack:{root: {scope:merge(merge({}, params1599133889431.scope), {params1599133889431: params1599133889431}), in:{}, out:$event}}}),{}, $event)">
+</ion-searchbar>
+<ion-scroll class="class1599133954852" scrollY="true">
+<ng-container class="class1599133954855" *ngFor="let myIndex = index;let item of let item1599133954855 of this.local.sourceValue[params1599133889431.elems]">
+<button class="class1599133954858" type="button" ion-item (tap)="CTS1599133954876(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1599133954876'}), {stack:{root: {scope:merge(merge({}, params1599133889431.scope), {item1599133954855: item1599133954855, item: item, myIndex:myIndex, params1599133889431: params1599133889431}), in:{}, out:$event}}}),{}, $event)" [title]="item">
+<ion-checkbox class="class1599133954864" [checked]="params1599133889431.model.value == item">
+</ion-checkbox>
+<ion-label class="class1599133954867">
+{{item}}
+</ion-label>
+</button>
+</ng-container>
+</ion-scroll>
+</ion-list>
+</div>
+</div>
+</ng-template >
+<!-- ============================== -->
+
+<ion-header class="class1571856354963" *ngIf="!(this.local.published == true || this.local.anonymous == true)">
+<ng-container class="class1572552867684" *ngIf="!(this.local.published == true || this.local.anonymous == true)">
+<ng-container *ngTemplateOutlet="sc1571848248991;context:{params1571848248991: merge(merge({published: ''},{}),{scope:{}})}"></ng-container>
+</ng-container>
+</ion-header>
+
+<ion-content class="class1537435548501" false [style.background-repeat]="'no-repeat'" [style.background-size]="'cover'" [ngStyle]="{'background-color': this.enabled == true ? (this.form.wallpaper['type'] == 'color' ? this.form.wallpaper['color'] : '#fff') : '#fff' ,'background-image': this.enabled == true ? (this.form.wallpaper['type'] != undefined ? (this.form.wallpaper['type'] != 'color' ? 'url('+this.local.url+')' : 'none') : 'url(' + this.link+ ')') : 'none'}" [ngClass]="'themeVizu'" id="myContent">
+<ng-container class="class1576510500502" *ngIf="!this.local.finished">
+<ion-grid class="class1543345620685" *ngIf="this.local.spinner == false &&  this.local.errorViewer != true">
+<ion-row class="class1543345633316">
+<ion-col class="class1543345636494">
+</ion-col>
+<ion-col class="class1543345638252" col-md-10 col-lg-8 col-12 col-sm-12 col-xl-6>
+<div class="class1584610356623" [ngClass]="['card', 'card-md']">
+<ng-container class="class1600247779964" *ngIf="!(this.local.pages != undefined && this.form.pages[this['local']['currentIndex']] != undefined && this.form.pages[this['local']['currentIndex']].desc != '')">
+<ng-container class="class1584610404185" *ngIf="form.namePosition == 'text-center'">
+<div class="class1584610404188" [attr.text-center]="true">
+<div class="class1584610404194" text-wrap>
+{{this.form.name}}
+</div>
+</div>
+</ng-container>
+<ng-container class="class1584610404203" *ngIf="form.namePosition == 'text-left'">
+<div class="class1584610404206" [attr.text-left]="true">
+<div class="class1584610404212" text-wrap>
+{{this.form.name}}
+</div>
+</div>
+</ng-container>
+<ng-container class="class1584610404221" *ngIf="form.namePosition == 'text-right'">
+<div class="class1584610404224" [attr.text-right]="true">
+<div class="class1584610404230" text-wrap>
+{{this.form.name}}
+</div>
+</div>
+</ng-container>
+</ng-container>
+<ng-container class="class1584610404239" *ngIf="this.local.pages == undefined && this.form.descform != ''">
+<div class="class1584610404353" [innerHTML]="this.router.sanitizer.bypassSecurityTrustHtml(this.form.descform)" [ngClass]="['styledivnormal']">
+</div>
+</ng-container>
+<ng-container class="class1592563520001" *ngIf="this.local.pages != undefined && this.form.pages[this['local']['currentIndex']] != undefined && this.form.pages[this['local']['currentIndex']].desc != ''">
+<div class="class1592563520004" [innerHTML]="this.router.sanitizer.bypassSecurityTrustHtml(this.form.pages[this['local']['currentIndex']].desc)" [ngClass]="['styledivnormal']">
+</div>
+</ng-container>
+</div>
+<ng-container class="class1543865083865" *ngFor="let item1543865083865 of let item of this.formsList;let i = index">
+<ng-container class="class1586530752522" *ngIf="item.cat == undefined">
+<ng-container class="class1592514000964" *ngIf="this.local.pages == undefined  || (this.local.pages[this.local.currentIndex]['pageTechName'] == item.config.page)">
+<ng-container class="class1588846603623" [ngSwitch]="item.type">
+<div class="class1586265611980" [ngClass]="['card', 'card-md']" *ngIf="item.type != 'ion-card' && item.conditions != undefined  ? this.eval(this.evaluateConditions(item.conditions)): item.type != 'ion-card' ">
+<div class="class1586265727271" [ngClass]="['styledivnormal']">
+<ng-container class="class1588846642198" *ngSwitchCase="'text'">
+<ng-container *ngTemplateOutlet="sc1570455165983;context:{params1570455165983: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: item, this: this, model: this.formsSubmit[item['name']], redList: this.redList[item['name']]}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642216" *ngSwitchCase="'ion-title'">
+<ng-container *ngTemplateOutlet="sc1570465481624;context:{params1570465481624: merge(merge({item: item},{item: item, model: this.formsSubmit[item['name']]}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642228" *ngSwitchCase="'ion-label'">
+<ng-container *ngTemplateOutlet="sc1570474765064;context:{params1570474765064: merge(merge({item: item},{item: item, model: this.formsSubmit[item['name']]}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642240" *ngSwitchCase="'checkbox'">
+<ng-container *ngTemplateOutlet="sc1570465415178;context:{params1570465415178: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: item, model: this.formsSubmit[item['name']], redList: this.redList[item['name']]}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642255" *ngSwitchCase="'radio'">
+<ng-container *ngTemplateOutlet="sc1570521386137;context:{params1570521386137: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: item, model: this.formsSubmit[item['name']], redList: this.redList[item['name']]}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642270" *ngSwitchCase="'slider'">
+<ng-container *ngTemplateOutlet="sc1570487961899;context:{params1570487961899: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: item, model: this.formsSubmit[item['name']], redList: this.redList[item['name']]}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642285" *ngSwitchCase="'select'">
+<ng-container *ngTemplateOutlet="sc1570521148238;context:{params1570521148238: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: item, model: this.formsSubmit[item['name']], redList: this.redList[item['name']]}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642300" *ngSwitchCase="'datetime'">
+<ng-container *ngTemplateOutlet="sc1570476357007;context:{params1570476357007: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: item, model: this.formsSubmit[item['name']], redList: this.redList[item['name']]}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642315" *ngSwitchCase="'time'">
+<ng-container *ngTemplateOutlet="sc1571411661277;context:{params1571411661277: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: item, model: this.formsSubmit[item['name']], redList: this.redList[item['name']]}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642330" *ngSwitchCase="'img'">
+<ng-container *ngTemplateOutlet="sc1570455192839;context:{params1570455192839: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: item, model: this.formsSubmit[item['name']], redList: this.redList[item['name']]}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642345" *ngSwitchCase="'barcode'">
+<ng-container *ngTemplateOutlet="sc1570487126259;context:{params1570487126259: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: item, model: this.formsSubmit[item['name']], redList: this.redList[item['name']]}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642360" *ngSwitchCase="'file'">
+<ng-container *ngTemplateOutlet="sc1570521387467;context:{params1570521387467: merge(merge({idFiles: null, item: item, model: {}, redList: null, disabled: false},{item: item, model: this.formsSubmit[item['name']], redList: this.redList[item['name']], idFiles: this.idFiles}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642378" *ngSwitchCase="'signature'">
+<ng-container *ngTemplateOutlet="sc1570477969257;context:{params1570477969257: merge(merge({item: item, model: {}, redList: null, disabled: false, parentname: null, color: 'black'},{item: item, model: this.formsSubmit[item['name']], redList: this.redList[item['name']]}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642393" *ngSwitchCase="'radio_group'">
+<ng-container *ngTemplateOutlet="sc1574980433028;context:{params1574980433028: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: item, model: this.formsSubmit[item['name']], redList: this.redList[item['name']], ix: i}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1588846642411" *ngSwitchCase="'checkbox_group'">
+<ng-container *ngTemplateOutlet="sc1575885462526;context:{params1575885462526: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: item, model: this.formsSubmit[item['name']], redList: this.redList[item['name']], disabled: false}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+<ng-container class="class1604675615710" *ngSwitchCase="'description'">
+<ng-container *ngTemplateOutlet="sc1604668853717;context:{params1604668853717: merge(merge({item: item},{item: item}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</ng-container>
+</div>
+</div>
+<ng-container class="class1588846710912" *ngSwitchCase="'ion-card'">
+<div class="class1580402859499">
+<ng-container *ngTemplateOutlet="sc1570527222903;context:{params1570527222903: merge(merge({item: item, model: this.formsSubmit[item['name']], redList: this.redList, this: this},{item: item, model: this.formsSubmit[item['name']], redList: this.redList[item['name']], this: this}),{scope:merge({}, {item1543865083865: item1543865083865})})}"></ng-container>
+</div>
+</ng-container>
+</ng-container>
+</ng-container>
+</ng-container>
+</ng-container>
+<ng-container class="class1592514107460" *ngIf="this.isThereANextPage() else ElseBlock_1592514238339">
+<ion-item class="class1592514301607">
+<ion-buttons class="class1592514301613" right>
+<ng-container class="class1592514910340" *ngIf="this.local.currentIndex > 0">
+<button class="class1592514849445" type="button" ion-button (click)="CTS1592514849451(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1592514849451'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)" item-start>
+{{ 'previous' | translate }}
+</button>
+</ng-container>
+<button class="class1592514320843" type="button" ion-button (click)="ATS1592831695091({root: {scope:{}, in:{}, out:$event}})">
+{{ 'next' | translate }}
+</button>
+</ion-buttons>
+</ion-item>
+</ng-container>
+<ng-template class="class1592514238339" #ElseBlock_1592514238339>
+<ion-item class="class1544464002619">
+<ion-buttons class="class1543865084768" right>
+<ng-container class="class1592514986401" *ngIf="this.local.currentIndex != 0">
+<button class="class1592514986404" type="button" ion-button (click)="CTS1592514986410(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1592514986410'}), {stack:{root: {scope:merge({}, {ElseBlock_1592514238339: ElseBlock_1592514238339}), in:{}, out:$event}}}),{}, $event)" item-start>
+{{ 'previous' | translate }}
+</button>
+</ng-container>
+<button class="class1543865084771" type="button" ion-button (click)="resolveError(actionBeans.STS1576328658272(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1576328658272'}), {stack:{root: {scope:merge({}, {ElseBlock_1592514238339: ElseBlock_1592514238339}), in:{}, out:$event}}}),{}, $event))">
+{{'send'| translate}}
+</button>
+</ion-buttons>
+</ion-item>
+</ng-template>
+</ion-col>
+<ion-col class="class1543345640046">
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-grid class="class1576600108253" *ngIf="this.local.spinner == true">
+<ion-row class="class1576600108256" align-items-center style="height:100%" justify-content-center>
+<ion-col class="class1576600108259" col-12 align-self-center>
+<div class="class1576600108262">
+<div  class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-grid class="class1604349328497" *ngIf="this.local.spinner == false && this.local.errorViewer == true">
+<ion-row class="class1604349368266" align-items-center style="height:100%" justify-content-center>
+<ion-col class="class1604349368269" col-12 align-self-center>
+<div class="class1604349368272">
+<h1 class="class1604421050869">
+{{this.local.errorMsgViewer}}
+</h1>
+</div>
+<div class="class1604486086487" [ngClass]="'styledivnormal'">
+<button class="class1604486086505" type="button" color="btLight" ion-button (click)="ATS1604486146249({root: {scope:{}, in:{}, out:$event}})">
+<ion-icon class="class1604486220540" name="log-out" item-left>
+</ion-icon>
+<ion-label class="class1604486276111">
+{{'logout' | translate}}
+</ion-label>
+</button>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-container>
+<ng-container class="class1576510583186" *ngIf="this.local.finished">
+<ion-grid class="class1576510607811" style="height:100%">
+<ion-row class="class1576510612660" align-items-center justify-content-center>
+<ion-col class="class1576510671475" col-md-1 col-lg-2 col-xl-4>
+</ion-col>
+<ion-col class="class1576510671478" col-md-10 col-lg-8 col-12 col-sm-12 col-xl-4>
+<ion-card class="class1576510790267">
+<ion-card-content class="class1576510820428">
+<div class="class1576510855715" [ngClass]="'styledivnormal'">
+<div class="class1576510855721" text-wrap>
+{{this.form.name}}
+</div>
+</div>
+<div class="class1576511328850" [ngClass]="'styledivnormal'">
+<div class="class1576511149483">
+<h2 class="class1604349569841">
+{{'responseSubmited' | translate}}
+</h2>
+</div>
+</div>
+<div class="class1576511345379" [ngClass]="'styledivnormal'">
+<button class="class1604349588455" type="button" color="btLight" ion-button (click)="resolveError(actionBeans.RootPageAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'RootPage', actionFunction: 'RootPageAction', animate_duration: 250, data: {i: this['navParams']['get']('i')}, page: 'C8Oforms.MobileApplication.Application.viewerPage', animate: 'true'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+<div class="class1576511158864">
+{{'sendAnotherResponse' | translate}}
+</div>
+</button>
+</div>
+</ion-card-content>
+</ion-card>
+</ion-col>
+<ion-col class="class1576510675780" col-md-1 col-lg-2 col-xl-4>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-container>
+<div class="animate__animated animate__backInDown class1596722220123" *ngIf="this.local.showT">
+<div class="class1596723338074" text-center>
+{{ 'gotoMsg' | translate }}
+</div>
+</div>
+</ion-content>
+

@@ -1,0 +1,62 @@
+<ion-content class="class1603904607878">
+<ion-list class="class1603904620135">
+<ng-container class="class1603916555956" *ngFor="let item of let item1603916555956 of listen(['fs://c8oforms_fs.view#viewNotifsAll'])?.rows">
+<ion-item class="class1603904709934">
+<ion-avatar class="class1603905144382" item-start>
+<ng-container class="class1603917600694" [ngSwitch]="item1603916555956?.value?.doc?.type">
+<ng-container class="class1603917622068" *ngSwitchCase="'pwa'">
+<ng-container class="class1603926805012" [ngSwitch]="item1603916555956?.value?.doc?.status">
+<ng-container class="class1603926805015" *ngSwitchCase="'doing'">
+<img class="class1603926825796" width="" [src]="'assets/images/svg/icon/pwa_wait.svg'" height=""/>
+</ng-container>
+<ng-container class="class1603926805021" *ngSwitchCase="'done'">
+<img class="class1603926818864" width="" [src]="'assets/images/svg/icon/pwa.svg'" height=""/>
+</ng-container>
+</ng-container>
+</ng-container>
+<ng-container class="class1603917632091" *ngSwitchCase="'published'">
+<img class="class1603917654443" width="" [src]="'assets/images/category.png'" height=""/>
+</ng-container>
+</ng-container>
+</ion-avatar>
+<ng-container class="class1603917762935" [ngSwitch]="item1603916555956?.value?.doc?.type">
+<ng-container class="class1603917762938" *ngSwitchCase="'pwa'">
+<ng-container class="class1603917816841" [ngSwitch]="item1603916555956?.value?.doc?.status">
+<ng-container class="class1603917816844" *ngSwitchCase="'doing'">
+<h3 class="class1603966007779" [innerHTML]="this.translate.instant('the_pwa') + ' <b>'+item.value.doc.targetName+'</b> ' + this.translate.instant('pwa_in_preparation')">
+</h3>
+</ng-container>
+<ng-container class="class1603917816850" *ngSwitchCase="'done'">
+<h3 class="class1603966077463" [innerHTML]="this.translate.instant('the_pwa') + ' <b>'+item.value.doc.targetName+'</b> '+ this.translate.instant('pwa_is_ready') + ' <a target=&quot;_blank&quot; href=&quot;'+window.location.href.substring(0, window.location.href.indexOf('mobile/index.html')) + 'pwas/'+item.value.doc.targetId+'/index.html&quot;>'+this.translate.instant('open')+'</a>'">
+</h3>
+</ng-container>
+</ng-container>
+</ng-container>
+<ng-container class="class1603917762944" *ngSwitchCase="'published'">
+<ng-container class="class1604008848551" [ngSwitch]="item1603916555956?.value?.doc?.status">
+<ng-container class="class1604008848554" *ngSwitchCase="'doing'">
+<h3 class="class1604008848557" [innerHTML]="this.translate.instant('form_published') + ' <b>'+item.value.doc.targetName+'</b> ' + this.translate.instant('published_in_preparation')">
+</h3>
+</ng-container>
+<ng-container class="class1604008848563" *ngSwitchCase="'done'">
+<h3 class="class1604008848566" [innerHTML]="this.translate.instant('form_published') + ' <b>'+item.value.doc.targetName+'</b> ' + this.translate.instant('published_success')">
+</h3>
+</ng-container>
+</ng-container>
+</ng-container>
+</ng-container>
+<p class="class1603905324108">
+{{getDate(item1603916555956?.value?.doc?.date)}}
+</p>
+</ion-item>
+</ng-container>
+</ion-list>
+<ng-container class="class1604007759762" *ngIf="listen(['fs://c8oforms_fs.view#viewNotifsAll'])?.rows?.length == 0">
+<ion-item class="class1604007824199" no-lines>
+<p class="class1604007834707">
+{{ 'no_notifs' | translate }}
+</p>
+</ion-item>
+</ng-container>
+</ion-content>
+

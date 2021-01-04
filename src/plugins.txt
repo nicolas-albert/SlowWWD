@@ -1,0 +1,10 @@
+	<plugin name="cordova-plugin-inappbrowser" spec="3.0.0">
+	</plugin>
+	<plugin name="cordova-plugin-camera" spec="2.4.0">
+		<variable name="CAMERA_USAGE_DESCRIPTION" value="To capture photos" />
+		<variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="To access photo gallery" />
+	</plugin>
+	<plugin name="cordova-plugin-chooser" spec="1.2.5">
+	</plugin>
+	<plugin name="cordova-plugin-file" spec="6.0.1">
+	</plugin>

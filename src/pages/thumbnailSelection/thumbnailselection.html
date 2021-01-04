@@ -1,0 +1,49 @@
+<ion-content class="class1594649062366" padding>
+<ion-grid class="class1594649062369">
+<ion-row class="class1594649062372" justify-content-end>
+<ion-col class="class1594649062375" col-12>
+<button class="class1594649062378" clear icon-end type="button" icon-only ion-button (click)="resolveError(actionBeans.CloseModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CloseModal', actionFunction: 'CloseModalAction', data: null}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+<ion-icon class="class1594649062381" name="close">
+</ion-icon>
+</button>
+<div class="class1594649062393" text-center text-capitalize>
+<h2 class="class1594649062396">
+{{'thumbnail' | translate}}
+</h2>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="class1594649062402">
+<ion-col class="class1594649062405">
+<ion-item class="class1594649062459">
+<ion-label class="class1594649062462" stacked>
+<div class="class1594649062465" text-capitalize>
+{{'thumbnail' | translate}}
+</div>
+</ion-label>
+<ion-toggle class="class1594649062471" disabled="false" [(ngModel)]="this.global.enabledThumbTemp">
+</ion-toggle>
+</ion-item>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ng-container class="class1594649062501" *ngIf="this.global.enabledThumbTemp">
+<super-tabs class="class1594649062504" #slidingTabsThumb [selectedTabIndex]="this.local.selectedTabI">
+<super-tab class="class1594649062507" title="{{'from_convertigo_templates' | translate}}" icon="bookmarks" [root]="'ThumbnailSelectionTemplates'">
+</super-tab>
+<super-tab class="class1594649062510" title="{{'custom' | translate}}" icon="images" [root]="'ThumbnailSelectionCustom'">
+</super-tab>
+<super-tab class="class1603355358200" title="{{'color_picker_palette' | translate}}" icon="color-palette" [root]="'ThumbnailSelectionColorPicker'">
+</super-tab>
+</super-tabs>
+</ng-container>
+</ion-content>
+
+<ion-footer class="class1594649062525">
+<ion-buttons class="class1594649062528" right>
+<button class="class1594649062531" type="button" ion-button item-right (click)="ATS1594649062543({root: {scope:{}, in:{}, out:$event}})">
+{{'Save' | translate}}
+</button>
+</ion-buttons>
+</ion-footer>
+

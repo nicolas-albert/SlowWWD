@@ -1,0 +1,49 @@
+<ion-content class="class1569837350632" padding>
+<ion-grid class="class1585928636214">
+<ion-row class="class1585928640630" justify-content-end>
+<ion-col class="class1585928644661" col-12>
+<button class="class1585928732790" clear icon-end type="button" icon-only ion-button (click)="resolveError(actionBeans.CloseModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CloseModal', actionFunction: 'CloseModalAction', data: null}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+<ion-icon class="class1585928685078" name="close">
+</ion-icon>
+</button>
+<div class="class1585928997485" text-center>
+<h2 class="class1585928985325">
+{{'define_wallpaper' | translate}}
+</h2>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="class1585929213540">
+<ion-col class="class1585929219356">
+<ion-item class="class1586164970425">
+<ion-label class="class1586164970428" stacked>
+<div class="class1586164970431" text-capitalize>
+{{'wallpaper' | translate}}
+</div>
+</ion-label>
+<ion-toggle class="class1586164970437" disabled="false" [(ngModel)]="this.global.enabledTemp">
+</ion-toggle>
+</ion-item>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ng-container class="class1586165313875" *ngIf="this.global.enabledTemp">
+<super-tabs class="class1586163767624" #slidingTabs [selectedTabIndex]="this.local.selectedTabI" (selectedTabIndexChange)="CTS1586183283074(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1586183283074'}), {stack:{root: {scope:merge({}, {slidingTabs: slidingTabs}), in:{}, out:$event}}}),{}, $event)">
+<super-tab class="class1586163762782" title="{{'from_convertigo_templates' | translate}}" icon="bookmarks" [root]="'WallpaperSelectionTemplates'">
+</super-tab>
+<super-tab class="class1586163803832" title="{{'custom' | translate}}" icon="images" [root]="'wallpaperSelectionCustom'">
+</super-tab>
+<super-tab class="class1602836425304" title="{{'color_picker_palette' | translate}}" icon="color-palette" [root]="'wallpaperSelectionColorPicker'">
+</super-tab>
+</super-tabs>
+</ng-container>
+</ion-content>
+
+<ion-footer class="class1586166828021">
+<ion-buttons class="class1586166864660" right>
+<button class="class1586166864663" type="button" ion-button item-right (click)="ATS1586166864678({root: {scope:{}, in:{}, out:$event}})">
+{{'Save' | translate}}
+</button>
+</ion-buttons>
+</ion-footer>
+

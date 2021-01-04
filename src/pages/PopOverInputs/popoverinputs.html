@@ -1,0 +1,19 @@
+<ion-content class="class1594988106100" fullscreen="true">
+<ion-list class="class1594988145366" *ngIf="this.local.pages != undefined">
+<ng-container class="class1594988155190" *ngFor="let item of let item1594988155190 of this.local.pages">
+<ion-item-group class="class1594990002953">
+<ion-item-divider class="class1594990013056" color="light">
+{{item.name}}
+</ion-item-divider>
+</ion-item-group>
+<ng-container class="class1594990038555" *ngFor="let child of let item1594990038555 of item.child">
+<ng-container class="class1594992070963" *ngIf="this.navParams.data.self != child.name">
+<button class="class1594991791995" type="button" ion-item (click)="ATS1594992838293({root: {scope:merge({}, {item1594990038555: item1594990038555, child: child, item1594988155190: item1594988155190, item: item}), in:{}, out:$event}})">
+{{child.name}}
+</button>
+</ng-container>
+</ng-container>
+</ng-container>
+</ion-list>
+</ion-content>
+

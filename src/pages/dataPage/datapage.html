@@ -1,0 +1,328 @@
+<!-- ====== SHARED TEMPLATES ====== -->
+<!-- 'sharedHeaderButtonMenu' shared component template -->
+<ng-template #sc1571075804071 let-params1571075804071="params1571075804071" >
+<button class="class1571156177325" clear type="false" menuToggle color="dark" icon-only ion-button item-start>
+<ion-icon class="class1571156177328" name="menu">
+</ion-icon>
+</button>
+</ng-template >
+<!-- 'sharedStatsImg' shared component template -->
+<ng-template #sc1581690229070 let-params1581690229070="params1581690229070" >
+<ng-container class="class1581690229076" *ngIf="params1581690229070?.element?.type == 'img' || params1581690229070?.element?.type == 'signature'">
+<ion-card class="class1581690229079">
+<ion-card-header class="class1581690229085">
+<ion-item class="class1581690229088">
+<h2 class="class1581690229091">
+{{params1581690229070?.element['name']}}
+</h2>
+<p class="class1581690229097">
+{{params1581690229070?.element?.value.length + '  ' + translate.instant('answer_s')}}
+</p>
+</ion-item>
+</ion-card-header>
+<ion-card-content class="class1581690229106">
+<ion-slides class="class1581690332817" [loop]="'true'" [speed]="'300'" [parallax]="'false'" [spaceBetween]="'0'" [pager]="'true'" [zoom]="'false'" [autoplay]="''" [paginationType]="'fraction'" [effect]="'slide'" [initialSlide]="'0'" [slidesPerView]="'1'" [direction]="'horizontal'">
+<ng-container class="class1581690341159" *ngFor="let i = index;let item of let item1581690341159 of params1581690229070?.element?.value">
+<ion-slide class="class1581690364142">
+<img class="class1581690384892" width="" [src]="item.type == 'img' ? 'data:image/jpeg;base64,'+item.value : item.value" height=""/>
+</ion-slide>
+</ng-container>
+</ion-slides>
+</ion-card-content>
+</ion-card>
+</ng-container>
+</ng-template >
+<!-- 'sharedStatsSlider' shared component template -->
+<ng-template #sc1581680106929 let-params1581680106929="params1581680106929" >
+<ng-container class="class1581680106938" *ngIf="params1581680106929?.element?.type == 'slider'">
+<ion-card class="class1581680106935">
+<ion-card-header class="class1581680106941">
+<ion-item class="class1581680106944">
+<h2 class="class1581680106947">
+{{params1581680106929?.element?.name}}
+</h2>
+</ion-item>
+</ion-card-header>
+<ion-card-content class="class1581680106962">
+<ng-container class="class1581680106965" *ngIf="params1581680106929.element.value != undefined">
+<canvas class="class1581680106968" baseChart [options]="{'responsive': true, 'maintainAspectRatio': false, 'scales': {'yAxes': [{'ticks': {'suggestedMin': -1}}]}}" [colors]="params1581680106929.element.color" chartType="bar" [datasets]="params1581680106929.element.value" width="500px" [labels]="['response']">
+</canvas>
+</ng-container>
+</ion-card-content>
+</ion-card>
+</ng-container>
+</ng-template >
+<!-- 'sharedStatsRadio' shared component template -->
+<ng-template #sc1581601986463 let-params1581601986463="params1581601986463" >
+<ng-container class="class1581601986472" *ngIf="params1581601986463?.element?.type == 'radio' || params1581601986463?.element?.type == 'select' ">
+<ion-card class="class1581601986469">
+<ion-card-header class="class1581601986475">
+<ion-item class="class1581601986478">
+<ion-grid class="class1585919936865">
+<ion-row class="class1585919936868">
+<ion-col class="class1585919936871">
+<h2 class="class1581601986481">
+{{params1581601986463?.element?.name}}
+</h2>
+</ion-col>
+<ion-col class="class1585919936880">
+<ion-icon class="class1585919936883" name="eye" title="{{translate.instant('which_question')}}" (click)="resolveError(actionBeans.ModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ModalPage', actionFunction: 'ModalAction', data: {html:params1581601986463?.element['label']}, cssClass: null, blockWhileDisplayed: false, showBackdrop: true, page: 'C8Oforms.MobileApplication.Application.which_question', enableBackdropDismiss: true}), {stack:{root: {scope:merge(merge({}, params1581601986463.scope), {params1581601986463: params1581601986463}), in:{}, out:$event}}}),{}, $event))">
+</ion-icon>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-item>
+</ion-card-header>
+<ion-card-content class="class1581601986496">
+<ng-container class="class1581601986499" *ngIf="params1581601986463.element.value != undefined">
+<canvas class="class1581601986502" baseChart [options]="{'responsive': true, 'maintainAspectRatio': false, 'scales': {'xAxes': [{'ticks': {'suggestedMin': 0}}]}}" [colors]="[{backgroundColor: ['rgba(255, 99, 132, 1)','rgba(54, 162, 235, 1)','rgba(255, 206, 86, 1)','rgba(75, 192, 192, 1)','rgba(153, 102, 255, 1)','rgba(255, 159, 64, 1)','rgba(255,99,132,1)','rgba(54, 162, 235, 1)','rgba(255, 206, 86, 1)','rgba(75, 192, 192, 1)','rgba(153, 102, 255, 1)','rgba(255, 159, 64, 1)']}]" chartType="pie" [datasets]="[{'label': 'réponses','data': params1581601986463.element.value}]" width="500px" [labels]="params1581601986463.element.sets">
+</canvas>
+</ng-container>
+</ion-card-content>
+</ion-card>
+</ng-container>
+</ng-template >
+<!-- 'sharedStatsCheckbox' shared component template -->
+<ng-template #sc1581589785221 let-params1581589785221="params1581589785221" >
+<ng-container class="class1581589785230" *ngIf="params1581589785221?.element?.type == 'checkbox'">
+<ion-card class="class1581589785227">
+<ion-card-header class="class1581589785233">
+<ion-item class="class1581589785236">
+<ion-grid class="class1585915068629">
+<ion-row class="class1585915068632">
+<ion-col class="class1585915068635">
+<h2 class="class1581589785239">
+{{params1581589785221?.element?.name}}
+</h2>
+</ion-col>
+<ion-col class="class1585915068644">
+<ion-icon class="class1585915068647" name="eye" title="{{translate.instant('which_question')}}" (click)="resolveError(actionBeans.ModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ModalPage', actionFunction: 'ModalAction', data: {html:params1581589785221?.element['label']}, cssClass: null, blockWhileDisplayed: false, showBackdrop: true, page: 'C8Oforms.MobileApplication.Application.which_question', enableBackdropDismiss: true}), {stack:{root: {scope:merge(merge({}, params1581589785221.scope), {params1581589785221: params1581589785221}), in:{}, out:$event}}}),{}, $event))">
+</ion-icon>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-item>
+</ion-card-header>
+<ion-card-content class="class1581589785254">
+<ng-container class="class1581599123611" *ngIf="params1581589785221.element.value != undefined">
+<canvas class="class1581590054520" baseChart [options]="{'responsive': true, 'maintainAspectRatio': false, 'scales': {'xAxes': [{'ticks': {'suggestedMin': 0}}]}}" [colors]="[{backgroundColor: ['rgba(255, 99, 132, 1)','rgba(54, 162, 235, 1)','rgba(255, 206, 86, 1)','rgba(75, 192, 192, 1)','rgba(153, 102, 255, 1)','rgba(255, 159, 64, 1)','rgba(255,99,132,1)','rgba(54, 162, 235, 1)','rgba(255, 206, 86, 1)','rgba(75, 192, 192, 1)','rgba(153, 102, 255, 1)','rgba(255, 159, 64, 1)']}]" chartType="horizontalBar" [datasets]="[{'label': '','data': params1581589785221.element.value}]" width="500px" [labels]="params1581589785221.element.sets">
+</canvas>
+</ng-container>
+</ion-card-content>
+</ion-card>
+</ng-container>
+</ng-template >
+<!-- 'sharedStatsInputText' shared component template -->
+<ng-template #sc1580308950214 let-params1580308950214="params1580308950214" >
+<ng-container class="class1580313203709" *ngIf="params1580308950214?.element?.type == 'text' || params1580308950214?.element?.type == 'time' || params1580308950214?.element?.type == 'datetime' || params1580308950214?.element?.type == 'barcode' || params1580308950214?.element?.type == 'file'">
+<ion-card class="class1580314502614">
+<ion-card-header class="class1580314577553">
+<ion-item class="class1580314829145">
+<ion-grid class="class1585241128990">
+<ion-row class="class1585241134110">
+<ion-col class="class1585241137381">
+<h2 class="class1580314836175">
+{{params1580308950214?.element['name']}}
+</h2>
+</ion-col>
+<ion-col class="class1585241139390">
+<ion-icon class="class1585241107958" name="eye" title="{{translate.instant('which_question')}}" (click)="resolveError(actionBeans.ModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ModalPage', actionFunction: 'ModalAction', data: {html:params1580308950214?.element['label']}, cssClass: null, blockWhileDisplayed: false, showBackdrop: true, page: 'C8Oforms.MobileApplication.Application.which_question', enableBackdropDismiss: true}), {stack:{root: {scope:merge(merge({}, params1580308950214.scope), {params1580308950214: params1580308950214}), in:{}, out:$event}}}),{}, $event))">
+</ion-icon>
+</ion-col>
+</ion-row>
+</ion-grid>
+<p class="class1580314846210">
+{{params1580308950214?.element?.value.length + '  ' + translate.instant('answer_s')}}
+</p>
+</ion-item>
+</ion-card-header>
+<ion-card-content class="class1580314574292">
+<ion-list class="class1580316276128">
+<ng-container class="class1580316276131" *ngFor="let i = index;let item of let item1580316276131 of params1580308950214?.element?.value">
+<ng-container class="class1580317851357" *ngIf="i < 2 || this.local.show[params1580308950214.element?.name] == true">
+<ion-item class="class1580316276134">
+<div class="class1580316276137">
+<h2 class="class1580316962711" [innerHTML]="item.value">
+</h2>
+</div>
+</ion-item>
+</ng-container>
+</ng-container>
+</ion-list>
+<ng-container class="class1580319641541" *ngIf="params1580308950214?.element?.value?.length > 2">
+<div class="class1580318329544">
+<ng-container class="class1580319430344" *ngIf="this.local.show[params1580308950214?.element?.name] == false">
+<button class="class1580318763840" clear type="button" ion-button large (click)="CTS1580319336558(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1580319336558'}), {stack:{root: {scope:merge(merge({}, params1580308950214.scope), {params1580308950214: params1580308950214}), in:{}, out:$event}}}),{name: params1580308950214?.element?.name}, $event)">
+<ion-icon class="class1580318763843" name="arrow-dropdown-circle">
+</ion-icon>
+</button>
+</ng-container>
+<ng-container class="class1580319471790" *ngIf="this.local.show[params1580308950214?.element?.name] == true">
+<button class="class1580319471793" clear type="button" ion-button large (click)="CTS1580319471805(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1580319471805'}), {stack:{root: {scope:merge(merge({}, params1580308950214.scope), {params1580308950214: params1580308950214}), in:{}, out:$event}}}),{name: params1580308950214?.element?.name}, $event)">
+<ion-icon class="class1580319471796" name="arrow-dropup-circle">
+</ion-icon>
+</button>
+</ng-container>
+</div>
+</ng-container>
+</ion-card-content>
+</ion-card>
+</ng-container>
+</ng-template >
+<!-- 'sharedStatsCheckboxGroup' shared component template -->
+<ng-template #sc1581609353396 let-params1581609353396="params1581609353396" >
+<ng-container class="class1581609353405" *ngIf="params1581609353396?.element?.type == 'checkbox_group' || params1581609353396?.element?.type == 'radio_group'">
+<ion-card class="class1581609353402">
+<ion-card-header class="class1581609353408">
+<ion-item class="class1581609353411">
+<ion-grid class="class1585920109183">
+<ion-row class="class1585920109186">
+<ion-col class="class1585920109189">
+<h2 class="class1585920125822">
+{{params1581609353396?.element?.name}}
+</h2>
+</ion-col>
+<ion-col class="class1585920109198">
+<ion-icon class="class1585920109201" name="eye" title="{{translate.instant('which_question')}}" (click)="resolveError(actionBeans.ModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ModalPage', actionFunction: 'ModalAction', data: {html:params1581609353396?.element['labelHtml']}, cssClass: null, blockWhileDisplayed: false, showBackdrop: true, page: 'C8Oforms.MobileApplication.Application.which_question', enableBackdropDismiss: true}), {stack:{root: {scope:merge(merge({}, params1581609353396.scope), {params1581609353396: params1581609353396}), in:{}, out:$event}}}),{}, $event))">
+</ion-icon>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-item>
+</ion-card-header>
+<ion-card-content class="class1581609353429">
+<ng-container class="class1581609353432" *ngIf="params1581609353396.element.value != undefined">
+<canvas class="class1581609353435" baseChart [options]="{'responsive': true, 'maintainAspectRatio': false, 'scales': {'yAxes': [{'ticks': {'suggestedMin': 0}}]}}" [colors]="params1581609353396.element.color" chartType="bar" [datasets]="params1581609353396.element.value" width="500px" [labels]="params1581609353396.element.sets">
+</canvas>
+</ng-container>
+</ion-card-content>
+</ion-card>
+</ng-container>
+</ng-template >
+<!-- 'sharedHeaderImageConvertigo' shared component template -->
+<ng-template #sc1571075899569 let-params1571075899569="params1571075899569" >
+<img class="class1571075937119" width="" [src]="'assets/images/svg/logo/logo_convertigo_blue.svg'" height=""/>
+</ng-template >
+<!-- 'sharedHeaderData' shared component template -->
+<ng-template #sc1572517786339 let-params1572517786339="params1572517786339" >
+<ion-grid class="class1572518023110">
+<ion-row class="class1572518023113" style="height:100%">
+<ion-col class="class1572518023116" col-lg-auto col-xl-1>
+</ion-col>
+<ion-col class="class1572518023119" col-md-12 col-lg-12 col-12 col-sm-12 col-xl-10>
+<ion-grid class="class1572517786342">
+<ion-row class="class1572517786345" style="height:100%">
+<ion-col class="class1572517786348" col-md-12 col-lg-12 col-12 col-sm-12 col-xl-12>
+<ion-grid class="class1572517816070">
+<ion-row class="class1572517816073">
+<ion-col class="class1572517816079" col-auto>
+<ng-container *ngTemplateOutlet="sc1571075804071;context:{params1571075804071: merge(merge({},{}),{scope:merge(merge({}, params1572517786339.scope), {params1572517786339: params1572517786339})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571075899569;context:{params1571075899569: merge(merge({},{}),{scope:merge(merge({}, params1572517786339.scope), {params1572517786339: params1572517786339})})}"></ng-container>
+<div class="class1572518104657">
+{{ 'Form_Builder' | translate }}
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-col>
+<ion-col class="class1572518023128" col-xl-1>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-template >
+<!-- ============================== -->
+
+<ion-header class="class1580149563645">
+<ng-container *ngTemplateOutlet="sc1572517786339;context:{params1572517786339: merge(merge({},{}),{scope:{}})}"></ng-container>
+</ion-header>
+
+<ion-content class="class1580149551037" padding>
+<ion-grid class="class1580302368230">
+<ion-row class="class1580302368233">
+<ion-col class="class1580302368236" col-md-1 col-lg-2 col-xl-3>
+</ion-col>
+<ion-col class="class1580302368239" col-md-10 col-lg-8 col-12 col-sm-12 col-xl-6>
+<ng-container class="class1580388124895" *ngIf="this.local.spinner == false && this.local.noresponse == false">
+<ion-card class="class1580302368242">
+<ion-card-header class="class1580304910773">
+<ion-grid class="class1580304934697">
+<ion-row class="class1580319898069">
+<ion-col class="class1580319911410">
+<ion-item class="class1580319920036">
+<h2 class="class1580319925705">
+{{(this.local.formName?.substring(0,1)?.toUpperCase() + this.local.formName?.substring(1))}}
+</h2>
+<p class="class1580319931159">
+{{this.local.countResponses + '  '+ translate.instant('answer_s')}}
+</p>
+</ion-item>
+</ion-col>
+<ion-col class="class1593770667417">
+<ion-buttons class="class1593770715696" right>
+<button class="class1593770674664" clear type="button" icon-only ion-button title="{{translate.instant('delete_for_version')}}" (click)="ATS1593771018486({root: {scope:{}, in:{}, out:$event}})">
+<ion-icon class="class1593770681416" color="danger" name="trash">
+</ion-icon>
+</button>
+<button class="class1604321610606" clear type="button" icon-only ion-button title="{{translate.instant('respCsv')}}" (click)="resolveError(actionBeans.ModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ModalPage', actionFunction: 'ModalAction', data: {id:this.local.formId, name:this.local.formName, offset: this.local.offset, version: this.local.index.length}, cssClass: 'modalCSV', blockWhileDisplayed: true, showBackdrop: true, page: 'C8Oforms.MobileApplication.Application.exportCsvPage', enableBackdropDismiss: true}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event));resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+<ion-icon class="class1604321628407" color="greenCsv" name="custom-csv">
+</ion-icon>
+</button>
+</ion-buttons>
+</ion-col>
+</ion-row>
+<ion-row class="class1580304938302">
+<ion-col class="class1580304945330" col-2>
+<ion-icon class="class1580304984729" name="arrow-back" (click)="CTS1580305791430(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'moveBackward', actionFunction: 'CTS1580305791430'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)" [ngClass]="this.local.currentIndex == 0 ? 'arrowNonAuthorised' : 'arrowAuthorised' " [attr.disabled]="this.local.currentIndex == 0">
+</ion-icon>
+</ion-col>
+<ion-col class="class1580304956599" col-8>
+<div class="class1580305016674" text-center>
+<ng-container class="class1580305559626" *ngIf="this.local.currentIndex != undefined">
+{{translate.instant('version')+this.local.index[this.local.currentIndex] }}
+</ng-container>
+</div>
+</ion-col>
+<ion-col class="class1580304958407" col-2>
+<ion-icon class="class1580305001795" name="arrow-forward" (click)="CTS1580306549141(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'moveForward', actionFunction: 'CTS1580306549141'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)" [ngClass]="this.local.currentIndex == this.local.index?.length -1 ? 'arrowNonAuthorised' : 'arrowAuthorised' ">
+</ion-icon>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-card-header>
+</ion-card>
+<ng-container class="class1580314535530" *ngFor="let item1 of let item1580314535530 of this.local.flatObj">
+<ng-container *ngTemplateOutlet="sc1580308950214;context:{params1580308950214: merge(merge({element: ''},{element: item1}),{scope:merge({}, {item1580314535530: item1580314535530, item1: item1})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1581589785221;context:{params1581589785221: merge(merge({element: ''},{element: item1}),{scope:merge({}, {item1580314535530: item1580314535530, item1: item1})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1581601986463;context:{params1581601986463: merge(merge({element: ''},{element: item1}),{scope:merge({}, {item1580314535530: item1580314535530, item1: item1})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1581609353396;context:{params1581609353396: merge(merge({element: ''},{element: item1}),{scope:merge({}, {item1580314535530: item1580314535530, item1: item1})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1581680106929;context:{params1581680106929: merge(merge({element: ''},{element: item1}),{scope:merge({}, {item1580314535530: item1580314535530, item1: item1})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1581690229070;context:{params1581690229070: merge(merge({element: ''},{element: item1}),{scope:merge({}, {item1580314535530: item1580314535530, item1: item1})})}"></ng-container>
+</ng-container>
+</ng-container>
+<ion-grid class="class1580302368500" *ngIf="this.local.spinner == true">
+<ion-row class="class1580302368503" align-items-center style="height:100%" justify-content-center>
+<ion-col class="class1580302368506" col-12 align-self-center>
+<div class="class1580302368509">
+<div  class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-grid class="class1581947465320" *ngIf="this.local.noresponse == true">
+<ion-row class="class1581947465323" align-items-center style="height:100%" justify-content-center>
+<ion-col class="class1581947465326" col-12 align-self-center>
+<div class="class1581947465329">
+No responses yet
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-col>
+<ion-col class="class1580302368524" col-md-1 col-lg-2 col-xl-3>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
+

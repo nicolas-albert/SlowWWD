@@ -1,0 +1,155 @@
+<ion-header class="class1602171269083">
+<div class="class1602171269086" text-center>
+<h2 class="class1602171269089">
+{{ 'respCsv' | translate }}
+</h2>
+</div>
+<button class="class1603794089870" clear icon-end type="button" icon-only ion-button (click)="resolveError(actionBeans.CloseModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CloseModal', actionFunction: 'CloseModalAction', data: null}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+<ion-icon class="class1603794089873" name="close">
+</ion-icon>
+</button>
+</ion-header>
+
+<ion-content class="class1602171238570" padding>
+<ion-item class="class1602172335541">
+<div class="class1602172335544" text-uppercase>
+{{ 'General' | translate }}
+</div>
+</ion-item>
+<ion-grid class="class1602233119667">
+<ion-row class="class1602233122792">
+<ion-col class="class1602233125477" col-md-4 col-4 col-lg-4 col-12 col-sm-12 col-xl-4>
+<ion-item class="class1602172502338" [ngClass]="'stylegenerictexteditor'">
+<ion-label class="class1602172502341" floating>
+<div class="class1602172502344" text-capitalize>
+{{ 'file_name' | translate }}
+</div>
+</ion-label>
+<ion-input class="class1602172991964" [(ngModel)]="this.local.name">
+</ion-input>
+</ion-item>
+</ion-col>
+<ion-col class="class1602496055342" col-md-4 col-4 col-lg-4 col-12 col-sm-12 col-xl-4>
+<ion-item class="class1602496055345" [ngClass]="'stylegenerictexteditor'">
+<ion-label class="class1602496055348" floating>
+<div class="class1602496055351">
+{{ 'version' | translate }}
+</div>
+</ion-label>
+<ion-select class="class1602496055366" interface="popover" [(ngModel)]="this.local.version">
+<ng-container class="class1602496084079" *ngFor="let item of let item1602496084079 of this.local.versionA">
+<ion-option class="class1602496055369" [value]="item">
+{{item}}
+</ion-option>
+</ng-container>
+</ion-select>
+</ion-item>
+</ion-col>
+<ion-col class="class1602233128522" col-md-4 col-4 col-lg-4 col-12 col-sm-12 col-xl-4>
+<ion-item class="class1602173202363" [ngClass]="'stylegenerictexteditor'">
+<ion-label class="class1602173202366" floating>
+<div class="class1602173202369">
+{{ 'column_name' | translate }}
+</div>
+</ion-label>
+<ion-select class="class1602233652856" interface="popover" [(ngModel)]="this.local.csvSettings.column_name">
+<ion-option class="class1602233655324" [value]="'id'">
+{{ 'id' | translate }}
+</ion-option>
+<ion-option class="class1602233657012" [value]="'standard'">
+{{ 'standard' | translate }}
+</ion-option>
+</ion-select>
+</ion-item>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-item class="class1602234403715" (click)="resolveError(actionBeans.SetGlobalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'SetGlobal', actionFunction: 'SetGlobalAction', Value: this.global.showAdvanced == undefined ? true : !this.global.showAdvanced, Property: 'showAdvanced'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+<div class="class1602234403718" text-uppercase>
+<ion-icon class="class1602497366989" color="'#4a4a4a'" name="{{this.global.showAdvanced ? 'arrow-dropdown' : 'arrow-dropright'}}">
+</ion-icon>
+{{ 'advanced' | translate }}
+</div>
+</ion-item>
+<ng-container class="class1602497586923" *ngIf="this.global.showAdvanced == true">
+<ion-grid class="class1602234589983">
+<ion-row class="class1602234589986">
+<ion-col class="class1602234589989" col-md-4 col-4 col-lg-4 col-12 col-sm-12 col-xl-4>
+<ion-item class="class1602234589992" [ngClass]="'stylegenerictexteditor'">
+<ion-label class="class1602234589995" floating>
+<div class="class1602234589998" text-capitalize>
+{{ 'separated_by' | translate }}
+</div>
+</ion-label>
+<ion-select class="class1602234606497" interface="popover" [(ngModel)]="this.local.csvSettings.separated_by">
+<ion-option class="class1602234606500" [value]="'%3B'">
+;
+</ion-option>
+<ion-option class="class1602234606506" [value]="'%2C'">
+,
+</ion-option>
+</ion-select>
+</ion-item>
+</ion-col>
+<ion-col class="class1602234590019" col-md-4 col-4 col-lg-4 col-12 col-sm-12 col-xl-4>
+<ion-item class="class1602234590022" [ngClass]="'stylegenerictexteditor'">
+<ion-label class="class1602234590025" floating>
+<div class="class1602234590028">
+{{ 'character_string_separator' | translate }}
+</div>
+</ion-label>
+<ion-select class="class1602234590043" interface="popover" [(ngModel)]="this.local.csvSettings.character_string_separator">
+<ion-option class="class1602234590046" [value]="'%22'">
+&quot;
+</ion-option>
+<ion-option class="class1602234590052" [value]="'%27'">
+'
+</ion-option>
+</ion-select>
+</ion-item>
+</ion-col>
+<ion-col class="class1602234612094" col-md-4 col-4 col-lg-4 col-12 col-sm-12 col-xl-4>
+<ion-item class="class1602234612097" [ngClass]="'stylegenerictexteditor'">
+<ion-label class="class1602234612100" floating>
+<div class="class1602234612103">
+{{ 'character_set' | translate }}
+</div>
+</ion-label>
+<ion-select class="class1602234612118" interface="popover" [(ngModel)]="this.local.csvSettings.character_set">
+<ion-option class="class1602234612121" [value]="'UTF-8'">
+UTF-8
+</ion-option>
+<ion-option class="class1602234612127" [value]="'UTF-16'">
+UTF-16
+</ion-option>
+<ion-option class="class1602254783036" [value]="'UTF-16BE'">
+UTF-16BE
+</ion-option>
+<ion-option class="class1602254785198" [value]="'UTF-16LE'">
+UTF-16LE
+</ion-option>
+<ion-option class="class1602254786638" [value]="'US-ASCII'">
+US-ASCII
+</ion-option>
+<ion-option class="class1602254787896" [value]="'ISO-8859-1'">
+ISO-8859-1
+</ion-option>
+</ion-select>
+</ion-item>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-container>
+</ion-content>
+
+<ion-footer class="class1602255012676">
+<ion-buttons class="class1602255012679" right>
+<button class="class1602255012682" type="button" ion-button item-left (click)="ATS1603794429653({root: {scope:{}, in:{}, out:$event}})">
+{{ 'copy_link_csv' | translate }}
+</button>
+<button class="class1602255012697" type="button" ion-button item-right (click)="ATS1602255151920({root: {scope:{}, in:{}, out:$event}})">
+{{ 'download_file' | translate }}
+</button>
+</ion-buttons>
+</ion-footer>
+

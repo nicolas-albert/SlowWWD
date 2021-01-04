@@ -1,0 +1,43 @@
+<!-- ====== SHARED TEMPLATES ====== -->
+<!-- 'ngxTagInput' shared component template -->
+<ng-template #sc1577113184271 let-params1577113184271="params1577113184271" >
+<tag-input class="class1577113818292" #ngxTag [ngModel]="params1577113184271.items" [theme]="params1577113184271.theme" [maxItems]="params1577113184271.maxItems" [placeholder]="params1577113184271.placeholder" [secondaryPlaceholder]="params1577113184271.secondaryPlaceholder" [editable]="params1577113184271.editableTag" [removable]="params1577113184271.removableTag" [identifyBy]="params1577113184271.itemIdentifyBy" [displayBy]="params1577113184271.itemDisplayBy" [onlyFromAutocomplete]="params1577113184271.onlyFromAutocomplete" [inputText]="params1577113184271.inputtext" (onTagEdited)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputEdited', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputEdited'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onAdd)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputAdded', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputAdded'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onRemove)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputRemoved', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputRemoved'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onSelect)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputSelected', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputSelected'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onFocus)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputFocused', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputFocused'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onBlur)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputBlured', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputBlured'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onTextChange)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputChanged', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputChanged'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onPaste)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputPasted', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputPasted'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onValidationError)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputValidationError', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputValidationError'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (ngModelChange)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputValidationError', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputNgModelChange'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))">
+<tag-input-dropdown class="class1577116356016" [autocompleteItems]="params1577113184271.autocompleteItems" [showDropdownIfEmpty]="params1577113184271.showAutoCompleteDropdownIfEmpty">
+</tag-input-dropdown>
+</tag-input>
+</ng-template >
+<!-- ============================== -->
+
+<ion-header class="class1599471880323">
+<div class="class1599471880326" text-center>
+<h2 class="class1599471880329">
+{{ 'share_form_to' | translate }}
+</h2>
+</div>
+</ion-header>
+
+<ion-content class="class1599471880344" padding>
+<ion-grid class="class1599471880347" *ngIf="this.local.spinner == true">
+<ion-row class="class1599471880350" align-items-center style="height:100%" justify-content-center>
+<ion-col class="class1599471880353" col-12 align-self-center>
+<div class="class1599471880356">
+<div  class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ng-container class="class1599471880371" *ngIf="this.local.spinner == false">
+</ng-container>
+<ng-container *ngTemplateOutlet="sc1577113184271;context:{params1577113184271: merge(merge({items: [], inputtext: '', theme: '', maxItems: 100, placeholder: '', secondaryPlaceholder: '', editableTag: true, removableTag: true, itemIdentifyBy: 'value', itemDisplayBy: 'display', autocompleteItems: [], onlyFromAutocomplete: false, showAutoCompleteDropdownIfEmpty: false, ref: ''},{items: [], inputtext: '', theme: '', maxItems: 100, placeholder: '', secondaryPlaceholder: '', editableTag: true, removableTag: true, itemIdentifyBy: 'value', itemDisplayBy: 'display', autocompleteItems: this.local.existingGrps, onlyFromAutocomplete: false, showAutoCompleteDropdownIfEmpty: true, ref: ''}),{scope:{}})}"></ng-container>
+</ion-content>
+
+<ion-footer class="class1599471880464" *ngIf="!this.global.enabledTemp">
+<ion-buttons class="class1599471880470" right>
+<button class="class1599471880473" type="button" ion-button item-left (click)="resolveError(actionBeans.CloseModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CloseModal', actionFunction: 'CloseModalAction', data: null}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+{{'Cancel' | translate}}
+</button>
+<button class="class1599471880488" type="button" ion-button item-right (click)="ATS1599471880500({root: {scope:{}, in:{}, out:$event}})">
+{{'Save' | translate}}
+</button>
+</ion-buttons>
+</ion-footer>
+

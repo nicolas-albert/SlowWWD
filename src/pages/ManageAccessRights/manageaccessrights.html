@@ -1,0 +1,64 @@
+<ion-header class="class1591801063449">
+<div class="class1591801076376" text-center>
+<h2 class="class1591801129184">
+<ng-container class="class1594313427647" *ngIf="this['navParams']['data']['resp'] != true">
+{{ 'title_acces_right' | translate }}
+</ng-container>
+<ng-container class="class1594313455114" *ngIf="this['navParams']['data']['resp'] == true">
+{{ 'title_acces_right_resp' | translate }}
+</ng-container>
+</h2>
+</div>
+</ion-header>
+
+<ion-content class="class1591801107968" padding>
+<ion-grid class="class1591962005113" *ngIf="this.local.spinner == true">
+<ion-row class="class1591962005116" align-items-center style="height:100%" justify-content-center>
+<ion-col class="class1591962005119" col-12 align-self-center>
+<div class="class1591962005122">
+<div  class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ng-container class="class1591962014581" *ngIf="this.local.spinner == false">
+<ion-searchbar class="class1591888999122" autocorrect="off" debounce="250" autocomplete="off" spellcheck="false" placeholder="Search" type="search" cancelButtonText="Cancel" showCancelButton="false" (ionInput)="CTS1591889064754(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1591889064754'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)">
+</ion-searchbar>
+<ion-list class="class1591883250849">
+<ion-item class="class1592312566850"  no-lines>
+<ion-checkbox class="class1592312566853" [checked]="this['navParams']['data']['existingGrps']['c8oGrp'] != undefined ? this['navParams']['data']['existingGrps']['c8oGrp'][item] : false" (ionChange)="CTS1592313514785(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1592313514785'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)">
+</ion-checkbox>
+</ion-item>
+<ng-container class="class1591883250852" *ngFor="let i = index;let item of let item1591883250852 of ObjectKeys(this.local.group)">
+<ng-container class="class1591883250855" *ngIf="item.indexOf('_C8O_HIDDEN_') == -1">
+<ion-item class="class1591883706834">
+<ion-checkbox class="class1591883250864" [checked]="this['navParams']['data']['existingGrps']['c8oGrp'] != undefined ? this['navParams']['data']['existingGrps']['c8oGrp'][item] : false" [(ngModel)]="this.local._group[item]">
+</ion-checkbox>
+<ion-label class="class1591883737234">
+<ng-container class="class1591884031681" *ngIf="item.indexOf('ad:') != -1 else ElseBlock_1591884082936">
+{{item.substring(3)}}
+<span class="class1591884300449">
+{{ 'AD' | translate }}
+</span>
+</ng-container>
+<ng-template class="class1591884082936" #ElseBlock_1591884082936>
+{{item}}
+</ng-template>
+</ion-label>
+</ion-item>
+</ng-container>
+</ng-container>
+</ion-list>
+</ng-container>
+</ion-content>
+
+<ion-footer class="class1591882841524" *ngIf="!this.global.enabledTemp">
+<ion-buttons class="class1591882841530" right>
+<button class="class1592313803198" type="button" ion-button item-left (click)="resolveError(actionBeans.CloseModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CloseModal', actionFunction: 'CloseModalAction', data: null}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+{{'Cancel' | translate}}
+</button>
+<button class="class1591882841533" type="button" ion-button item-right (click)="ATS1591882841545({root: {scope:{}, in:{}, out:$event}})">
+{{'Save' | translate}}
+</button>
+</ion-buttons>
+</ion-footer>
+

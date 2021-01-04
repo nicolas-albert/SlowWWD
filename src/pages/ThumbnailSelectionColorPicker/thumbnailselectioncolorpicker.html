@@ -1,0 +1,34 @@
+<!-- ====== SHARED TEMPLATES ====== -->
+<!-- 'colorPicker' shared component template -->
+<ng-template #sc1602843941010 let-params1602843941010="params1602843941010" >
+<div [ngSwitch]="this?.navParams?.data?.type">
+	<span *ngSwitchCase="'export'"
+		  [style.background]="this?.navParams?.data?.item[this?.navParams?.data?.path]"
+	      [cpToggle]="true"
+	      [cpDialogDisplay]="'inline'"
+	      [(colorPicker)]="this?.navParams?.data?.item[this?.navParams?.data?.path]">
+	</span>
+	<span *ngSwitchDefault
+		[style.background]="params1602843941010.color" 
+		[cpToggle]="true" 
+		[cpDialogDisplay]="'inline'" 
+		[cpWidth]="params1602843941010.width" 
+		[(colorPicker)]="params1602843941010.color" 
+		(colorPickerOpen)="this.global.colorPicker=params1602843941010.color"
+		(colorPickerChange)="this.global.colorPicker=$event"> 
+	</span>
+</div></ng-template >
+<!-- ============================== -->
+
+<ion-content class="class1603355267021" padding>
+<ion-grid class="class1603355267024">
+<ion-row class="class1603355267027">
+<ion-col class="class1603355267030">
+<div class="class1603355267033">
+<ng-container *ngTemplateOutlet="sc1602843941010;context:{params1602843941010: merge(merge({color: '#ffffff', width: '230px'},{color: this.global.thumbColor || '#ffffff', width: '450px'}),{scope:{}})}"></ng-container>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
+

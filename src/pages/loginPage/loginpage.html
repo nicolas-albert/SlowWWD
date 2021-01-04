@@ -1,0 +1,142 @@
+<!-- ====== SHARED TEMPLATES ====== -->
+<!-- 'menuVersion' shared component template -->
+<ng-template #sc1582106107923 let-params1582106107923="params1582106107923" >
+<div class="class1582106107929" text-center>
+<p class="class1582106107932">
+{{'version_c8o' | translate}}
+</p>
+</div>
+</ng-template >
+<!-- ============================== -->
+
+<ion-content class="class1558448212132" fullscreen="true" false>
+<ion-grid class="class1558448224950" no-padding="true" style="height:100%">
+<ion-row class="class1558448241607" align-items-stretch style="height:100%">
+<ng-container class="class1559050692194" *ngIf="this.show == false">
+<ion-col class="class1558448245298" col-md-6 col-lg-6 col-12 col-sm-12 col-xl-6>
+<ion-grid class="class1559037047535">
+<ion-row class="class1559037055859" style="height:10%">
+<img class="class1559037146270" width="" [src]="'assets/images/svg/logo/logo_convertigo_white.png'" height=""/>
+</ion-row>
+<ion-row class="class1559037057752" style="height:80%">
+<ion-slides class="class1559037159032" [loop]="'true'" [speed]="'300'" [parallax]="'false'" [spaceBetween]="'0'" [pager]="'true'" [zoom]="'true'" [autoplay]="'4000'" [paginationType]="'bullets'" [effect]="'slide'" [initialSlide]="'0'" [slidesPerView]="'1'" [direction]="'horizontal'">
+<ion-slide class="class1559049539150">
+<img class="class1559049539153" width="" [src]="'assets/images/svg/tel/illus_tel_01.svg'" height=""/>
+</ion-slide>
+<ion-slide class="class1559037159062">
+<img class="class1559037159065" width="" [src]="'assets/images/svg/tel/illus_tel_02.svg'" height=""/>
+</ion-slide>
+<ion-slide class="class1559037159077">
+<img class="class1559037159080" width="" [src]="'assets/images/svg/tel/illus_tel_03.svg'" height=""/>
+</ion-slide>
+</ion-slides>
+</ion-row>
+<ion-row class="class1559037059433" style="height:10%">
+<ion-col class="class1559046973598" col-12>
+<ng-container class="class1559046793209" *ngIf="window.screen.width < 768">
+<div class="class1559046812590" text-center>
+<button class="class1559046793212" type="button" color="light" ion-button outline (click)="CTS1559050810244(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'setVal', actionFunction: 'CTS1559050810244'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)">
+{{ 'Skip' | translate }}
+</button>
+</div>
+</ng-container>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-col>
+</ng-container>
+<ng-container class="class1559035790653" *ngIf="window.screen.width > 767 || this.show == true">
+<ion-col class="class1558448247454" col-md-6 col-lg-6 col-12 col-sm-12 col-xl-6>
+<div class="class1603722109561">
+<div class="class1603722109567">
+</div>
+<div class="class1603722109573" [ngClass]="'styledivnormal'">
+<div class="class1603722109576" text-left>
+{{'titleLogin' | translate}}
+</div>
+<br class="class1603722109585"/>
+<div class="class1603722109588" text-left>
+{{'descLogin' | translate}}
+</div>
+</div>
+<div class="class1603722109603">
+<form class="class1603722109606" [formGroup]="form1603722109606" novalidate (ngSubmit)="ATS1603722109612({root: {scope:{}, in:merge({},form1603722109606.value), out:$event}})">
+<div class="class1603722109678" [ngClass]="'styledivnormal'">
+<ion-item class="class1603722109681" (change)="ATS1603722109693({root: {scope:{}, in:{}, out:$event}})" [ngClass]="'stylegenerictextnormal'">
+<ion-label class="class1603722109684" floating>
+{{'email' | translate}}
+</ion-label>
+<ion-input class="class1603722109723" #email formControlName="email" type="email" autofocus>
+</ion-input>
+</ion-item>
+<ng-container class="class1603722109735" *ngIf="(this.local.continue || this.local.forceContinue) else ElseBlock_1602679288839">
+<ion-item class="class1603722109738" [ngClass]="'stylegenerictextnormal'">
+<ion-label class="class1603722109741" floating>
+{{'password' | translate}}
+</ion-label>
+<ion-input class="class1603722109747" #pass formControlName="password" type="password">
+</ion-input>
+</ion-item>
+<ion-item class="class1603722109762" [ngClass]="'stylegenerictextnormal'">
+<ion-label class="class1603722109765">
+{{'login_AD' | translate}}
+</ion-label>
+<ion-checkbox class="class1603722109777" formControlName="var1603722109777" [(ngModel)]="this.local.loginad" (ngModelChange)="CTS1603722109786(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1603722109786'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)">
+</ion-checkbox>
+</ion-item>
+<div class="class1603722109789" text-center>
+<button class="class1603722109792" [disabled]="!form1603722109606.valid" type="submit" ion-button>
+{{'login' | translate}}
+</button>
+</div>
+</ng-container>
+<ng-template class="class1603722109801" #ElseBlock_1602679288839>
+<div class="class1603722109804" text-center>
+<button class="class1603722109807" [disabled]="!form1603722109606.valid" type="submit" ion-button>
+{{ 'Continue' | translate }}
+</button>
+</div>
+</ng-template>
+</div>
+</form>
+<ng-container class="class1603722109849" *ngIf="!this.local.forceContinue">
+<div class="class1603722109852" text-uppercase text-center>
+{{ 'or' | translate }}
+</div>
+<div class="class1603722109858" text-center>
+<button class="class1603722109861" type="button" ion-button (click)="ATS1603722109867({root: {scope:{}, in:{}, out:$event}})">
+<ion-thumbnail class="class1603722109915" item-start>
+<img class="class1603722109918" width="" [src]="'assets/images/svg/login/google-logo.svg'" height="18"/>
+</ion-thumbnail>
+{{ 'Continue_with_Google' | translate }}
+</button>
+</div>
+<div class="class1603722109927" text-center>
+<button class="class1603722109930" type="button" ion-button (click)="ATS1603722109936({root: {scope:{}, in:{}, out:$event}})">
+<ion-thumbnail class="class1603722109978" item-left>
+<img class="class1603722109981" width="" [src]="'assets/images/svg/login/microsoft-logo.svg'" height="18"/>
+</ion-thumbnail>
+{{ 'Continue_with_Microsoft' | translate }}
+</button>
+</div>
+</ng-container>
+</div>
+<div class="class1603722109993">
+<div class="class1603722109999" text-center>
+<a class="class1603722110002" (click)="resolveError(actionBeans.ModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ModalPage', actionFunction: 'ModalAction', data: null, cssClass: 'modal100', blockWhileDisplayed: false, showBackdrop: true, page: 'C8Oforms.MobileApplication.Application.resetPasswordPage', enableBackdropDismiss: true}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+<p class="class1603722110005">
+{{'forgotPassword' | translate}}
+</p>
+</a>
+</div>
+</div>
+<div class="class1603722110023">
+<ng-container *ngTemplateOutlet="sc1582106107923;context:{params1582106107923: merge(merge({},{}),{scope:{}})}"></ng-container>
+</div>
+</div>
+</ion-col>
+</ng-container>
+</ion-row>
+</ion-grid>
+</ion-content>
+

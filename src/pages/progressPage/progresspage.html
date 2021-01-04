@@ -1,0 +1,62 @@
+<ion-header class="class1551266140451">
+<ion-navbar class="class1551266140454" color="primary">
+<ion-title class="class1551266140457">
+<div class="class1551266140460" text-center>
+{{'uploading' | translate}}
+</div>
+</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content class="class1551275259134" padding>
+<progress-bar class="class1551265095199" [color]="'#488aff'" [progress]="getProgress()">
+</progress-bar>
+<ion-card class="class1551883365255">
+<ion-card-content class="class1551448270982">
+<ion-list class="class1551448294892">
+<ng-container class="class1551955211476" *ngIf=" this.global?.__C8O_TODELETE?.length > 0">
+<ion-list-header class="class1551955246718">
+{{'fileToDelete' | translate}}
+</ion-list-header>
+<ng-container class="class1551955366198" *ngFor="let item1551955366198 of let item of this.global['__C8O_TODELETE'];let i = index">
+<ion-item class="class1551955366201">
+<ion-icon class="class1551955366204" color="danger" name="close" item-right *ngIf=" this.global['__C8O_TODELETE'][i]['deleted']">
+</ion-icon>
+{{item?.name}}
+</ion-item>
+</ng-container>
+</ng-container>
+<ng-container class="class1551955373284" *ngIf="this.global?.__viewerarr?.length > 0">
+<ion-list-header class="class1551448297892">
+{{'fileToUpload' | translate}}
+</ion-list-header>
+<ng-container class="class1551448347214" *ngFor="let item1551448347214 of let item of this.global['__viewerarr'];let i = index">
+<ion-item class="class1551448300153">
+<ion-icon class="class1551448725038" color="secondary" name="checkmark" item-right *ngIf="this.global['__viewerarr'][i]['file']['ok']">
+</ion-icon>
+{{item?.file?.name}}
+</ion-item>
+</ng-container>
+</ng-container>
+</ion-list>
+</ion-card-content>
+</ion-card>
+</ion-content>
+
+<ion-footer class="class1551884445192" shadow>
+<div class="class1551884445198">
+<div class="class1551884445201">
+<button class="class1551884445231" type="button" ion-button (click)="resolveError(actionBeans.CloseModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CloseModal', actionFunction: 'CloseModalAction', data: null}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+{{'close' | translate}}
+</button>
+</div>
+<div class="class1551884445243">
+<ion-item class="class1551884445249" item-right no-lines>
+<div class="class1551884445252" text-nowrap>
+{{'copie' | translate}}
+</div>
+</ion-item>
+</div>
+</div>
+</ion-footer>
+

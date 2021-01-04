@@ -1,0 +1,757 @@
+.popOverNotifs {
+	max-width:100% !important;
+	max-height:100% !important;
+}
+.hugeModal{
+	.modal-wrapper {
+      
+      width: 90%; 
+     height: 90%; 
+     top: 5%; 
+     left: 5%; 
+     right: 5%; 
+     bottom: 5%;
+    } 
+}
+.alwaysFullScreen {
+	.modal-wrapper {
+	      position: absolute;
+	      top: 0 !important;
+	      left: 0 !important;
+	      display: block;
+	      width: 100% !important;
+	      height: 100% !important;
+    	}
+}
+
+.modalCSV{
+	/* if width is less than 1200px */
+	@media (max-width: 1200px) { 
+		.modal-wrapper {
+	      position: absolute;
+	      top: 0 !important;
+	      left: 0 !important;
+	      display: block;
+	      width: 100% !important;
+	      height: 100% !important;
+    	}
+	}
+	/* if width is more than 1200px */
+	@media (max-height: 600px) { 
+		.modal-wrapper {
+	      position: absolute;
+	      top: 0 !important;
+	      left: 0 !important;
+	      display: block;
+	      width: 100% !important;
+	      height: 100% !important;
+    	}
+	}
+}
+
+.modal100{
+	.modal-wrapper {
+      position: absolute;
+      top: 0 !important;
+      left: 0 !important;
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    } 
+}
+.mobileModal{
+	.modal-wrapper {
+      position: absolute;
+      top: 0 !important;
+      left: 0 !important;
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    } 
+}
+.alertcustom{
+	.alert-message{
+	min-height:40px !important;
+	}
+}
+@media (min-width: 680px) {
+  .mymodal {  
+  .modal-wrapper{
+  width: 90%; 
+     height: 90%; 
+     top: 5%; 
+     left: 5%; 
+     right: 5%; 
+     bottom: 5%;
+  }
+     
+  }
+}
+
+.tox-notifications-container{
+	display: none !important;
+}
+.label{
+		font-size: 1.4rem !important;
+	}
+.arrowAuthorised{
+	cursor:pointer;
+}
+.arrowNonAuthorised{
+	cursor: not-allowed;
+}
+.button-rounded {
+	margin-top: 3px !important;
+	margin-right: 12.60px !important;
+  float:right;
+  display: block !important;
+  width: 30px !important;
+  height: 30px !important;
+  line-height: 30px !important;
+  border: 2px solid white !important;
+  border-radius: 50% !important;
+  color: #ff8206 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  background-color: #ff8206 !important;
+}
+.requiredgregoryv::before {
+content: "*";
+color: red;
+position: absolute;
+top: 5%;
+left: -13px;
+}
+.requiredgregoryvpadding::before {
+content: "*";
+color: red;
+position: absolute;
+top: 5%;
+left: 7px;
+}
+.alert-message {
+	height: 0px !important;
+}
+
+
+body {
+	@media (pointer:none), (pointer:coarse) {
+		
+	}
+	@media (pointer: fine){
+	user-select: text;
+	}
+	
+
+}
+.popover-content {
+width:auto !important
+}
+.color-picker{
+	margin-right:0px !important;
+	vertical-align: middle;
+	
+}
+.text-input{
+user-drag: none; 
+/*user-select: none;
+-moz-user-select: none;
+-webkit-user-drag: none;
+-webkit-user-select: none;
+-ms-user-select: none;*/
+}
+.label-md[stacked] {
+    font-size: 1.4rem !important;
+}
+.rangeSLiderActivated {
+	.range-pin::before{
+		background-color: #0cbbe7 !important;
+		color: #0cbbe7 !important;
+	}
+	.range-pin{
+		background-color: #0cbbe7 !important;
+		//color: #0cbbe7 !important;
+	}
+}
+.lds-roller {
+	text-align: center;
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 32px 32px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff8206;
+  margin: -3px 0 0 -3px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 50px;
+  left: 50px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 54px;
+  left: 45px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 57px;
+  left: 39px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 58px;
+  left: 32px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 57px;
+  left: 25px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 54px;
+  left: 19px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 50px;
+  left: 14px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 45px;
+  left: 10px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.yesnobt{
+	color: #ff8206 !important;
+}
+* {
+    font-family: $font-family-base;
+}
+
+.update-profile-modal .modal-wrapper{
+
+box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+	
+
+}
+.ionic .checkbox input:before, 
+.ionic .checkbox-icon:before {
+  background: #333;    /* use your color hex instead of #333 */
+  border-color: #333;
+}
+
+
+
+
+.image-upload > input
+{
+    display: none;
+}
+.attach-doc
+{
+    cursor: pointer;
+}
+.my-drop-zone { 
+	border: dotted 3px lightgray;
+ }
+.nv-file-over { 
+	border: dotted 3px red;
+} /* Default class applied to drop zones on over */
+.another-file-over-class { 
+	border: dotted 3px green; 
+}
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.shadow{
+	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+
+border-left: 3px solid #488aff;
+}
+
+.shadow2{
+	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+border: 3px solid #488aff;
+}
+.shadow3{
+	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+border: 3px solid color($colors, convertigo);
+}
+
+.cardPers{
+	position: relative;
+    text-align: center;
+}
+
+.card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+.card-subtitle {
+   font-size: 3.0em;
+   position: absolute;
+   bottom: 5%;
+   width: 100%;
+   color: #fff;
+   text-align:center;
+ }
+ 
+
+.alertCustomCss {
+    // text color for basic alerts
+    color: white; 
+    // alert modal page bg color. Warning this will remove the alert transparency
+
+    button {
+        color: white !important; // button text color
+        background-color: color($colors, secondary, base) !important;
+    }
+
+    .alert-wrapper {
+        background-color: color($colors, dark, base); // bg color of alert content
+    }
+  }
+  
+.changeToast3 {
+	.toast-wrapper {
+		text-align: center !important;
+		border-radius: 5px !important;
+		background: color($colors, primary);
+		transform: translateX(-500px) !important;
+	}
+}
+.changeToast {
+	.toast-wrapper {
+		text-align: center !important;
+		border-radius: 5px !important;
+		background: color($colors, primary);
+	}
+}
+.styledivred {
+    background-color: #ffebee;
+    margin-top: 2px;
+    
+    padding: 16px 17px;
+}
+.styledivnormal {
+    margin-top: 2px;
+    margin: 0px 17px;
+}
+.styleselectnormal {
+	background-color: transparent;
+	margin:0px;
+	margin-bottom:5px;
+	padding:0px;
+	font-size: 1.6rem;
+}
+.stylegenerictextred {
+  	background-color: transparent;
+	border-bottom-color: #ff0000;
+	box-shadow: inset 0 -1px 0 0 #ff0000;
+	margin:0px;
+	margin-bottom:5px;
+	padding:0px;
+	font-size: 1.6rem;
+}
+.stylegenerictextnormal{
+	background-color: transparent;
+	border-bottom-color: #999999;
+	box-shadow: inset 0 -1px 0 0 #999999;
+	margin:0px;
+	margin-bottom:5px;
+	padding:0px;
+	font-size: 1.6rem;
+}
+
+.stylegenerictextnormalWithoutBorderBottom{
+	background-color: transparent;
+	border-bottom-color: #ffffff;
+	border-bottom-width: 0px !important;
+	box-shadow: inset 0 -1px 0 0 #999999;
+	margin:0px;
+	margin-bottom:5px;
+	padding:0px;
+	font-size: 1.6rem;
+}
+
+.stylegenerictexteditor{
+	background-color: transparent;
+	border-bottom-color: #999999;
+	box-shadow: inset 0 -1px 0 0 #999999;
+	margin:0px;
+	padding:0px;
+	font-size: 1.6rem;
+	margin-left:16px;
+	margin-right:32px;
+	padding-left:0px !important;
+}
+
+ion-item {
+  --border-color: var(--ion-color-danger, #f1453d);
+}
+
+.stylegenericcheckboxnormal {
+	background-color: transparent;
+	margin:0px;
+	padding:0px;
+	font-size: 16px;
+}
+
+
+.item-inner {
+      box-shadow: none;
+
+    }
+
+.content {
+	
+	
+	/* add some styling CSS rules here for the body of your app
+	   for example,
+	 		background-color: your color; 
+	 		background-image: url(some background image);
+	*/
+}
+
+.toolbar-background {
+	/* add some styling CSS rules here for the Headers and Footers
+	   for example,
+	 		background-color: your color; 
+	*/
+}
+.scroll-zoom-wrapper {
+height: 100% !important;
+}
+
+.formView {
+	width: 100%;
+	height: 100%;
+	border: 1px solid color($colors, primary, base);
+	border-radius: 4px;
+	background-color: #efefef;
+}
+
+.componentsView {
+	width: 100%;
+	height: 100%;
+	border: 1px solid color($colors, secondary);
+	border-radius: 4px;
+	background-color: #efefef;
+}
+
+.componentsView ion-list ion-list-header {
+	background-color: color($colors, secondary, #fff) !important;
+	color: #fff;
+/* 	font-weight: bold; */
+	border-radius: 8px !important;
+}
+
+.componentsView ion-list ion-item {
+/* 	background-color: color($colors, primary, #fff); */
+	margin: 5px 0;
+	border-radius: 12px !important;
+}
+
+.elementView {
+	border: 4px solid #808080;
+	border-radius: 12px;
+	background-color: #e4e4e4;
+}
+
+.containcol {
+	display: table;
+    width: 100%;
+}
+.col {
+	display: table-cell;
+    width:50%;
+}
+
+
+
+
+
+
+ ion-grid {
+    padding: 0 !important;
+    ion-row {
+      padding: 0 !important;
+      ion-col {
+        padding: 0 !important;
+
+        ion-card {
+          padding: 0 !important;
+          ion-card-header {
+            margin-top: 1px !important;
+            margin-bottom: 1px !important;
+          }
+          ion-card-content {
+            margin-inside: 1px !important;
+
+            padding: 0 !important;
+
+            ion-list {
+              margin-inside: 1px !important;
+              padding: 0 !important;
+
+              ion-item {
+                margin-inside: 1px !important;
+                padding: 0 !important;
+
+                ion-row {
+                  ion-col {
+                    p {
+                      color: color($colors, secondary, base) !important;
+                      font-size: small !important;
+                    }
+                    color: color($colors, secondary, base) !important;
+                    font-size: small !important;
+
+                  }
+
+                }
+
+              }
+
+            }
+
+          }
+        }
+      }
+    }
+  }
+  .modal-wrapper {
+ position: absolute;
+            top: 0;
+            left: 0;
+            right:0;
+            display: block;
+            width: 60%;
+            height: 60%;
+            top: 20%; 
+     left: 20%; 
+     right: 20%; 
+}
+
+.c8o-alert-create-form .alert-wrapper {
+	max-width: unset;
+  min-width: 400px;
+}
+.c8o-ngxTag-larger {
+	tag-input-form, tag-input-form input {
+		width: 100%;
+	}
+}
+
+body { 
+	/* Webkit scrollbar */
+	*::-webkit-scrollbar {
+	  width: 6px;
+	  height: 6px;
+	}
+	*::-webkit-scrollbar-thumb {
+	  background-color: color($colors, convertigo);
+	  border-radius: 20px;
+	}
+	/* Firefox scrollbar */
+	* {
+	  scrollbar-width: thin;
+	  scrollbar-color: color($colors, convertigo) #ffffff;
+	}
+	/** Use to remove scroll bar on mobile devices **/
+	@media (pointer:none), (pointer:coarse) {
+		::-webkit-scrollbar { 
+			width:0;
+		}
+		overflow: -moz-scrollbars-none;
+		 .scroll-content{
+		 	scrollbar-width:none !important;
+		 }
+		 .popover-content{
+		  	scrollbar-width:none !important;
+		 }
+		 ion-scroll .scroll-content{
+			scrollbar-width: none;
+			-webkit-scrollbar: hidden;
+			overflow: -moz-scrollbars-none;
+		}
+	}
+ }
+ 
+.TabSelected {
+	min-width:70px;
+	padding: 7px 12px 8px!important;
+	margin: 0;
+	color: #24292e;
+	background-color: #fff;
+	border: 1px solid transparent;
+	border-top: 3px solid transparent;
+	border-radius: 3px 3px 0 0;
+	box-sizing: border-box;
+	border-color: map-get($colors, btLight) #e1e4e8 transparent;
+	z-index:100;
+	border-bottom:0px !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 45px;
+	font-size: 1.6rem;
+}
+
+.TabSelected:hover {
+	cursor:pointer;
+}
+
+.TabNotSelected{
+	min-width:70px;
+	float: left;
+	padding: 7px 15px 8px;
+	color: #586069;
+	white-space: nowrap;
+	border: 1px solid transparent;
+	border-top: 3px solid transparent;
+	border-radius: 3px 3px 0 0;
+	padding: 7px 12px 8px!important;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1px solid #e1e4e8;
+	height: 45px !important;
+}
+
+.TabNotSelected:hover{
+	cursor:pointer;
+	background-color: #f0f0f0 !important;
+}
+// Custom icons
+// Overriding the ion-icon behavior
+// All custom icons will start with "custom-" prefix
+ion-icon {
+    &[class*="custom-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+		width: 3rem;
+		height: 3rem;
+    }
+    // custom icons
+    &[class*="custom-csv"] {
+        mask-image: url(../assets/images/svg/icon/csv.svg);
+    }
+    &[class*="custom-pwa"] {
+        mask-image: url(../assets/images/svg/icon/pwa.svg);
+    }
+    &[class*="custom-qr_code"] {
+        mask-image: url(../assets/images/svg/icon/qr_code.svg);
+    }
+    &[class*="custom-add-circle"] {
+        mask-image: url(../assets/images/svg/icon/add-circle.svg);
+    }
+    &[class*="custom-grid"] {
+        mask-image: url(../assets/images/svg/icon/grid.svg);
+    }
+    &[class*="custom-list"] {
+        mask-image: url(../assets/images/svg/icon/list.svg);
+    }
+}
+
+
+.class1602863446167 {
+display:inline
+;
+}
+.class1602863446206 {
+display:inline
+;
+}
+.class1602863446242 {
+display:inline
+;
+}
+.class1602863446263 {
+height: 40px !important;
+width: 40px !important;
+;
+}
+.class1602863446272 {
+display:inline;
+;
+}
+
+.class1602857113444 {
+display:inline
+;
+}
+.class1602863302271 {
+display:inline
+;
+}
+.class1602862983345 {
+display:inline
+;
+}
+.class1602749684270 {
+height: 40px !important;
+width: 40px !important;
+;
+}
+.class1602860969934 {
+display:inline;
+;
+}
+

@@ -1,0 +1,114 @@
+<ion-content class="class1566923643544" false>
+<ion-list class="class1566923669585" no-lines>
+<ion-item class="class1567072378199" (click)="ATS1606727297010({root: {scope:{}, in:{}, out:$event}})" *ngIf="this['navParams']['data']['that']['local']['published'] == false" tappable>
+<ion-icon class="class1603724774729" name="build" item-start>
+</ion-icon>
+{{ 'Editer' | translate }}
+</ion-item>
+<ion-item class="class1567072332062" (click)="ATS1606728735390({root: {scope:{}, in:{}, out:$event}})" tappable>
+{{ 'Visualiser' | translate }}
+<ion-icon class="class1603725257774" name="eye" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1571921646941" (click)="ATS1606729477447({root: {scope:{}, in:{}, out:$event}})" *ngIf="this['navParams']['data']['that']['local']['published'] == false" tappable>
+{{ 'Publier' | translate }}
+<ion-icon class="class1603730305674" name="share-alt" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1580132441145" (click)="ATS1606730033022({root: {scope:{}, in:{}, out:$event}})" *ngIf="this['navParams']['data']['that']['local']['published'] == true" tappable>
+<ng-container class="class1594297038023" *ngIf="this.isVisible() else ElseBlock_1594297430140">
+{{'vizu_response' | translate}}
+</ng-container>
+<ng-template class="class1594297430140" #ElseBlock_1594297430140>
+{{ 'vizu_mine_response' | translate }}
+</ng-template>
+<ion-icon class="class1603795537363" name="stats" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1572459511838" *ngIf="this['navParams']['data']['that']['local']['published'] == true &&  this.navParams.data.isVisible" (click)="ATS1606731395074({root: {scope:{}, in:{}, out:$event}})" tappable>
+<p class="class1572461724835">
+{{'respCsv' | translate}}
+</p>
+<ion-icon class="class1603732695102" color="greenCsv" name="custom-csv" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1603801509434" *ngIf="this['navParams']['data']['that']['local']['published'] == true &&  this.isVisible()" (click)="resolveError(actionBeans.STS1606752424750(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606752424750'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{selectedForm: this.navParams.data.selectedForm}, $event));resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" tappable>
+<p class="class1603801509443">
+{{ 'create_or_update_pwa' | translate }}
+</p>
+<ion-icon class="class1603801509467" name="custom-pwa" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1572458087226" (click)="resolveError(actionBeans.STS1606753067983(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606753067983'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{selectedForm: this.navParams.data.selectedForm}, $event));resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" *ngIf="this['navParams']['data']['that']['local']['published'] == true" tappable>
+{{translate.instant('linkShare')}}
+<ion-icon class="class1603730307646" name="link" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1575993202123" (click)="resolveError(actionBeans.STS1606815237125(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606815237125'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{selectedForm: this.navParams.data.selectedForm}, $event));resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" *ngIf="this['navParams']['data']['that']['local']['published'] == true &&  this.isVisible()" tappable>
+<ng-container class="class1576250982686" *ngIf="(this.navParams?.data?.selectedForm?.sharedAnonymous== true || this.navParams?.data?.selectedForm?.sharedAnonymous == 'true') else ElseBlock_1606815129027">
+{{this.upperFirst(translate.instant('linkShareAnonymous'))}}
+</ng-container>
+<ng-template class="class1606815129027" #ElseBlock_1606815129027>
+{{this.upperFirst(translate.instant('linkShareActive')+ ' ' + translate.instant('linkShareAnonymous')) }}
+</ng-template>
+<ion-icon class="class1603730309594" color="secondary" name="link" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1576251174431" (click)="resolveError(actionBeans.STS1606815643143(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606815643143'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{selectedForm: this.navParams.data.selectedForm}, $event));resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" *ngIf="this['navParams']['data']['that']['local']['published'] == true && (this['navParams']['data']['selectedForm']['sharedAnonymous'] == true || this['navParams']['data']['selectedForm']['sharedAnonymous'] == 'true') && this.isVisible()" tappable>
+{{'linkShareDisable' | translate}}
+<ion-icon class="class1603730312907" color="danger" name="link" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1578663445209" *ngIf="(this['navParams']['data']['that']['local']['published'] == true && this.isVisible()) || (this['navParams']['data']['that']['local']['published'] == false)" (click)="resolveError(actionBeans.STS1606819651922(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606819651922'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{selectedForm: this.navParams.data.selectedForm}, $event));resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover1', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" tappable>
+{{'manage_acces_right' | translate}}
+<ion-icon class="class1603730319967" name="key" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1594313281739" *ngIf="(this['navParams']['data']['that']['local']['published'] == true && this.isVisible()) || (this['navParams']['data']['that']['local']['published'] == false)" (click)="resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event));resolveError(actionBeans.STS1606819826094(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606819826094'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{selectedForm: this.navParams.data.selectedForm}, $event))" tappable>
+{{'manage_acces_right_resp' | translate}}
+<ion-icon class="class1603730321735" name="key" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1578920252046" (click)="resolveError(actionBeans.STS1606819977341(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606819977341'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{selectedForm: this.navParams.data.selectedForm}, $event));resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" tappable>
+{{'manage_labels' | translate}}
+<ion-icon class="class1603730324637" name="folder-open" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1588251387387" (click)="resolveError(actionBeans.STS1606820276458(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606820276458'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{selectedForm: this.navParams.data.selectedForm}, $event));resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" *ngIf="this['navParams']['data']['that']['local']['published'] == false" tappable>
+{{ 'duplicate_form' | translate }}
+<ion-icon class="class1603795700163" name="copy" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1588254912106" (click)="resolveError(actionBeans.STS1606821705396(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606821705396'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{selectedForm: this.navParams.data.selectedForm}, $event));resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" *ngIf="this['navParams']['data']['that']['local']['published'] == true && ((this.global?.settings?.editing_rights != undefined && this.global?.settings?.editing_rights == 'true') || this.global?.settings?.editing_rights == undefined)" tappable>
+{{ 'duplicate_form_to' | translate }}
+<ion-icon class="class1603795702797" name="copy" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1594642420621" (click)="resolveError(actionBeans.STS1606825399935(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606825399935'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{selectedForm: this.navParams.data.selectedForm}, $event));resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" *ngIf="this['navParams']['data']['that']['local']['published'] == false" tappable>
+{{ 'thumb_bg_label' | translate }}
+<ion-icon class="class1603795705531" name="image" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1566923687561" (click)="resolveError(actionBeans.STS1606826327707(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606826327707'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{selectedForm: this.navParams.data.selectedForm, index: this.navParams.data.index, that: this.navParams.data.that}, $event));resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" *ngIf="this['navParams']['data']['that']['local']['published'] == false && this.global?.settings?.favorites?.indexOf(this['navParams']['data']['selectedForm']['_id']) == -1" tappable>
+<ion-icon class="class1603725982020" name="star" item-start>
+</ion-icon>
+{{ 'Ajouter_aux_favoris' | translate }}
+</ion-item>
+<ion-item class="class1579008867358" (click)="resolveError(actionBeans.STS1606828487741(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606828487741'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{selectedForm: this.navParams.data.selectedForm}, $event));resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" *ngIf="this['navParams']['data']['that']['local']['published'] == false && this.global?.settings?.favorites?.indexOf(this['navParams']['data']['selectedForm']['_id']) != -1" tappable>
+{{'Remove_aux_Favoris' | translate}}
+<ion-icon class="class1603726802356" name="star" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1569858735855" (click)="ATS1606829749824({root: {scope:{}, in:{}, out:$event}})" tappable>
+{{ 'Exporter_form' | translate }}
+<ion-icon class="class1603730303004" name="download" item-start>
+</ion-icon>
+</ion-item>
+<ion-item class="class1566923689496" (click)="resolveError(actionBeans.STS1606843476348(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606843476348'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{selectedForm: this.navParams.data.selectedForm}, $event));resolveError(actionBeans.ClosePopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ClosePopover', actionFunction: 'ClosePopoverAction'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" tappable>
+{{ 'Supprimer' | translate }}
+<ion-icon class="class1603730259711" name="trash" item-start>
+</ion-icon>
+</ion-item>
+</ion-list>
+</ion-content>
+

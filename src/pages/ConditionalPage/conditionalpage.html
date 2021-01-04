@@ -1,0 +1,1103 @@
+<!-- ====== SHARED TEMPLATES ====== -->
+<!-- 'itemCheckboxGroupViewerConditions' shared component template -->
+<ng-template #sc1596187732432 let-params1596187732432="params1596187732432" >
+<div class="class1596188538703" #divtext [ngClass]="(this.redList != undefined ) ?  this.redList[params1596187732432.item.name] == true ? 'styledivred': (this.local.redListTwoSameColumn != undefined ? this.local.redListTwoSameColumn[params1596187732432.item.name] == true ? 'styledivred': 'styledivnormal' : 'styledivnormal') : (this.local.redListTwoSameColumn != undefined ? this.local.redListTwoSameColumn[params1596187732432.item.name] == true ? 'styledivred': 'styledivnormal' : 'styledivnormal')" [attr.id]="params1596187732432.item.name">
+<div class="class1596188538715" (scroll)="CTS1596188538859(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'setStyleOnscroll', actionFunction: 'CTS1596188538859'}), {stack:{root: {scope:merge(merge({}, params1596187732432.scope), {divtext: divtext, params1596187732432: params1596187732432}), in:{}, out:$event}}}),{name: params1596187732432.item.name}, $event)">
+<div class="class1596188538721">
+<div class="class1596188538727">
+<div class="class1596188538733" [ngStyle]="this?.local?.gridAndCheckboxStyleOnScroll[params1596187732432.item.name] == true ? {'box-shadow': '5px 0 5px -1px #ffffff'} : {}">
+</div>
+<ng-container class="class1596188538742" *ngFor="let item1596188538742 of let parent of params1596187732432.item.children;let k = index">
+<div class="class1596188538745">
+{{parent.value}}
+</div>
+</ng-container>
+</div>
+<ng-container class="class1596188538754" *ngFor="let item1596188538754 of let line of params1596187732432.item.lines;let k = index">
+<div class="class1596188538757">
+<div class="class1596188538763" [ngStyle]="this?.local?.gridAndCheckboxStyleOnScroll[params1596187732432.item.name] == true ? {'box-shadow': '5px 0 5px -1px #ffffff'} : {}">
+{{line.title}}
+</div>
+<ng-container class="class1596188538775" *ngFor="let item1596188538775 of let child of params1596187732432.item.children;let j = index">
+<div class="class1596188538778">
+<ion-grid class="class1596188887315">
+<ion-row class="class1596188893034">
+<ion-col class="class1596188898002">
+<ion-item class="class1596188538808" no-lines>
+<ion-select class="class1596188538811" placeholder="{{this.translate.instant('select_page_navigate_to')}}" interface="popover" [(ngModel)]="params1596187732432.model[line.id][j]['action']">
+<ion-option class="class1596444882637" [value]="''">
+</ion-option>
+<ng-container class="class1596188538820" *ngFor="let i = index;let item of let item1596188538820 of this.navParams.data.form.pages">
+<ion-option class="class1596188538823" [value]="item.pageTechName">
+{{translate.instant('goToPageIF') + ' ' +item.name}}
+</ion-option>
+</ng-container>
+</ion-select>
+</ion-item>
+</ion-col>
+</ion-row>
+</ion-grid>
+</div>
+</ng-container>
+</div>
+<div class="class1596188538835">
+<ng-container class="class1596188538841" *ngFor="let item1596188538841 of let child of params1596187732432.item.children;let j = index">
+<div class="class1596188538844">
+</div>
+</ng-container>
+<div class="class1596188538850">
+</div>
+</div>
+</ng-container>
+</div>
+</div>
+</div>
+</ng-template >
+<!-- 'itemCheckboxViewerConditions' shared component template -->
+<ng-template #sc1596548897194 let-params1596548897194="params1596548897194" >
+<div class="class1596548990846" #divtext [ngClass]="'styledivnormal'" [attr.id]="params1596548897194.item.name">
+<div class="class1596552841830">
+<ng-container class="class1596552880478" *ngFor="let item1596552880478 of let child of params1596548897194.item.children;let j = index">
+<div class="class1596552884093">
+<div class="class1596552925699">
+<div class="class1596552966531">
+<ion-item class="class1596552966537" no-lines [ngClass]="'stylegenericcheckboxnormal'" *ngIf="params1596548897194.item.type == 'checkbox'">
+<ion-checkbox class="class1596552966543" color="{{params1596548897194.item.config.color}}" disabled="true">
+</ion-checkbox>
+</ion-item>
+<ion-item class="class1596617963395" *ngIf="params1596548897194.item.type == 'radio'" no-lines [ngClass]="'stylegenericcheckboxnormal'">
+<ion-radio class="class1596617963416" disabled="true" item-left>
+</ion-radio>
+</ion-item>
+</div>
+</div>
+<div class="class1596552945626">
+<div class="class1596552975851" *ngIf="!child.other">
+{{child.value}}
+</div>
+<div class="class1596552981112" *ngIf="child.other">
+{{('Other'|translate) + ' :'}}
+</div>
+</div>
+<div class="class1596552958931">
+<div class="class1596552985047">
+<ion-item class="class1596552985053" no-lines>
+<ion-select class="class1596552985056" placeholder="{{this.translate.instant('select_page_navigate_to')}}" interface="popover" [(ngModel)]="params1596548897194.model[child.id]">
+<ion-option class="class1596552985065" [value]="''">
+</ion-option>
+<ng-container class="class1596552985068" *ngFor="let i = index;let item of let item1596552985068 of this.navParams.data.form.pages">
+<ion-option class="class1596552985071" [value]="item.pageTechName">
+{{translate.instant('goToPageIF') + ' ' +item.name}}
+</ion-option>
+</ng-container>
+</ion-select>
+</ion-item>
+</div>
+</div>
+</div>
+</ng-container>
+</div>
+</div>
+</ng-template >
+<!-- 'conditionVisibleIfPrev' shared component template -->
+<ng-template #sc1595246801579 let-params1595246801579="params1595246801579" >
+<div class="class1595246902586">
+<div class="class1595247733718">
+{{params1595246801579.current.subject == 'field' ? this.translate.instant('the_field') : this.translate.instant('pub_form_success0')}}
+</div>
+<ng-container class="class1595246902637" *ngIf="params1595246801579.current.subject == 'field'">
+<div class="class1595248240079">
+<ion-badge class="class1595248240082" color="primaryB">
+{{this.getItemNameById(params1595246801579.current.val1)}}
+</ion-badge>
+</div>
+<div class="class1595248240091">
+<ng-container class="class1595248240094" [ngSwitch]="params1595246801579.current.operator">
+<ng-container class="class1595248240097" *ngSwitchCase="'equals'">
+<ion-badge class="class1595248240100" color="light">
+=
+</ion-badge>
+</ng-container>
+<ng-container class="class1595248240106" *ngSwitchCase="'different'">
+<ion-badge class="class1595248240109" color="light">
+&#8800;</ion-badge>
+</ng-container>
+<ng-container class="class1595248240112" *ngSwitchCase="'minus'">
+<ion-badge class="class1595248240115" color="light">
+&#60;</ion-badge>
+</ng-container>
+<ng-container class="class1595248240118" *ngSwitchCase="'minusequals'">
+<ion-badge class="class1595248240121" color="light">
+&#8804;</ion-badge>
+</ng-container>
+<ng-container class="class1595248240124" *ngSwitchCase="'greater'">
+<ion-badge class="class1595248240127" color="light">
+&#62;</ion-badge>
+</ng-container>
+<ng-container class="class1595248240130" *ngSwitchCase="'greaterequals'">
+<ion-badge class="class1595248240133" color="light">
+&#8805;</ion-badge>
+</ng-container>
+<ng-container class="class1595432210055" *ngSwitchCase="'among_following'">
+<ion-badge class="class1595432210058" color="light">
+{{ 'among_following' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1595432272235" *ngSwitchCase="'out_following'">
+<ion-badge class="class1595432272238" color="light">
+{{ 'out_following' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1595432274392" *ngSwitchCase="'contains'">
+<ion-badge class="class1595432274395" color="light">
+{{ 'contains' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1595432277188" *ngSwitchCase="'not_contains'">
+<ion-badge class="class1595432277191" color="light">
+{{ 'not_contains' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1595495095692" *ngSwitchCase="'does_not_contain_file'">
+<ion-badge class="class1595495095695" color="light">
+{{ 'does_not_contain_file' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1595495095701" *ngSwitchCase="'contains_multiple_files'">
+<ion-badge class="class1595495095704" color="light">
+{{ 'contains_multiple_files' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1595495095710" *ngSwitchCase="'contains_a_file'">
+<ion-badge class="class1595495095713" color="light">
+{{ 'contains_a_file' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1595495095719" *ngSwitchCase="'is_filled'">
+<ion-badge class="class1595495095722" color="light">
+{{ 'is_filled' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1595495099653" *ngSwitchCase="'is_empty'">
+<ion-badge class="class1595495099656" color="light">
+{{ 'is_empty' | translate }}
+</ion-badge>
+</ng-container>
+</ng-container>
+</div>
+<div class="class1595248240142" *ngIf="!(params1595246801579.current.operator == 'among_following' || params1595246801579.current.operator == 'out_following' || this.getType(params1595246801579.current.val1.type) == 'camSign' || this.getType(params1595246801579.current.val1.type) == 'file'
+|| params1595246801579.current.operator == 'is_filled' || params1595246801579.current.operator == 'is_empty')">
+<ng-container class="class1595248240148" [ngSwitch]="params1595246801579.current.operator">
+<ng-container class="class1595248240151" *ngSwitchCase="'equals'">
+{{ 'to' | translate }}
+</ng-container>
+<ng-container class="class1595248240157" *ngSwitchCase="'different'">
+{{ 'fromO' | translate }}
+</ng-container>
+<ng-container class="class1595248240163" *ngSwitchCase="'minus'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1595248240169" *ngSwitchCase="'minusequals'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1595248240175" *ngSwitchCase="'greater'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1595248240181" *ngSwitchCase="'greaterequals'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1595433546768" *ngSwitchCase="'among_following'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1595433546774" *ngSwitchCase="'out_following'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1595433546780" *ngSwitchCase="'contains'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1595433546786" *ngSwitchCase="'not_contains'">
+{{ 'the' | translate }}
+</ng-container>
+</ng-container>
+<ng-container class="class1595248240187" *ngIf="params1595246801579.current.val2.source == true else ElseBlock_1594993065876">
+{{ 'the_field2' | translate }}
+</ng-container>
+<ng-template class="class1595248240193" #ElseBlock_1594993065876>
+<ng-container class="class1595248240196" *ngIf="params1595246801579.current.operator != ''">
+{{ 'text' | translate }}
+</ng-container>
+</ng-template>
+</div>
+<div class="class1595248240202" *ngIf="!(params1595246801579.current.operator == 'among_following' || params1595246801579.current.operator == 'out_following' || this.getType(params1595246801579.current.val1.type) == 'camSign' || this.getType(params1595246801579.current.val1.type) == 'file' || params1595246801579.current.operator == 'is_filled' || params1595246801579.current.operator == 'is_empty')">
+<ng-container class="class1596025160689" *ngIf="params1595246801579.current.val2.arr !=undefined else ElseBlock_1596025160695">
+<ng-container class="class1595511331761" *ngFor="let elO of let item1595511331761 of params1595246801579.current.val2.arr">
+<ion-badge class="class1595248240208" color="secondary">
+{{elO.display}}
+</ion-badge>
+</ng-container>
+</ng-container>
+<ng-template class="class1596025160695" #ElseBlock_1596025160695>
+<ion-badge class="class1596025264250" color="secondary">
+{{getItemNameById(params1595246801579.current.val2)}}
+</ion-badge>
+</ng-template>
+</div>
+<div class="class1595432402145" *ngIf="(params1595246801579.current.operator == 'among_following' || params1595246801579.current.operator == 'out_following')">
+<ng-container class="class1595432634663" *ngIf="params1595246801579.current.val2.source == true">
+{{'('+this.translate.instant('the_field2')+')'}}
+</ng-container>
+<ng-container class="class1595432417584" *ngFor="let itm of let item1595432417584 of params1595246801579.current.val2.arr">
+<ion-badge class="class1595432402151" color="secondary">
+{{itm.display}}
+</ion-badge>
+</ng-container>
+</div>
+</ng-container>
+<ng-container class="class1595246902898" *ngIf="params1595246801579.current.subject == 'form'">
+<div class="class1595248407240">
+<ng-container class="class1595248407243" [ngSwitch]="params1595246801579.current.operator">
+<ng-container class="class1595248407246" *ngSwitchCase="'equals'">
+<ion-badge class="class1595248407249" color="light">
+{{ 'is' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1595248407255" *ngSwitchCase="'different'">
+<ion-badge class="class1595248407258" color="light">
+{{ 'isnt' | translate }}
+</ion-badge>
+</ng-container>
+</ng-container>
+</div>
+<div class="class1595248502132">
+<ion-badge class="class1595248502138" color="secondary">
+{{this.translate.instant(params1595246801579.current.attribute)}}
+</ion-badge>
+</div>
+</ng-container>
+<ng-container class="class1595252081834" *ngIf="this.local.visible.length > 1 && (this.local.visible.length -1 ) != params1595246801579.i">
+<div class="class1595252081879">
+{{this.local.condVisible == 'and' ? this.translate.instant('and') : this.translate.instant('or')}}
+</div>
+</ng-container>
+</div>
+</ng-template >
+<!-- 'conditiongoToPageIfPrev' shared component template -->
+<ng-template #sc1596115004349 let-params1596115004349="params1596115004349" >
+<ng-container class="class1598621419321" *ngIf="(params1596115004349.current?.page != undefined && params1596115004349.current.page != '') && (((params1596115004349.current?.operator != undefined && params1596115004349.current?.operator != '') && ((params1596115004349.current?.val2?.str != '') || this.lengthOk(params1596115004349.current?.val2?.vals) || this.lengthOk(params1596115004349.current?.val2?.arr))) || (params1596115004349.current?.operator == 'is_filled' || params1596115004349.current?.operator == 'is_empty'))">
+<ng-container class="class1596533268846" *ngIf="this.getGoToPageType(this.local.goToPageSelf.type) != 'multiple'">
+<div class="class1596115092079">
+<div class="class1596115092085">
+<ion-badge class="class1596115092091">
+{{getPageNameByTech(params1596115004349.current.page)}}
+</ion-badge>
+</div>
+<div class="class1596115092097">
+{{ 'if_the_field' | translate }}
+</div>
+<div class="class1596115092106">
+<ion-badge class="class1596115092112" color="primaryB">
+{{this.getItemNameByIdStr(params1596115004349.current.val1.str)}}
+</ion-badge>
+</div>
+<div class="class1596115092121">
+<ng-container class="class1596115092127" [ngSwitch]="params1596115004349.current.operator">
+<ng-container class="class1596115092130" *ngSwitchCase="'equals'">
+<ion-badge class="class1596115092133" color="light">
+=
+</ion-badge>
+</ng-container>
+<ng-container class="class1596115092139" *ngSwitchCase="'different'">
+<ion-badge class="class1596115092142" color="light">
+&#8800;</ion-badge>
+</ng-container>
+<ng-container class="class1596115092148" *ngSwitchCase="'minus'">
+<ion-badge class="class1596115092151" color="light">
+&#60;</ion-badge>
+</ng-container>
+<ng-container class="class1596115092157" *ngSwitchCase="'minusequals'">
+<ion-badge class="class1596115092160" color="light">
+&#8804;</ion-badge>
+</ng-container>
+<ng-container class="class1596115092166" *ngSwitchCase="'greater'">
+<ion-badge class="class1596115092169" color="light">
+&#62;</ion-badge>
+</ng-container>
+<ng-container class="class1596115092175" *ngSwitchCase="'greaterequals'">
+<ion-badge class="class1596115092178" color="light">
+&#8805;</ion-badge>
+</ng-container>
+<ng-container class="class1596115092184" *ngSwitchCase="'among_following'">
+<ion-badge class="class1596115092187" color="light">
+{{ 'among_following' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1596115092193" *ngSwitchCase="'out_following'">
+<ion-badge class="class1596115092196" color="light">
+{{ 'out_following' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1596115092202" *ngSwitchCase="'contains'">
+<ion-badge class="class1596115092205" color="light">
+{{ 'contains' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1596115092211" *ngSwitchCase="'not_contains'">
+<ion-badge class="class1596115092214" color="light">
+{{ 'not_contains' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1596115092220" *ngSwitchCase="'does_not_contain_file'">
+<ion-badge class="class1596115092223" color="light">
+{{ 'does_not_contain_file' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1596115092229" *ngSwitchCase="'contains_multiple_files'">
+<ion-badge class="class1596115092232" color="light">
+{{ 'contains_multiple_files' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1596115092238" *ngSwitchCase="'contains_a_file'">
+<ion-badge class="class1596115092241" color="light">
+{{ 'contains_a_file' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1596115092247" *ngSwitchCase="'is_filled'">
+<ion-badge class="class1596115092250" color="light">
+{{ 'is_filled' | translate }}
+</ion-badge>
+</ng-container>
+<ng-container class="class1596115092256" *ngSwitchCase="'is_empty'">
+<ion-badge class="class1596115092259" color="light">
+{{ 'is_empty' | translate }}
+</ion-badge>
+</ng-container>
+</ng-container>
+</div>
+<div class="class1596115212363" *ngIf="!(params1596115004349.current.operator == 'among_following' || params1596115004349.current.operator == 'out_following' || this.getType(params1596115004349.current.val1.type) == 'camSign' || this.getType(params1596115004349.current.val1.type) == 'file'
+|| params1596115004349.current.operator == 'is_filled' || params1596115004349.current.operator == 'is_empty')">
+<ng-container class="class1596115212369" [ngSwitch]="params1596115004349.current.operator">
+<ng-container class="class1596115212372" *ngSwitchCase="'equals'">
+{{ 'to' | translate }}
+</ng-container>
+<ng-container class="class1596115212378" *ngSwitchCase="'different'">
+{{ 'fromO' | translate }}
+</ng-container>
+<ng-container class="class1596115212384" *ngSwitchCase="'minus'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1596115212390" *ngSwitchCase="'minusequals'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1596115212396" *ngSwitchCase="'greater'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1596115212402" *ngSwitchCase="'greaterequals'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1596115212408" *ngSwitchCase="'among_following'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1596115212414" *ngSwitchCase="'out_following'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1596115212420" *ngSwitchCase="'contains'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1596115212426" *ngSwitchCase="'not_contains'">
+{{ 'the' | translate }}
+</ng-container>
+</ng-container>
+<ng-container class="class1596115212432" *ngIf="params1596115004349.current.val2.source == true else ElseBlock_1594993065876">
+{{ 'the_field2' | translate }}
+</ng-container>
+<ng-template class="class1596115212438" #ElseBlock_1594993065876>
+<ng-container class="class1596115212441" *ngIf="params1596115004349.current.operator != ''">
+{{ 'text' | translate }}
+</ng-container>
+</ng-template>
+</div>
+<div class="class1596115212450" *ngIf="!(params1596115004349.current.operator == 'among_following' || params1596115004349.current.operator == 'out_following' || this.getType(params1596115004349.current.val1.type) == 'camSign' || this.getType(params1596115004349.current.val1.type) == 'file' || params1596115004349.current.operator == 'is_filled' || params1596115004349.current.operator == 'is_empty')">
+<ng-container class="class1596115212459" *ngIf="params1596115004349.current.val2.arr !=undefined else ElseBlock_1596025160695">
+<ng-container class="class1596115212462" *ngFor="let elO of let item1596115212462 of params1596115004349.current.val2.arr">
+<ion-badge class="class1596115212465" color="secondary">
+{{elO.display}}
+</ion-badge>
+</ng-container>
+</ng-container>
+<ng-template class="class1596115212471" #ElseBlock_1596025160695>
+<ion-badge class="class1596115212474" color="secondary">
+{{getItemNameById(params1596115004349.current.val2)}}
+</ion-badge>
+</ng-template>
+</div>
+<div class="class1596115212480" *ngIf="(params1596115004349.current.operator == 'among_following' || params1596115004349.current.operator == 'out_following')">
+<ng-container class="class1596115212489" *ngIf="params1596115004349.current.val2.source == true">
+{{'('+this.translate.instant('the_field2')+')'}}
+</ng-container>
+<ng-container class="class1596115212495" *ngFor="let itm of let item1596115212495 of params1596115004349.current.val2.arr">
+<ion-badge class="class1596115212498" color="secondary">
+{{itm.display}}
+</ion-badge>
+</ng-container>
+</div>
+</div>
+</ng-container>
+<ng-container class="class1596533326783" *ngIf="this.getGoToPageType(this.local.goToPageSelf.type) == 'multiple'">
+<ng-container class="class1596547270194" [ngSwitch]="params1596115004349.current.val1.type">
+<ng-container class="class1596547270197" *ngSwitchCase="'checkbox_group'">
+<ng-container *ngTemplateOutlet="sc1596187732432;context:{params1596187732432: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: this.navParams.data.j == undefined ? this['navParams'].data.form.formulaire[this['navParams'].data.i] : this['navParams'].data.form.formulaire[this['navParams'].data.i]['children'][this.navParams.data.j], model: params1596115004349.current.val2.vals, redList: null, disabled: false}),{scope:merge(merge({}, params1596115004349.scope), {params1596115004349: params1596115004349})})}"></ng-container>
+</ng-container>
+<ng-container class="class1596547270200" *ngSwitchCase="'radio_group'">
+</ng-container>
+<ng-container class="class1596550570944" *ngSwitchCase="'checkbox'">
+<ng-container *ngTemplateOutlet="sc1596548897194;context:{params1596548897194: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: this.navParams.data.j == undefined ? this['navParams'].data.form.formulaire[this['navParams'].data.i] : this['navParams'].data.form.formulaire[this['navParams'].data.i]['children'][this.navParams.data.j], model: params1596115004349.current.val2.vals, redList: null, disabled: false}),{scope:merge(merge({}, params1596115004349.scope), {params1596115004349: params1596115004349})})}"></ng-container>
+</ng-container>
+<ng-container class="class1596547270203" *ngSwitchDefault="">
+<div class="class1596547270206">
+<div class="class1596547270212">
+<ion-item class="class1596547270218" no-lines>
+<ion-select class="class1596547270221" placeholder="{{this.translate.instant('Element')}}" interface="popover" [(ngModel)]="params1596115004349.current.page">
+<ng-container class="class1596547270230" *ngFor="let i = index;let item of let item1596547270230 of this.navParams.data.form.pages">
+<ion-option class="class1596547270233" [value]="item.pageTechName">
+{{item.name}}
+</ion-option>
+</ng-container>
+</ion-select>
+</ion-item>
+</div>
+<div class="class1596547270245">
+{{ 'if_the_field' | translate }}
+</div>
+<div class="class1596547270254">
+<ion-badge class="class1596547270260" color="primaryB">
+{{params1596115004349.current.val1.str}}
+</ion-badge>
+</div>
+<ng-container class="class1596547270269" *ngIf="this.getGoToPageType(params1596115004349.current.val1.type) == 'simple' || this.getGoToPageType(params1596115004349.current.val1.type) == 'file' || this.getGoToPageType(params1596115004349.current.val1.type) == 'camSign' else ElseBlock_1596117684818">
+<div class="class1596547270272">
+<ion-item class="class1596547270278" no-lines>
+<ion-select class="class1596547270287" placeholder="{{this.translate.instant('operator')}}" interface="popover" [ngModel]="params1596115004349.current.operator" *ngIf="this.getGoToPageType(params1596115004349.current.val1.type) == 'simple'" (ngModelChange)="CTS1596547270362(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'SetVal2Properly', actionFunction: 'CTS1596547270362'}), {stack:{root: {scope:merge(merge({}, params1596115004349.scope), {params1596115004349: params1596115004349}), in:{}, out:$event}}}),{previousOperator: params1596115004349.current.operator}, $event)">
+<ion-option class="class1596547270296" [value]="'equals'">
+=
+</ion-option>
+<ion-option class="class1596547270302" [value]="'different'">
+&#8800;</ion-option>
+<ion-option class="class1596547270308" [value]="'minus'">
+&#60;</ion-option>
+<ion-option class="class1596547270314" [value]="'minusequals'">
+&#8804;</ion-option>
+<ion-option class="class1596547270320" [value]="'greater'">
+&#62;</ion-option>
+<ion-option class="class1596547270326" [value]="'greaterequals'">
+&#8805;</ion-option>
+<ion-option class="class1596547270332" [value]="'among_following'">
+{{ 'among_following' | translate }}
+</ion-option>
+<ion-option class="class1596547270338" [value]="'out_following'">
+{{ 'out_following' | translate }}
+</ion-option>
+<ion-option class="class1596547270344" [value]="'contains'">
+{{ 'contains' | translate }}
+</ion-option>
+<ion-option class="class1596547270350" [value]="'not_contains'">
+{{ 'not_contains' | translate }}
+</ion-option>
+</ion-select>
+</ion-item>
+</div>
+<div class="class1596547270470" *ngIf="!(this.getGoToPageType(params1596115004349.current.val1.type)  == 'file' || this.getGoToPageType(params1596115004349.current.val1.type)  == 'camSign')">
+<ion-item class="class1596547270476" no-lines *ngIf="!(params1596115004349.current.operator == 'among_following' || params1596115004349.current.operator == 'out_following')">
+<ng-container class="class1596547270482" [ngSwitch]="params1596115004349.current.operator">
+<ng-container class="class1596547270485" *ngSwitchCase="'equals'">
+{{ 'to' | translate }}
+</ng-container>
+<ng-container class="class1596547270491" *ngSwitchCase="'different'">
+{{ 'fromO' | translate }}
+</ng-container>
+<ng-container class="class1596547270497" *ngSwitchCase="'minus'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1596547270503" *ngSwitchCase="'minusequals'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1596547270509" *ngSwitchCase="'greater'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1596547270515" *ngSwitchCase="'greaterequals'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1596547270521" *ngSwitchCase="'among_following'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1596547270527" *ngSwitchCase="'out_following'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1596547270533" *ngSwitchCase="'contains'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1596547270539" *ngSwitchCase="'not_contains'">
+{{ 'the' | translate }}
+</ng-container>
+</ng-container>
+<ng-container class="class1596547270545" *ngIf="params1596115004349.current?.val2?.source == true else ElseBlock_1596036552699">
+{{ 'the_field2' | translate }}
+</ng-container>
+<ng-template class="class1596547270551" #ElseBlock_1596036552699>
+<ng-container class="class1596547270554" *ngIf="params1596115004349.current.operator != ''">
+{{ 'text' | translate }}
+</ng-container>
+</ng-template>
+</ion-item>
+</div>
+<div class="class1596547270566" *ngIf="this.getGoToPageType(params1596115004349.current.val1.type) == 'simple' && (params1596115004349.current.operator != '' && params1596115004349.current.operator != undefined)">
+<ng-container *ngTemplateOutlet="sc1595423161001;context:{params1595423161001: merge(merge({current: '', i: '', type: 'simple', inputngx: false, prefixEvent: ''},{current: params1596115004349.current, i: params1596115004349.i, type: this.getGoToPageType(params1596115004349.current.val1.type), inputngx: (params1596115004349.current.operator == 'among_following' || params1596115004349.current.operator == 'out_following') || (this.getGoToPageType(params1596115004349.current.val1.type)  == 'multiple'), prefixEvent: 'cond_goToPage_'}),{scope:merge(merge({}, params1596115004349.scope), {params1596115004349: params1596115004349})})}"></ng-container>
+</div>
+</ng-container>
+<ng-template class="class1596547270593" #ElseBlock_1596117684818>
+<div class="class1596547270599">
+<ion-badge class="class1596547270602" color="light">
+=
+</ion-badge>
+</div>
+<div class="class1596547270611">
+<ng-container *ngTemplateOutlet="sc1596119585918;context:{params1596119585918: merge(merge({current: '', i: '', type: 'simple', inputngx: false},{current: params1596115004349.current, i: this.navParams.data.i, type: 'simple', inputngx: false}),{scope:merge(merge({}, params1596115004349.scope), {ElseBlock_1596117684818: ElseBlock_1596117684818, params1596115004349: params1596115004349})})}"></ng-container>
+</div>
+</ng-template>
+<div class="class1596547270650">
+<button class="class1596547270653" clear type="button" icon-only ion-button (click)="CTS1596547270662(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1596547270662'}), {stack:{root: {scope:merge(merge({}, params1596115004349.scope), {params1596115004349: params1596115004349}), in:{}, out:$event}}}),{i: params1596115004349.i}, $event)">
+<ion-icon class="class1596547270656" color="danger" name="ios-remove-circle-outline">
+</ion-icon>
+</button>
+</div>
+</div>
+</ng-container>
+</ng-container>
+</ng-container>
+</ng-container>
+</ng-template >
+<!-- 'inputTextAndField' shared component template -->
+<ng-template #sc1595423161001 let-params1595423161001="params1595423161001" >
+<ng-container class="class1595428574295" *ngIf="params1595423161001.inputngx else ElseBlock_1595424926188">
+<div class="class1595428736397" [ngStyle]="(params1595423161001.current.val1.source && params1595423161001.current.val2.source && (params1595423161001.current.val1.str == params1595423161001.current.val2.str)) ? {'background-color':'#f53d3d50'} : params1595423161001.current.val2.source ? {'background-color':'#f4f4f4'}:{}" title="{{(params1595423161001.current.val1.source && params1595423161001.current.val2.source && (params1595423161001.current.val1.str == params1595423161001.current.val2.str)) ? 'salut' : ''}}" *ngIf="params1595423161001.current.operator != '' && params1595423161001.current.operator != undefined">
+<ng-container *ngTemplateOutlet="sc1577113184271;context:{params1577113184271: merge(merge({items: [], inputtext: '', theme: '', maxItems: 100, placeholder: '', secondaryPlaceholder: '', editableTag: true, removableTag: true, itemIdentifyBy: 'value', itemDisplayBy: 'display', autocompleteItems: [], onlyFromAutocomplete: false, showAutoCompleteDropdownIfEmpty: false, ref: ''},{items: params1595423161001.current.val2.arr, inputtext: '', theme: '', maxItems: 100, placeholder: '', secondaryPlaceholder: '', editableTag: true, removableTag: true, itemIdentifyBy: 'value', itemDisplayBy: 'display', autocompleteItems: [], onlyFromAutocomplete: false, showAutoCompleteDropdownIfEmpty: false, ref: params1595423161001.prefixEvent + params1595423161001.i}),{scope:merge(merge({}, params1595423161001.scope), {params1595423161001: params1595423161001})})}"></ng-container>
+<button class="class1595428717236" clear type="button" ion-button item-right (click)="ATS1595428717248({root: {scope:merge(merge({}, params1595423161001.scope), {params1595423161001: params1595423161001}), in:{}, out:$event}})">
+<ion-icon class="class1595428717242" name="ios-more">
+</ion-icon>
+</button>
+</div>
+</ng-container>
+<ng-template class="class1595428574346" #ElseBlock_1595424926188>
+<ion-item class="class1595423295747" no-lines lines="none" [ngStyle]="(params1595423161001.current.val1.source && params1595423161001.current.val2.source && (params1595423161001.current.val1.str == params1595423161001.current.val2.str)) ? {'background-color':'#f53d3d50'} : params1595423161001.current.val2.source ? {'background-color':'#f4f4f4'}:{}" *ngIf="params1595423161001.current.operator != '' && params1595423161001.current.operator != undefined">
+<ion-input class="class1595423295753" no-lines [ngModel]="this.getItemNameById(params1595423161001.current.val2)" (keydown)="CTS1595423295768(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1595423295768'}), {stack:{root: {scope:merge(merge({}, params1595423161001.scope), {ElseBlock_1595424926188: ElseBlock_1595424926188, params1595423161001: params1595423161001}), in:{}, out:$event}}}),{el: params1595423161001.current.val2}, $event)" (ngModelChange)="CTS1596011963335(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1596011963335'}), {stack:{root: {scope:merge(merge({}, params1595423161001.scope), {ElseBlock_1595424926188: ElseBlock_1595424926188, params1595423161001: params1595423161001}), in:{}, out:$event}}}),{}, $event)">
+</ion-input>
+<button class="class1595423295780" clear type="button" ion-button item-right (click)="ATS1595423295792({root: {scope:merge(merge({}, params1595423161001.scope), {ElseBlock_1595424926188: ElseBlock_1595424926188, params1595423161001: params1595423161001}), in:{}, out:$event}})">
+<ion-icon class="class1595423295786" name="ios-more">
+</ion-icon>
+</button>
+</ion-item>
+</ng-template>
+</ng-template >
+<!-- 'ngxTagInput' shared component template -->
+<ng-template #sc1577113184271 let-params1577113184271="params1577113184271" >
+<tag-input class="class1577113818292" #ngxTag [ngModel]="params1577113184271.items" [theme]="params1577113184271.theme" [maxItems]="params1577113184271.maxItems" [placeholder]="params1577113184271.placeholder" [secondaryPlaceholder]="params1577113184271.secondaryPlaceholder" [editable]="params1577113184271.editableTag" [removable]="params1577113184271.removableTag" [identifyBy]="params1577113184271.itemIdentifyBy" [displayBy]="params1577113184271.itemDisplayBy" [onlyFromAutocomplete]="params1577113184271.onlyFromAutocomplete" [inputText]="params1577113184271.inputtext" (onTagEdited)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputEdited', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputEdited'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onAdd)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputAdded', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputAdded'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onRemove)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputRemoved', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputRemoved'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onSelect)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputSelected', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputSelected'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onFocus)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputFocused', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputFocused'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onBlur)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputBlured', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputBlured'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onTextChange)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputChanged', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputChanged'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onPaste)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputPasted', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputPasted'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onValidationError)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputValidationError', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputValidationError'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (ngModelChange)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputValidationError', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputNgModelChange'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))">
+<tag-input-dropdown class="class1577116356016" [autocompleteItems]="params1577113184271.autocompleteItems" [showDropdownIfEmpty]="params1577113184271.showAutoCompleteDropdownIfEmpty">
+</tag-input-dropdown>
+</tag-input>
+</ng-template >
+<!-- 'inputMultiVal' shared component template -->
+<ng-template #sc1596119585918 let-params1596119585918="params1596119585918" >
+<ion-item class="class1596119862014" no-lines lines="none" [ngStyle]="{'background-color':'#f4f4f4'}">
+<ion-input class="class1596119862026" disabled="true" no-lines [ngModel]="this.getItemNameById(params1596119585918.current.val2)">
+</ion-input>
+<button class="class1596119862053" clear type="button" ion-button item-right (click)="ATS1596119862068({root: {scope:merge(merge({}, params1596119585918.scope), {params1596119585918: params1596119585918}), in:{}, out:$event}})">
+<ion-icon class="class1596119862059" name="ios-more">
+</ion-icon>
+</button>
+</ion-item>
+</ng-template >
+<!-- 'conditionVisibleIf' shared component template -->
+<ng-template #sc1595231667236 let-params1595231667236="params1595231667236" >
+<div class="class1595231678427">
+<div class="class1595231678433">
+<ion-item class="class1595231678439" no-lines>
+<ion-select class="class1595231678442" placeholder="{{this.translate.instant('Element')}}" interface="popover" [(ngModel)]="params1595231667236.current.subject" (ngModelChange)="CTS1595235564097(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1595235564097'}), {stack:{root: {scope:merge(merge({}, params1595231667236.scope), {params1595231667236: params1595231667236}), in:{}, out:$event}}}),{current: params1595231667236.current}, $event)">
+<ion-option class="class1595231678445" [value]="'field'">
+{{ 'the_field' | translate }}
+</ion-option>
+<ion-option class="class1595231678451" [value]="'form'">
+{{ 'pub_form_success0' | translate }}
+</ion-option>
+</ion-select>
+</ion-item>
+</div>
+<ng-container class="class1595231678469" *ngIf="params1595231667236.current.subject == 'field'">
+<div class="class1595231678472">
+<ion-item class="class1595231678478" no-lines lines="none" [ngStyle]="params1595231667236.current.val1.source ? {'background-color':'#f4f4f4'}:{}">
+<ion-input class="class1595231678484" placeholder="{{this.translate.instant('field')}}" value="{{this.getItemNameById(params1595231667236.current.val1)}}" disabled="true" no-lines>
+</ion-input>
+<button class="class1595231678502" clear type="button" ion-button item-right (click)="ATS1595231678514({root: {scope:merge(merge({}, params1595231667236.scope), {params1595231667236: params1595231667236}), in:{}, out:$event}})">
+<ion-icon class="class1595231678508" name="ios-more">
+</ion-icon>
+</button>
+</ion-item>
+</div>
+<div class="class1595231678523">
+<ion-item class="class1595231678529" no-lines>
+<ion-select class="class1595231678532" placeholder="{{this.translate.instant('operator')}}" interface="popover" [ngModel]="params1595231667236.current.operator" *ngIf="this.getType(params1595231667236.current.val1.type) == 'simple'" (ngModelChange)="CTS1596111344187(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'SetVal2Properly', actionFunction: 'CTS1596111344187'}), {stack:{root: {scope:merge(merge({}, params1595231667236.scope), {params1595231667236: params1595231667236}), in:{}, out:$event}}}),{previousOperator: params1595231667236.current.operator}, $event)">
+<ion-option class="class1595231678535" [value]="'equals'">
+=
+</ion-option>
+<ion-option class="class1595231678541" [value]="'different'">
+&#8800;</ion-option>
+<ion-option class="class1595231678547" [value]="'minus'">
+&#60;</ion-option>
+<ion-option class="class1595231678553" [value]="'minusequals'">
+&#8804;</ion-option>
+<ion-option class="class1595231678559" [value]="'greater'">
+&#62;</ion-option>
+<ion-option class="class1595231678565" [value]="'greaterequals'">
+&#8805;</ion-option>
+<ion-option class="class1595346850001" [value]="'among_following'">
+{{ 'among_following' | translate }}
+</ion-option>
+<ion-option class="class1595346879712" [value]="'out_following'">
+{{ 'out_following' | translate }}
+</ion-option>
+<ion-option class="class1595346882427" [value]="'contains'">
+{{ 'contains' | translate }}
+</ion-option>
+<ion-option class="class1595346883681" [value]="'not_contains'">
+{{ 'not_contains' | translate }}
+</ion-option>
+<ion-option class="class1596031084486" [value]="'is_empty'">
+{{ 'is_empty' | translate }}
+</ion-option>
+<ion-option class="class1596031084492" [value]="'is_filled'">
+{{ 'is_filled' | translate }}
+</ion-option>
+</ion-select>
+<ion-select class="class1595434537996" placeholder="{{this.translate.instant('operator')}}" interface="popover" [(ngModel)]="params1595231667236.current.operator" *ngIf="this.getType(params1595231667236.current.val1.type) == 'multiple'">
+<ion-option class="class1595434538005" [value]="'equals'">
+=
+</ion-option>
+<ion-option class="class1595434538011" [value]="'different'">
+&#8800;</ion-option>
+<ion-option class="class1595434538041" [value]="'among_following'">
+{{ 'among_following' | translate }}
+</ion-option>
+<ion-option class="class1595434538047" [value]="'out_following'">
+{{ 'out_following' | translate }}
+</ion-option>
+</ion-select>
+<ion-select class="class1595494101303" placeholder="{{this.translate.instant('operator')}}" interface="popover" [(ngModel)]="params1595231667236.current.operator" *ngIf="this.getType(params1595231667236.current.val1.type) == 'file'">
+<ion-option class="class1595494101312" [value]="'does_not_contain_file'">
+{{ 'does_not_contain_file' | translate }}
+</ion-option>
+<ion-option class="class1595494101330" [value]="'contains_a_file'">
+{{ 'contains_a_file' | translate }}
+</ion-option>
+<ion-option class="class1595494101324" [value]="'contains_multiple_files'">
+{{ 'contains_multiple_files' | translate }}
+</ion-option>
+</ion-select>
+<ion-select class="class1595494103511" placeholder="{{this.translate.instant('operator')}}" interface="popover" [(ngModel)]="params1595231667236.current.operator" *ngIf="this.getType(params1595231667236.current.val1.type) == 'camSign'">
+<ion-option class="class1595494103520" [value]="'is_empty'">
+{{ 'is_empty' | translate }}
+</ion-option>
+<ion-option class="class1595494103532" [value]="'is_filled'">
+{{ 'is_filled' | translate }}
+</ion-option>
+</ion-select>
+</ion-item>
+</div>
+<div class="class1595231678583" *ngIf="!(this.getType(params1595231667236.current.val1.type) == 'file' || this.getType(params1595231667236.current.val1.type) == 'camSign' || params1595231667236.current.operator == 'is_filled' || params1595231667236.current.operator == 'is_empty' )">
+<ion-item class="class1595231678589" no-lines *ngIf="!(params1595231667236.current.operator == 'among_following' || params1595231667236.current.operator == 'out_following')">
+<ng-container class="class1595231678595" [ngSwitch]="params1595231667236.current.operator">
+<ng-container class="class1595231678598" *ngSwitchCase="'equals'">
+{{ 'to' | translate }}
+</ng-container>
+<ng-container class="class1595231678604" *ngSwitchCase="'different'">
+{{ 'fromO' | translate }}
+</ng-container>
+<ng-container class="class1595231678610" *ngSwitchCase="'minus'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1595231678616" *ngSwitchCase="'minusequals'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1595231678622" *ngSwitchCase="'greater'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1595231678628" *ngSwitchCase="'greaterequals'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1595433329572" *ngSwitchCase="'among_following'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1595433329581" *ngSwitchCase="'out_following'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1595433329590" *ngSwitchCase="'contains'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1595433329599" *ngSwitchCase="'not_contains'">
+{{ 'the' | translate }}
+</ng-container>
+</ng-container>
+<ng-container class="class1595231678634" *ngIf="params1595231667236.current.val2.source == true else ElseBlock_1594993065876">
+{{ 'the_field2' | translate }}
+</ng-container>
+<ng-template class="class1595231678640" #ElseBlock_1594993065876>
+<ng-container class="class1595231678643" *ngIf="params1595231667236.current.operator != ''">
+{{ 'text' | translate }}
+</ng-container>
+</ng-template>
+</ion-item>
+</div>
+<div class="class1595231678649" *ngIf="!(this.getType(params1595231667236.current.val1.type) == 'file' || this.getType(params1595231667236.current.val1.type) == 'camSign' || params1595231667236.current.operator == 'is_filled' || params1595231667236.current.operator == 'is_empty' )">
+<ng-container *ngTemplateOutlet="sc1595423161001;context:{params1595423161001: merge(merge({current: '', i: '', type: 'simple', inputngx: false, prefixEvent: ''},{current: params1595231667236.current, i: params1595231667236.i, type: this.getType(params1595231667236.current.val1.type), inputngx: (params1595231667236.current.operator == 'among_following' || params1595231667236.current.operator == 'out_following') || (this.getType(params1595231667236.current.val1.type) == 'multiple'), prefixEvent: 'cond_visible_'}),{scope:merge(merge({}, params1595231667236.scope), {params1595231667236: params1595231667236})})}"></ng-container>
+</div>
+<div class="class1595244600680" *ngIf="params1595231667236.current.val1.source && params1595231667236.current.val2.source && (params1595231667236.current.val1.str == params1595231667236.current.val2.str)" title="{{params1595231667236.current.operator == 'equals' ? this.translate.instant('assert_always_true') : this.translate.instant('assert_never_true')}}">
+<ion-icon class="class1595244619963" color="danger" name="ios-warning-outline">
+</ion-icon>
+</div>
+</ng-container>
+<ng-container class="class1595231678706" *ngIf="params1595231667236.current.subject == 'form'">
+<div class="class1595231678709">
+<ion-item class="class1595231678712" no-lines>
+<ion-select class="class1595231678715" placeholder="{{this.translate.instant('operator')}}" interface="popover" [(ngModel)]="params1595231667236.current.operator">
+<ion-option class="class1595231678718" [value]="'equals'">
+{{ 'is' | translate }}
+</ion-option>
+<ion-option class="class1595231678724" [value]="'different'">
+{{ 'isnt' | translate }}
+</ion-option>
+</ion-select>
+</ion-item>
+</div>
+<div class="class1595231678739">
+<ion-item class="class1595231678742" no-lines>
+<ion-select class="class1595231678745" placeholder="{{this.translate.instant('attribute')}}" interface="popover" [(ngModel)]="params1595231667236.current.attribute">
+<ion-option class="class1595231678748" [value]="'anonymous'">
+{{ 'anonymous' | translate }}
+</ion-option>
+</ion-select>
+</ion-item>
+</div>
+</ng-container>
+<div class="class1595236872905">
+<button class="class1595236880328" clear type="button" icon-only ion-button (click)="CTS1595237218870(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1595237218870'}), {stack:{root: {scope:merge(merge({}, params1595231667236.scope), {params1595231667236: params1595231667236}), in:{}, out:$event}}}),{i: params1595231667236.i}, $event)">
+<ion-icon class="class1595237110655" color="danger" name="ios-remove-circle-outline">
+</ion-icon>
+</button>
+</div>
+</div>
+</ng-template >
+<!-- 'conditiongoToPageIf' shared component template -->
+<ng-template #sc1595924991979 let-params1595924991979="params1595924991979" >
+<ng-container class="class1596446140402" [ngSwitch]="params1595924991979.current.val1.type">
+<ng-container class="class1596446198579" *ngSwitchCase="'checkbox_group'">
+<ng-container *ngTemplateOutlet="sc1596187732432;context:{params1596187732432: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: this.navParams.data.j == undefined ? this['navParams'].data.form.formulaire[this['navParams'].data.i] : this['navParams'].data.form.formulaire[this['navParams'].data.i]['children'][this.navParams.data.j], model: params1595924991979.current.val2.vals, redList: null, disabled: false}),{scope:merge(merge({}, params1595924991979.scope), {params1595924991979: params1595924991979})})}"></ng-container>
+</ng-container>
+<ng-container class="class1596446772586" *ngSwitchCase="'radio_group'">
+<ng-container *ngTemplateOutlet="sc1596187732432;context:{params1596187732432: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: this.navParams.data.j == undefined ? this['navParams'].data.form.formulaire[this['navParams'].data.i] : this['navParams'].data.form.formulaire[this['navParams'].data.i]['children'][this.navParams.data.j], model: params1595924991979.current.val2.vals, redList: null, disabled: false}),{scope:merge(merge({}, params1595924991979.scope), {params1595924991979: params1595924991979})})}"></ng-container>
+</ng-container>
+<ng-container class="class1596446786441" *ngSwitchCase="'checkbox'">
+<ng-container *ngTemplateOutlet="sc1596548897194;context:{params1596548897194: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: this.navParams.data.j == undefined ? this['navParams'].data.form.formulaire[this['navParams'].data.i] : this['navParams'].data.form.formulaire[this['navParams'].data.i]['children'][this.navParams.data.j], model: params1595924991979.current.val2.vals, redList: null, disabled: false}),{scope:merge(merge({}, params1595924991979.scope), {params1595924991979: params1595924991979})})}"></ng-container>
+</ng-container>
+<ng-container class="class1596446788653" *ngSwitchCase="'radio'">
+<ng-container *ngTemplateOutlet="sc1596548897194;context:{params1596548897194: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: this.navParams.data.j == undefined ? this['navParams'].data.form.formulaire[this['navParams'].data.i] : this['navParams'].data.form.formulaire[this['navParams'].data.i]['children'][this.navParams.data.j], model: params1595924991979.current.val2.vals, redList: null, disabled: false}),{scope:merge(merge({}, params1595924991979.scope), {params1595924991979: params1595924991979})})}"></ng-container>
+</ng-container>
+<ng-container class="class1596633628092" *ngSwitchCase="'select'">
+<ng-container *ngTemplateOutlet="sc1596548897194;context:{params1596548897194: merge(merge({item: item, model: {}, redList: null, disabled: false},{item: this.navParams.data.j == undefined ? this['navParams'].data.form.formulaire[this['navParams'].data.i] : this['navParams'].data.form.formulaire[this['navParams'].data.i]['children'][this.navParams.data.j], model: params1595924991979.current.val2.vals, redList: null, disabled: false}),{scope:merge(merge({}, params1595924991979.scope), {params1595924991979: params1595924991979})})}"></ng-container>
+</ng-container>
+<ng-container class="class1596446301002" *ngSwitchDefault="">
+<div class="class1596446314233">
+<div class="class1596446314239">
+<ion-item class="class1596446314245" no-lines>
+<ion-select class="class1596446314248" placeholder="{{this.translate.instant('Element')}}" interface="popover" [(ngModel)]="params1595924991979.current.page">
+<ng-container class="class1596446314257" *ngFor="let i = index;let item of let item1596446314257 of this.navParams.data.form.pages">
+<ion-option class="class1596446314260" [value]="item.pageTechName">
+{{item.name}}
+</ion-option>
+</ng-container>
+</ion-select>
+</ion-item>
+</div>
+<div class="class1596446314272">
+{{ 'if_the_field' | translate }}
+</div>
+<div class="class1596446314281">
+<ion-badge class="class1596446314287" color="primaryB">
+{{this.getItemNameByIdStr(params1595924991979.current.val1.str)}}
+</ion-badge>
+</div>
+<ng-container class="class1596446314296" *ngIf="this.getGoToPageType(params1595924991979.current.val1.type) == 'simple' || params1595924991979.current.val1.type == 'file' || this.getGoToPageType(params1595924991979.current.val1.type) == 'camSign' else ElseBlock_1596117684818">
+<div class="class1596446314299">
+<ion-item class="class1596446314305" no-lines>
+<ion-select class="class1596446314314" placeholder="{{this.translate.instant('operator')}}" interface="popover" [ngModel]="params1595924991979.current.operator" *ngIf="this.getGoToPageType(params1595924991979.current.val1.type) == 'simple'" (ngModelChange)="CTS1596446314389(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'SetVal2Properly', actionFunction: 'CTS1596446314389'}), {stack:{root: {scope:merge(merge({}, params1595924991979.scope), {params1595924991979: params1595924991979}), in:{}, out:$event}}}),{previousOperator: params1595924991979.current.operator}, $event)">
+<ion-option class="class1596446314323" [value]="'equals'">
+=
+</ion-option>
+<ion-option class="class1596446314329" [value]="'different'">
+&#8800;</ion-option>
+<ion-option class="class1596446314335" [value]="'minus'">
+&#60;</ion-option>
+<ion-option class="class1596446314341" [value]="'minusequals'">
+&#8804;</ion-option>
+<ion-option class="class1596446314347" [value]="'greater'">
+&#62;</ion-option>
+<ion-option class="class1596446314353" [value]="'greaterequals'">
+&#8805;</ion-option>
+<ion-option class="class1596446314359" [value]="'among_following'">
+{{ 'among_following' | translate }}
+</ion-option>
+<ion-option class="class1596446314365" [value]="'out_following'">
+{{ 'out_following' | translate }}
+</ion-option>
+<ion-option class="class1596446314371" [value]="'contains'">
+{{ 'contains' | translate }}
+</ion-option>
+<ion-option class="class1596446314377" [value]="'not_contains'">
+{{ 'not_contains' | translate }}
+</ion-option>
+</ion-select>
+<ion-select class="class1596446314443" placeholder="{{this.translate.instant('operator')}}" interface="popover" [(ngModel)]="params1595924991979.current.operator" *ngIf="params1595924991979.current.val1.type == 'file'">
+<ion-option class="class1596446314452" [value]="'does_not_contain_file'">
+{{ 'does_not_contain_file' | translate }}
+</ion-option>
+<ion-option class="class1596446314458" [value]="'contains_a_file'">
+{{ 'contains_a_file' | translate }}
+</ion-option>
+<ion-option class="class1596446314464" [value]="'contains_multiple_files'">
+{{ 'contains_multiple_files' | translate }}
+</ion-option>
+</ion-select>
+<ion-select class="class1596446314473" placeholder="{{this.translate.instant('operator')}}" interface="popover" [(ngModel)]="params1595924991979.current.operator" *ngIf="this.getType(params1595924991979.current.val1.type) == 'camSign'">
+<ion-option class="class1596446314482" [value]="'is_empty'">
+{{ 'is_empty' | translate }}
+</ion-option>
+<ion-option class="class1596446314488" [value]="'is_filled'">
+{{ 'is_filled' | translate }}
+</ion-option>
+</ion-select>
+</ion-item>
+</div>
+<div class="class1596446314497" *ngIf="!(this.getGoToPageType(params1595924991979.current.val1.type)  == 'file' || this.getGoToPageType(params1595924991979.current.val1.type)  == 'camSign')">
+<ion-item class="class1596446314503" no-lines *ngIf="!(params1595924991979.current.operator == 'among_following' || params1595924991979.current.operator == 'out_following' || params1595924991979.current.operator == '' || params1595924991979.current.operator == undefined) ">
+<ng-container class="class1596446314509" [ngSwitch]="params1595924991979.current.operator">
+<ng-container class="class1596446314512" *ngSwitchCase="'equals'">
+{{ 'to' | translate }}
+</ng-container>
+<ng-container class="class1596446314518" *ngSwitchCase="'different'">
+{{ 'fromO' | translate }}
+</ng-container>
+<ng-container class="class1596446314524" *ngSwitchCase="'minus'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1596446314530" *ngSwitchCase="'minusequals'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1596446314536" *ngSwitchCase="'greater'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1596446314542" *ngSwitchCase="'greaterequals'">
+{{ 'thanO' | translate }}
+</ng-container>
+<ng-container class="class1596446314548" *ngSwitchCase="'among_following'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1596446314554" *ngSwitchCase="'out_following'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1596446314560" *ngSwitchCase="'contains'">
+{{ 'the' | translate }}
+</ng-container>
+<ng-container class="class1596446314566" *ngSwitchCase="'not_contains'">
+{{ 'the' | translate }}
+</ng-container>
+</ng-container>
+<ng-container class="class1596446314572" *ngIf="params1595924991979.current?.val2?.source == true else ElseBlock_1596036552699">
+{{ 'the_field2' | translate }}
+</ng-container>
+<ng-template class="class1596446314578" #ElseBlock_1596036552699>
+<ng-container class="class1596446314581" *ngIf="params1595924991979.current.operator != ''">
+{{ 'text' | translate }}
+</ng-container>
+</ng-template>
+</ion-item>
+</div>
+<div class="class1596446314593" *ngIf="this.getGoToPageType(params1595924991979.current.val1.type) == 'simple' && (params1595924991979.current.operator != '' && params1595924991979.current.operator != undefined)">
+<ng-container *ngTemplateOutlet="sc1595423161001;context:{params1595423161001: merge(merge({current: '', i: '', type: 'simple', inputngx: false, prefixEvent: ''},{current: params1595924991979.current, i: params1595924991979.i, type: this.getGoToPageType(params1595924991979.current.val1.type), inputngx: (params1595924991979.current.operator == 'among_following' || params1595924991979.current.operator == 'out_following') || (this.getGoToPageType(params1595924991979.current.val1.type)  == 'multiple'), prefixEvent: 'cond_goToPage_'}),{scope:merge(merge({}, params1595924991979.scope), {params1595924991979: params1595924991979})})}"></ng-container>
+</div>
+</ng-container>
+<ng-template class="class1596446314620" #ElseBlock_1596117684818>
+<div class="class1596446314626">
+<ion-badge class="class1596446314629" color="light">
+=
+</ion-badge>
+</div>
+<div class="class1596446314638">
+<ng-container *ngTemplateOutlet="sc1596119585918;context:{params1596119585918: merge(merge({current: '', i: '', type: 'simple', inputngx: false},{current: params1595924991979.current, i: this.navParams.data.i, type: 'simple', inputngx: false}),{scope:merge(merge({}, params1595924991979.scope), {ElseBlock_1596117684818: ElseBlock_1596117684818, params1595924991979: params1595924991979})})}"></ng-container>
+</div>
+</ng-template>
+<div class="class1596446314677">
+<button class="class1596446314680" clear type="button" icon-only ion-button (click)="CTS1596446314689(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1596446314689'}), {stack:{root: {scope:merge(merge({}, params1595924991979.scope), {params1595924991979: params1595924991979}), in:{}, out:$event}}}),{i: params1595924991979.i}, $event)">
+<ion-icon class="class1596446314683" color="danger" name="ios-remove-circle-outline">
+</ion-icon>
+</button>
+</div>
+</div>
+</ng-container>
+</ng-container>
+</ng-template >
+<!-- ============================== -->
+
+<ion-content class="class1594972595129" padding>
+<ion-grid class="class1594972846813">
+<ion-row class="class1594972851527">
+<ion-col class="class1594972854431" *ngIf="this.local.visible != undefined">
+<div class="class1594985778179">
+<div class="class1594985778182" text-uppercase>
+<ion-icon class="class1595238656491" color="btLight" name="{{this.local.showVisible ? 'arrow-dropdown' : 'arrow-dropright'}}">
+</ion-icon>
+{{'visible_if' | translate}}
+</div>
+</div>
+<ng-container class="class1595238961426" *ngIf="this.local.showVisible == true else ElseBlock_1595246658893">
+<ng-container class="class1595232225766" *ngFor="let l = index;let item of let item1595232225766 of this.local.visible">
+<div class="class1595492824098">
+<ng-container *ngTemplateOutlet="sc1595231667236;context:{params1595231667236: merge(merge({current: '', i: ''},{current: item, i: l}),{scope:merge({}, {item1595232225766: item1595232225766, item: item, l:l})})}"></ng-container>
+</div>
+</ng-container>
+<div class="class1595233525635" (click)="CTS1595233702207(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1595233702207'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)">
+<button class="class1595233552287" clear type="button" icon-only ion-button>
+<ion-icon class="class1595233572655" color="btLight" name="add">
+</ion-icon>
+</button>
+</div>
+<ng-container class="class1595238172343" *ngIf="this.local.visible.length > 1">
+<ion-list class="class1595237939897" radio-group no-lines [(ngModel)]="this.local.condVisible">
+<ion-item class="class1595237954657">
+<ion-radio class="class1595237943433" [value]="'and'" item-left>
+</ion-radio>
+<ion-label class="class1595237969737">
+{{ 'all_cond_checked' | translate }}
+</ion-label>
+</ion-item>
+<ion-item class="class1595237956633">
+<ion-radio class="class1595237944960" [value]="'or'" item-left>
+</ion-radio>
+<ion-label class="class1595237972985">
+{{ 'at_least_one_checked' | translate }}
+</ion-label>
+</ion-item>
+</ion-list>
+</ng-container>
+<div class="class1595249578291">
+<ion-fab class="class1595249578294" bottom right (click)="CTS1595249678327(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1595249678327'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)">
+<button class="class1595249578297" mini color="btLight" ion-fab>
+<ion-icon class="class1595249578300" color="white" name="checkmark">
+</ion-icon>
+</button>
+</ion-fab>
+</div>
+</ng-container>
+<ng-template class="class1595246684140" #ElseBlock_1595246658893>
+<ion-grid class="class1595491329056">
+<ion-row class="class1595491333839">
+<ion-col class="class1595491338008" col-10>
+<div class="class1595491368420">
+<ng-container class="class1595491368423" *ngFor="let m = index;let item of let item1595491368423 of this.local.visible">
+<ng-container class="class1596802815286" *ngIf="this.isTotalyFilled(item)">
+<ng-container *ngTemplateOutlet="sc1595246801579;context:{params1595246801579: merge(merge({current: '', i: ''},{current: item, i: m}),{scope:merge({}, {item1595491368423: item1595491368423, item: item, m:m, ElseBlock_1595246658893: ElseBlock_1595246658893})})}"></ng-container>
+</ng-container>
+</ng-container>
+</div>
+</ion-col>
+<ion-col class="class1595491340312" col-2>
+<div class="class1595491613679">
+<button class="class1595491381024" clear type="button" icon-only ion-button (click)="CTS1595491495664(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1595491495664'}), {stack:{root: {scope:merge({}, {ElseBlock_1595246658893: ElseBlock_1595246658893}), in:{}, out:$event}}}),{}, $event)" item-right [title]="this.translate.instant('edit')">
+<ion-icon class="class1595491398128" color="btLight" name="ios-create-outline">
+</ion-icon>
+</button>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-template>
+<ion-item-divider class="class1595238574597">
+</ion-item-divider>
+</ion-col>
+</ion-row>
+<ion-row class="class1595862191120">
+<ion-col class="class1595862191123" *ngIf="this.local.goToPage != undefined && this.getGoToPageType(this.local.goToPageSelf.type) != '' && this.getGoToPageType(this.local.goToPageSelf.type) != 'file'">
+<div class="class1595862191126">
+<div class="class1595862191129" text-uppercase>
+<ion-icon class="class1595862191132" color="btLight" name="{{this.local.showGoToPage ? 'arrow-dropdown' : 'arrow-dropright'}}">
+</ion-icon>
+{{'AllowPageIf' | translate}}
+</div>
+</div>
+<ng-container class="class1595862191144" *ngIf="(this.local.showGoToPage || this.getGoToPageType(this.local.goToPageSelf.type) == 'multiple') else ElseBlock_1595862191603">
+<ng-container class="class1595862191480" *ngFor="let k = index;let item of let item1595862191480 of this.local.goToPage">
+<div class="class1595862191483">
+<ng-container *ngTemplateOutlet="sc1595924991979;context:{params1595924991979: merge(merge({current: '', i: '', length: ''},{current: item, i: k, length: this.local.goToPage.length}),{scope:merge({}, {item1595862191480: item1595862191480, item: item, k:k})})}"></ng-container>
+</div>
+</ng-container>
+<div class="class1595862191522" (click)="CTS1595862191534(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1595862191534'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)" *ngIf="this.getGoToPageType(this.local.goToPageSelf.type) != 'multiple'">
+<button class="class1595862191525" clear type="button" icon-only ion-button>
+<ion-icon class="class1595862191528" color="btLight" name="add">
+</ion-icon>
+</button>
+</div>
+<div class="class1595862191582" *ngIf="this.getGoToPageType(this.local.goToPageSelf.type) != 'multiple'">
+<ion-fab class="class1595862191585" bottom right (click)="CTS1595862191597(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1595862191597'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)">
+<button class="class1595862191588" mini color="btLight" ion-fab>
+<ion-icon class="class1595862191591" color="white" name="checkmark">
+</ion-icon>
+</button>
+</ion-fab>
+</div>
+</ng-container>
+<ng-template class="class1595862191603" #ElseBlock_1595862191603>
+<ion-grid class="class1595862191606">
+<ion-row class="class1595862191609" *ngIf="this.getGoToPageType(this.local.goToPageSelf.type) != 'multiple'">
+<ion-col class="class1595862191612" col-10>
+<div class="class1595862191615">
+<ng-container class="class1595862191618" *ngFor="let n = index;let item of let item1595862191618 of this.local.goToPage">
+<div class="class1596115647820">
+</div>
+<ng-container *ngTemplateOutlet="sc1596115004349;context:{params1596115004349: merge(merge({current: '', i: ''},{current: item, i: n}),{scope:merge({}, {item1595862191618: item1595862191618, item: item, n:n, ElseBlock_1595862191603: ElseBlock_1595862191603})})}"></ng-container>
+</ng-container>
+</div>
+</ion-col>
+<ion-col class="class1595862191630" col-2>
+<div class="class1595862191633">
+<button class="class1595862191636" clear type="button" icon-only ion-button (click)="CTS1595862191645(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1595862191645'}), {stack:{root: {scope:merge({}, {ElseBlock_1595862191603: ElseBlock_1595862191603}), in:{}, out:$event}}}),{}, $event)" item-right [title]="this.translate.instant('edit')">
+<ion-icon class="class1595862191639" color="btLight" name="ios-create-outline">
+</ion-icon>
+</button>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-template>
+<ion-item-divider class="class1595862191657">
+</ion-item-divider>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
+
+<ion-footer class="class1594972577194">
+<ion-buttons class="class1594972577200" right>
+<button class="class1594972577203" type="button" ion-button item-left (click)="resolveError(actionBeans.CloseModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CloseModal', actionFunction: 'CloseModalAction', data: null}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+{{'Cancel' | translate}}
+</button>
+<button class="class1594972577218" type="button" ion-button item-right (click)="ATS1596110338327({root: {scope:{}, in:{}, out:$event}})">
+{{'Save' | translate}}
+</button>
+</ion-buttons>
+</ion-footer>
+

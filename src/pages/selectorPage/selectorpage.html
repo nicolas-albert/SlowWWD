@@ -1,0 +1,664 @@
+<!-- ====== SHARED TEMPLATES ====== -->
+<!-- 'sharedHeaderButtonMenu' shared component template -->
+<ng-template #sc1571075804071 let-params1571075804071="params1571075804071" >
+<button class="class1571156177325" clear type="false" menuToggle color="dark" icon-only ion-button item-start>
+<ion-icon class="class1571156177328" name="menu">
+</ion-icon>
+</button>
+</ng-template >
+<!-- 'listSelector' shared component template -->
+<ng-template #sc1586351141705 let-params1586351141705="params1586351141705" >
+<ion-col class="class1586351172065" col-md-6 col-lg-6 col-12 col-sm-12 col-xl-6 align-self-start align-self-baseline>
+<ion-grid class="class1586351172071" no-padding="true" style="height:100%">
+<ion-row class="class1586351172074" align-items-center style="height:100%" justify-content-center>
+<ion-col class="class1586351172077" col-md-1 col-lg-1 align-self-center col-1 col-sm-1 col-xl-1 (mouseenter)="CTS1586351172083(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'showoptions', actionFunction: 'CTS1586351172083'}), {stack:{root: {scope:merge(merge({}, params1586351141705.scope), {params1586351141705: params1586351141705}), in:{}, out:$event}}}),{visible: params1586351141705.i}, $event)" (mouseleave)="CTS1586351172092(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'removeoptions', actionFunction: 'CTS1586351172092'}), {stack:{root: {scope:merge(merge({}, params1586351141705.scope), {params1586351141705: params1586351141705}), in:{}, out:$event}}}),{visible: params1586351141705.i}, $event)">
+<div class="class1586351172098" [ngStyle]="{'visibility':this.global['visibleoptions'][params1586351141705.i] ? 'visible' : 'hidden'}">
+<ion-checkbox class="class1586351172119" color="greenSelector" mode="ios" [(ngModel)]="this?.global?.selectedItem[params1586351141705.i]">
+</ion-checkbox>
+</div>
+</ion-col>
+<ion-col class="class1586351172134" col-md-2 col-lg-2 col-2 col-sm-2 col-xl-2 [ngStyle]="{'background-color': this.global['visibleoptions'][params1586351141705.i] ? '#f9f9f9': '#ffffff', 'border-top-left-radius': this.global['visibleoptions'][params1586351141705.i] ? '4px': '0px', 'border-bottom-left-radius': this.global['visibleoptions'][params1586351141705.i] ? '4px': '0px', 'border-left': this.global.selectedItem[params1586351141705.i] ? 'solid 1px #25e056': '', 'border-top': this.global.selectedItem[params1586351141705.i] ? 'solid 1px #25e056': '', 'border-bottom': this.global.selectedItem[params1586351141705.i] ? 'solid 1px #25e056': '', 'border-bottom-right-radius': '0px', 'border-top-right-radius':'0px'}" (mouseenter)="CTS1586351172152(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'showoptions', actionFunction: 'CTS1586351172152'}), {stack:{root: {scope:merge(merge({}, params1586351141705.scope), {params1586351141705: params1586351141705}), in:{}, out:$event}}}),{visible: params1586351141705.i}, $event)" (mouseleave)="CTS1586351172161(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'removeoptions', actionFunction: 'CTS1586351172161'}), {stack:{root: {scope:merge(merge({}, params1586351141705.scope), {params1586351141705: params1586351141705}), in:{}, out:$event}}}),{visible: params1586351141705.i}, $event)" (click)="ATS1586351172179({root: {scope:merge(merge({}, params1586351141705.scope), {params1586351141705: params1586351141705}), in:{}, out:$event}})">
+<ng-container class="class1604675076605" *ngIf="this.list[params1586351141705.i]?.value?.thumbnail else ElseBlock_1604595693051WallPaper">
+<img class="class1604675076608" width="" [src]="getAttachmentUrl(this.list[params1586351141705.i]?.id, 'thumbnail', null, 'C8Oforms.c8oforms_fs')" height=""/>
+</ng-container>
+<ng-template class="class1604675076614" #ElseBlock_1604595693051WallPaper>
+<ng-container class="class1604675076617" *ngIf="this.list[params1586351141705.i]?.value?.wallpaper else ElseBlock1604595755153Random">
+<img class="class1604675076620" width="" [src]="getAttachmentUrl(this.list[params1586351141705.i]?.id, 'wallpaper', null, 'C8Oforms.c8oforms_fs')" height=""/>
+</ng-container>
+</ng-template>
+<ng-template class="class1604675076626" #ElseBlock1604595755153Random>
+<ng-container class="class1604675076629" *ngIf="this.list[params1586351141705.i]?.value?.random != undefined else ElseBlock_1604598151040Color">
+<img class="class1604675076632" width="" [src]="this.list[params1586351141705.i]?.value?.random" height=""/>
+</ng-container>
+</ng-template>
+<ng-template class="class1604675076638" #ElseBlock_1604598151040Color>
+<div class="class1604675076641" [ngStyle]="{'background-color':this.list[params1586351141705.i]?.value?.color}">
+</div>
+</ng-template>
+<ng-container class="class1604675076650" *ngIf="(this.list[params1586351141705.i]?.value?.pwa_enabled == true || this.list[params1586351141705.i]?.value?.status != undefined )&& this.global?.qr !== true">
+<img class="class1604675076653" width="30px" [src]="this.list[params1586351141705.i]?.value?.status != undefined ? (this.list[params1586351141705.i]?.value?.status == 'doing' ? 'assets/images/svg/icon/pwa_wait.svg' :'assets/images/svg/icon/pwa.svg') : 'assets/images/svg/icon/pwa.svg'" height="" (click)="CTS1604675076662(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1604675076662'}), {stack:{root: {scope:merge(merge({}, params1586351141705.scope), {params1586351141705: params1586351141705}), in:{}, out:$event}}}),{}, $event)"/>
+</ng-container>
+</ion-col>
+<ion-col class="class1586351172203" col-md-8 col-lg-8 align-self-center col-8 col-sm-8 col-xl-8 [ngStyle]="{'background-color': this.global['visibleoptions'][params1586351141705.i] ? '#f9f9f9': '#ffffff',
+'border-top': this.global.selectedItem[params1586351141705.i] ? 'solid 1px #25e056': '', 'border-bottom': this.global.selectedItem[params1586351141705.i] ? 'solid 1px #25e056': '', 'border-bottom-left-radius': '0px', 'border-top-left-radius':'0px', 'border-bottom-right-radius': '0px', 'border-top-right-radius':'0px'}" (mouseenter)="CTS1586351172224(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'showoptions', actionFunction: 'CTS1586351172224'}), {stack:{root: {scope:merge(merge({}, params1586351141705.scope), {params1586351141705: params1586351141705}), in:{}, out:$event}}}),{visible: params1586351141705.i}, $event)" (mouseleave)="CTS1586351172233(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'removeoptions', actionFunction: 'CTS1586351172233'}), {stack:{root: {scope:merge(merge({}, params1586351141705.scope), {params1586351141705: params1586351141705}), in:{}, out:$event}}}),{visible: params1586351141705.i}, $event)" (click)="ATS1586351172251({root: {scope:merge(merge({}, params1586351141705.scope), {params1586351141705: params1586351141705}), in:{}, out:$event}})">
+<div class="class1586351172209" [innerHTML]="this.list[params1586351141705.i]?.value?.name">
+</div>
+</ion-col>
+<ion-col class="class1586351172263" col-md-1 col-lg-1 col-1 col-sm-1 col-xl-1 [ngStyle]="{'background-color': this.global['visibleoptions'][params1586351141705.i] ? '#f9f9f9': '#ffffff', 'border-bottom-right-radius': this.global['visibleoptions'][params1586351141705.i] ? '4px': '0px', 'border-top-right-radius': this.global['visibleoptions'][params1586351141705.i] ? '4px': '0px', 'border-right': this.global.selectedItem[params1586351141705.i] ? 'solid 1px #25e056': '', 'border-top': this.global.selectedItem[params1586351141705.i] ? 'solid 1px #25e056': '', 'border-bottom': this.global.selectedItem[params1586351141705.i] ? 'solid 1px #25e056': '', 'border-bottom-left-radius': '0px', 'border-top-left-radius':'0px'}" (mouseenter)="CTS1586351172287(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'showoptions', actionFunction: 'CTS1586351172287'}), {stack:{root: {scope:merge(merge({}, params1586351141705.scope), {params1586351141705: params1586351141705}), in:{}, out:$event}}}),{visible: params1586351141705.i}, $event)" (mouseleave)="CTS1586351172296(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'removeoptions', actionFunction: 'CTS1586351172296'}), {stack:{root: {scope:merge(merge({}, params1586351141705.scope), {params1586351141705: params1586351141705}), in:{}, out:$event}}}),{visible: params1586351141705.i}, $event)">
+<ion-icon class="class1586351172269" color="#9b9b9b" name="ios-more" (click)="ATS1604677407612({root: {scope:merge(merge({}, params1586351141705.scope), {params1586351141705: params1586351141705}), in:{}, out:$event}})">
+</ion-icon>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-col>
+</ng-template >
+<!-- 'sharedHeaderWeb' shared component template -->
+<ng-template #sc1571069820644 let-params1571069820644="params1571069820644" >
+<ng-container class="class1571069818074" *ngIf="!params1571069820644.mobile">
+<ion-grid class="class1571075719551">
+<ion-row class="class1571075719554">
+<ion-col class="class1571075719560">
+<ng-container *ngTemplateOutlet="sc1571075804071;context:{params1571075804071: merge(merge({},{}),{scope:merge(merge({}, params1571069820644.scope), {params1571069820644: params1571069820644})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571075899569;context:{params1571075899569: merge(merge({},{}),{scope:merge(merge({}, params1571069820644.scope), {params1571069820644: params1571069820644})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571075984554;context:{params1571075984554: merge(merge({},{}),{scope:merge(merge({}, params1571069820644.scope), {params1571069820644: params1571069820644})})}"></ng-container>
+<ng-container class="class1601542183777" *ngIf="params1571069820644.showbuttonsright == true">
+<button class="class1603903405770" clear icon-start type="button" color="dark" icon-only ion-button (click)="ATS1603918107963({root: {scope:merge(merge({}, params1571069820644.scope), {params1571069820644: params1571069820644}), in:{}, out:$event}})">
+<ion-icon class="class1603903491790" name="ios-notifications-outline">
+</ion-icon>
+<ng-container class="class1603925095760" *ngIf="listen(['fs://c8oforms_fs.view#viewNotifsNew'])?.rows?.length > 0">
+<ion-badge class="class1603903985013">
+{{listen(['fs://c8oforms_fs.view#viewNotifsNew'])?.rows?.length}}
+</ion-badge>
+</ng-container>
+</button>
+</ng-container>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-container>
+</ng-template >
+<!-- 'ngxTagInput' shared component template -->
+<ng-template #sc1577113184271 let-params1577113184271="params1577113184271" >
+<tag-input class="class1577113818292" #ngxTag [ngModel]="params1577113184271.items" [theme]="params1577113184271.theme" [maxItems]="params1577113184271.maxItems" [placeholder]="params1577113184271.placeholder" [secondaryPlaceholder]="params1577113184271.secondaryPlaceholder" [editable]="params1577113184271.editableTag" [removable]="params1577113184271.removableTag" [identifyBy]="params1577113184271.itemIdentifyBy" [displayBy]="params1577113184271.itemDisplayBy" [onlyFromAutocomplete]="params1577113184271.onlyFromAutocomplete" [inputText]="params1577113184271.inputtext" (onTagEdited)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputEdited', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputEdited'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onAdd)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputAdded', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputAdded'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onRemove)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputRemoved', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputRemoved'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onSelect)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputSelected', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputSelected'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onFocus)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputFocused', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputFocused'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onBlur)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputBlured', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputBlured'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onTextChange)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputChanged', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputChanged'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onPaste)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputPasted', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputPasted'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (onValidationError)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputValidationError', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputValidationError'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))" (ngModelChange)="resolveError(actionBeans.PublishEventAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'publishNgxTagInputValidationError', actionFunction: 'PublishEventAction', data: {event: $event, ref:  params1577113184271.ref}, topic: 'ngxTagInputNgModelChange'}), {stack:{root: {scope:merge(merge({}, params1577113184271.scope), {ngxTag: ngxTag, params1577113184271: params1577113184271}), in:{}, out:$event}}}),{}, $event))">
+<tag-input-dropdown class="class1577116356016" [autocompleteItems]="params1577113184271.autocompleteItems" [showDropdownIfEmpty]="params1577113184271.showAutoCompleteDropdownIfEmpty">
+</tag-input-dropdown>
+</tag-input>
+</ng-template >
+<!-- 'cardSelector' shared component template -->
+<ng-template #sc1586272511108 let-params1586272511108="params1586272511108" >
+<ion-col class="class1586272535726" col-md-4 col-lg-3 col-6 col-sm-6 col-xl-3 align-self-start align-self-baseline [ngStyle]="this.global?.mobilePlat ? {'height': '10rem !important;'} : {'height': '20rem !important;'}" (press)="CTS1586272535906(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'showoptions', actionFunction: 'CTS1586272535906'}), {stack:{root: {scope:merge(merge({}, params1586272511108.scope), {params1586272511108: params1586272511108}), in:{}, out:$event}}}),{visible: params1586272511108.i}, $event)">
+<div class="class1586272535729" (mouseenter)="CTS1586272535867(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'showoptions', actionFunction: 'CTS1586272535867'}), {stack:{root: {scope:merge(merge({}, params1586272511108.scope), {params1586272511108: params1586272511108}), in:{}, out:$event}}}),{visible: params1586272511108.i}, $event)" (mouseleave)="CTS1586272535876(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'removeoptions', actionFunction: 'CTS1586272535876'}), {stack:{root: {scope:merge(merge({}, params1586272511108.scope), {params1586272511108: params1586272511108}), in:{}, out:$event}}}),{visible: params1586272511108.i}, $event)" id="{{'idcard'+params1586272511108.i}}">
+<div class="class1586272535735" id="{{'idcardO'+params1586272511108.i}}" [ngStyle]="this.global?.mobilePlat ? {'visibility': 'visible !important'}: {
+'visibility':'hidden'}">
+<div class="class1586272535738" [ngStyle]="(this.global?.mobilePlat && this?.global?.selectedItem[params1586272511108.i]) ? {'visibility': 'visible'} : this.global?.mobilePlat && !this?.global?.selectedItem[params1586272511108.i]  ? {'visibility': 'hidden'}: {}">
+<button class="class1606574996486" clear type="button" ion-button>
+<ion-checkbox class="class1606575016988" color="greenSelector" mode="ios" [(ngModel)]="this?.global?.selectedItem[params1586272511108.i]">
+</ion-checkbox>
+</button>
+</div>
+<div class="class1586272535771">
+<button class="class1606574763560" clear type="button" icon-only ion-button (click)="ATS1606574815659({root: {scope:merge(merge({}, params1586272511108.scope), {params1586272511108: params1586272511108}), in:{}, out:$event}})">
+<ion-icon class="class1606574808458" color="greyButton" name="ios-more">
+</ion-icon>
+</button>
+</div>
+</div>
+<div class="class1586272535795" (click)="ATS1586272535807({root: {scope:merge(merge({}, params1586272511108.scope), {params1586272511108: params1586272511108}), in:{}, out:$event}})">
+<ion-badge class="class1586272535822" color="btLight" *ngIf="this.local.published && this.global?.qr != true">
+{{this.list[params1586272511108.i]?.value.version != undefined ? 'V' + this.list[params1586272511108.i]?.value.version : '...'}}
+</ion-badge>
+<ng-container class="class1604595128856" *ngIf="this.global?.qr === true else ElseBlock_1604595169223Thumbnail">
+<div class="class1604598394437">
+<ng-container *ngTemplateOutlet="sc1600099015160;context:{params1600099015160: merge(merge({qrdata: '', size: 256, level: 'M', usesvg: false, colordark: '#000000', colorlight: '#FFFFFF', allowEmptyString: false},{qrdata: this.list[params1586272511108.i].value?.pwa_enabled ? window.location.href.substring(0, window.location.href.indexOf('mobile/index.html')) + this.list[params1586272511108.i]?.value?.pwa_subPath : window.location.href.substring(0, window.location.href.indexOf('#/')) + '#/viewer/' + this.list[params1586272511108.i]?.id + '/:edit/:i', size: 256, level: 'M', usesvg: false, colordark: '#000000', colorlight: '#FFFFFF', allowEmptyString: false}),{scope:merge(merge({}, params1586272511108.scope), {params1586272511108: params1586272511108})})}"></ng-container>
+</div>
+</ng-container>
+<ng-template class="class1604595169223" #ElseBlock_1604595169223Thumbnail>
+<ng-container class="class1604595212371" *ngIf="this.list[params1586272511108.i]?.value?.thumbnail else ElseBlock_1604595693051WallPaper">
+<img class="class1604595883957" width="" [src]="getAttachmentUrl(this.list[params1586272511108.i]?.id, 'thumbnail', null, 'C8Oforms.c8oforms_fs')" height=""/>
+</ng-container>
+</ng-template>
+<ng-template class="class1604595693051" #ElseBlock_1604595693051WallPaper>
+<ng-container class="class1604595693054" *ngIf="this.list[params1586272511108.i]?.value?.wallpaper else ElseBlock1604595755153Random">
+<img class="class1604597199746" width="" [src]="getAttachmentUrl(this.list[params1586272511108.i]?.id, 'wallpaper', null, 'C8Oforms.c8oforms_fs')" height=""/>
+</ng-container>
+</ng-template>
+<ng-template class="class1604595755153" #ElseBlock1604595755153Random>
+<ng-container class="class1604598095421" *ngIf="this.list[params1586272511108.i]?.value?.random != undefined else ElseBlock_1604598151040Color">
+<img class="class1604597259456" width="" [src]="this.list[params1586272511108.i]?.value?.random" height=""/>
+</ng-container>
+</ng-template>
+<ng-template class="class1604598151040" #ElseBlock_1604598151040Color>
+<div class="class1604598203716" [ngStyle]="{'background-color':this.list[params1586272511108.i]?.value?.color}">
+</div>
+</ng-template>
+<ng-container class="class1603969359823" *ngIf="(this.list[params1586272511108.i]?.value?.pwa_enabled == true || this.list[params1586272511108.i]?.value?.status != undefined )&& this.global?.qr !== true">
+<img class="class1603968891126" width="30px" [src]="this.list[params1586272511108.i]?.value?.status != undefined ? (this.list[params1586272511108.i]?.value?.status == 'doing' ? 'assets/images/svg/icon/pwa_wait.svg' :'assets/images/svg/icon/pwa.svg') : 'assets/images/svg/icon/pwa.svg'" height="" (click)="CTS1603969447339(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1603969447339'}), {stack:{root: {scope:merge(merge({}, params1586272511108.scope), {params1586272511108: params1586272511108}), in:{}, out:$event}}}),{}, $event)"/>
+</ng-container>
+</div>
+<div class="class1603968061706">
+<div class="class1586272535855" text-center text-wrap [innerHTML]="this.list[params1586272511108.i]?.value?.name">
+</div>
+</div>
+</div>
+</ion-col>
+</ng-template >
+<!-- 'angularxQRCode' shared component template -->
+<ng-template #sc1600099015160 let-params1600099015160="params1600099015160" >
+<qrcode class="class1600100138075" #QRCode [qrdata]="params1600099015160.qrdata" [size]="params1600099015160.size" [level]="params1600099015160.level" [usesvg]="params1600099015160.usesvg" [colordark]="params1600099015160.colordark" [colorlight]="params1600099015160.colorlight" [allowEmptyString]="params1600099015160.allowEmptyString">
+</qrcode>
+</ng-template >
+<!-- 'sharedHeader' shared component template -->
+<ng-template #sc1571069560308 let-params1571069560308="params1571069560308" >
+<ion-grid class="class1571069604422">
+<ion-row class="class1571069604425" style="height:100%">
+<ion-col class="class1571069604428" col-xl-1>
+</ion-col>
+<ion-col class="class1571069604437" col-md-12 col-lg-12 col-12 col-sm-12 col-xl-10>
+<ng-container *ngTemplateOutlet="sc1571069818059;context:{params1571069818059: merge(merge({mobile: this.global?.mobilePlat, showbuttonsright: true},{mobile: this.global?.mobilePlat, showbuttonsright: params1571069560308.showbuttonsright}),{scope:merge(merge({}, params1571069560308.scope), {params1571069560308: params1571069560308})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571069820644;context:{params1571069820644: merge(merge({mobile: this.global?.mobilePlat, showbuttonsright: true},{mobile: this.global?.mobilePlat, showbuttonsright: params1571069560308.showbuttonsright}),{scope:merge(merge({}, params1571069560308.scope), {params1571069560308: params1571069560308})})}"></ng-container>
+</ion-col>
+<ion-col class="class1571069604809" col-xl-1>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-template >
+<!-- 'sharedHeaderTextFormBuilder' shared component template -->
+<ng-template #sc1571075984554 let-params1571075984554="params1571075984554" >
+<ng-container class="class1600691673886" *ngIf="window.document.body.clientWidth > 302">
+<div class="class1571156193490">
+{{ 'Form_Builder' | translate }}
+</div>
+</ng-container>
+</ng-template >
+<!-- 'sharedHeaderImageConvertigo' shared component template -->
+<ng-template #sc1571075899569 let-params1571075899569="params1571075899569" >
+<img class="class1571075937119" width="" [src]="'assets/images/svg/logo/logo_convertigo_blue.svg'" height=""/>
+</ng-template >
+<!-- 'sharedHeaderMobile' shared component template -->
+<ng-template #sc1571069818059 let-params1571069818059="params1571069818059" >
+<ng-container class="class1571069818365" *ngIf="params1571069818059.mobile">
+<ion-grid class="class1571075747739">
+<ion-row class="class1571075747742" style="height:100%">
+<ion-col class="class1571075747748" align-self-baseline>
+<ion-grid class="class1571075747751">
+<ion-row class="class1571075747754" style="height:100%">
+<ion-col class="class1571075747757">
+<div class="class1571075747760">
+<ng-container *ngTemplateOutlet="sc1571075804071;context:{params1571075804071: merge(merge({},{}),{scope:merge(merge({}, params1571069818059.scope), {params1571069818059: params1571069818059})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571075899569;context:{params1571075899569: merge(merge({},{}),{scope:merge(merge({}, params1571069818059.scope), {params1571069818059: params1571069818059})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571075984554;context:{params1571075984554: merge(merge({},{}),{scope:merge(merge({}, params1571069818059.scope), {params1571069818059: params1571069818059})})}"></ng-container>
+<ng-container class="class1601542263765" *ngIf="params1571069818059.showbuttonsright != false">
+<button class="class1606995382480" clear icon-start type="button" color="dark" icon-only ion-button (click)="ATS1606995382489({root: {scope:merge(merge({}, params1571069818059.scope), {params1571069818059: params1571069818059}), in:{}, out:$event}})">
+<ion-icon class="class1606995382495" name="ios-notifications-outline">
+</ion-icon>
+<ng-container class="class1606995382501" *ngIf="listen(['fs://c8oforms_fs.view#viewNotifsNew'])?.rows?.length > 0">
+<ion-badge class="class1606995382504">
+{{listen(['fs://c8oforms_fs.view#viewNotifsNew'])?.rows?.length}}
+</ion-badge>
+</ng-container>
+</button>
+</ng-container>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-container>
+</ng-template >
+<!-- ============================== -->
+
+<ion-header class="class1537533854974">
+<ng-container *ngTemplateOutlet="sc1571069560308;context:{params1571069560308: merge(merge({showbuttonsright: true},{}),{scope:{}})}"></ng-container>
+</ion-header>
+
+<ion-content class="class1537533855334" fullscreen="true" (click)="CTS1605176478429(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1605176478429'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)">
+<ion-grid class="class1559750569253">
+<ion-row class="class1559750585431">
+<ion-col class="class1567171596531" col-xl-2>
+</ion-col>
+<ion-col class="class1559750590333" col-md-12 col-8 col-lg-12 col-12 col-sm-12 col-xl-8>
+<ion-grid class="class1559827351477">
+<ion-row class="class1579253829433">
+<ion-col class="class1579253835065" col-12 text-right>
+<div class="class1602516281541">
+<div class="class1602516281547">
+<ng-container class="class1602516470906" *ngIf="(this.global?.settings?.editing_rights != undefined && this.global?.settings?.editing_rights == 'true') || this.global?.settings?.editing_rights == undefined">
+<div class="class1602516281559" [ngClass]="this.local.published?'TabNotSelected':'TabSelected'" (click)="ATS1602516409044({root: {scope:{}, in:{}, out:$event}})">
+<ion-icon class="class1602516281565" color="convertigo" name="menu">
+</ion-icon>
+<p class="class1602516409026" [style.color]="this.local.published ? '' : '#0cbbe7'">
+<ng-container class="class1603096168912" *ngIf="window.innerWidth > 428 else ElseBlock_1603096168918">
+{{ 'Vue_des_projets' | translate }}
+</ng-container>
+<ng-template class="class1603096168918" #ElseBlock_1603096168918>
+{{ 'Vue_des_projets2' | translate }}
+</ng-template>
+</p>
+</div>
+</ng-container>
+<div class="class1602516281580" (click)="ATS1602522452374({root: {scope:{}, in:{}, out:$event}})" [ngClass]="this.local.published?'TabSelected':'TabNotSelected'">
+<ion-icon class="class1602516281586" color="convertigo" name="menu">
+</ion-icon>
+<p class="class1602516414295" [style.color]="this.local.published ? '#0cbbe7' : ''">
+<ng-container class="class1603095920274" *ngIf="window.innerWidth > 428 else ElseBlock_1603096127001">
+{{ 'Vue_Publication' | translate }}
+</ng-container>
+<ng-template class="class1603096127001" #ElseBlock_1603096127001>
+{{ 'Vue_Publication2' | translate }}
+</ng-template>
+</p>
+</div>
+<div class="class1602517922050">
+</div>
+</div>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="class1559827351480" align-items-center>
+<ion-col class="class1559827351483" col-md-6 col-lg-6 col-12 col-sm-12 col-xl-6>
+<ion-item class="class1559827351486" no-lines no-margin *ngIf="this.local.tag == false || this.local.tag == undefined">
+<ion-icon class="class1559827351489" color="{{'#9b9b9b'}}" name="search" item-start>
+</ion-icon>
+<ion-input class="class1559827351495" placeholder="{{'searchProject' | translate}}" [(ngModel)]="query" (ngModelChange)="ATS1572278831637({root: {scope:{}, in:{}, out:$event}})">
+</ion-input>
+<button class="class1605176257746" clear type="button" icon-only ion-button item-end (click)="CTS1605176566731(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'StopPropagationAndShowAdvancedSearch', actionFunction: 'CTS1605176566731'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)">
+<ion-icon class="class1578926299818" color="danger" name="md-arrow-dropdown">
+</ion-icon>
+</button>
+</ion-item>
+<ng-container class="class1605175515179" *ngIf="this.local.showAdvancedSearch">
+<div class="class1605175544594" (click)="CTS1605176642473(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'StopPropagationToPreventFromClosingThis', actionFunction: 'CTS1605176642473'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)">
+<div class="class1605178161270" [ngClass]="'styledivnormal'">
+<ion-label class="class1605178166890" stacked>
+<div class="class1605178166893" text-capitalize>
+{{ 'Name' | translate }}
+</div>
+</ion-label>
+<ion-input class="class1605178169903" placeholder="{{this.translate.instant('Name')}}" [ngModel]="query" (ngModelChange)="CTS1605287378515(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'saveTemp', actionFunction: 'CTS1605287378515'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)">
+</ion-input>
+</div>
+<div class="class1605178172767" [ngClass]="'styledivnormal c8o-ngxTag-larger'">
+<ion-label class="class1605178182739" stacked>
+{{ 'labels' | translate }}
+</ion-label>
+<ng-container *ngTemplateOutlet="sc1577113184271;context:{params1577113184271: merge(merge({items: [], inputtext: '', theme: '', maxItems: 100, placeholder: '', secondaryPlaceholder: '', editableTag: true, removableTag: true, itemIdentifyBy: 'value', itemDisplayBy: 'display', autocompleteItems: [], onlyFromAutocomplete: false, showAutoCompleteDropdownIfEmpty: false, ref: ''},{items: this.local.searchTags, inputtext: '', theme: '', maxItems: 100, placeholder: translate.instant('labels_placeholder'), secondaryPlaceholder: translate.instant('labels_placeholder'), editableTag: false, removableTag: true, itemIdentifyBy: 'value', itemDisplayBy: 'display', autocompleteItems: [], onlyFromAutocomplete: false, showAutoCompleteDropdownIfEmpty: false, ref: 'searchTags'}),{scope:{}})}"></ng-container>
+</div>
+<div class="class1605179329167" [ngClass]="'styledivnormal c8o-ngxTag-larger'">
+<ion-label class="class1605179329170" stacked>
+{{ 'subtag' | translate }}
+</ion-label>
+<ng-container *ngTemplateOutlet="sc1577113184271;context:{params1577113184271: merge(merge({items: [], inputtext: '', theme: '', maxItems: 100, placeholder: '', secondaryPlaceholder: '', editableTag: true, removableTag: true, itemIdentifyBy: 'value', itemDisplayBy: 'display', autocompleteItems: [], onlyFromAutocomplete: false, showAutoCompleteDropdownIfEmpty: false, ref: ''},{items: this.local.searchSubTags, inputtext: '', theme: '', maxItems: 100, placeholder: translate.instant('subTag_placeholder'), secondaryPlaceholder: translate.instant('subTag_placeholder'), editableTag: true, removableTag: true, itemIdentifyBy: 'value', itemDisplayBy: 'display', autocompleteItems: [], onlyFromAutocomplete: false, showAutoCompleteDropdownIfEmpty: false, ref: 'searchSubTags'}),{scope:{}})}"></ng-container>
+</div>
+<ion-buttons class="class1605179589046" end>
+<button class="class1605179426106" type="button" color="convertigo" ion-button item-end (click)="ATS1605287109317({root: {scope:{}, in:{}, out:$event}})">
+{{ 'Search' | translate }}
+</button>
+</ion-buttons>
+</div>
+</ng-container>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-col>
+<ion-col class="class1567171596534" col-xl-2>
+</ion-col>
+</ion-row>
+<ng-container class="class1606929898932" *ngIf="!this.local.published">
+<ion-row class="class1606905332756">
+<ion-col class="class1606905363322" col-xl-2>
+</ion-col>
+<ion-col class="class1606905363325" col-md-12 col-8 col-lg-12 col-12 col-sm-12 col-xl-8>
+<div class="class1606913323202">
+<p class="class1606913372387">
+{{ 'chooseformcreate' | translate }}
+</p>
+<button class="class1606988855266" clear type="button" icon-only ion-button (click)="resolveError(actionBeans.ModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'ModalPage', actionFunction: 'ModalAction', data: {import: true}, cssClass: 'modalCSV', blockWhileDisplayed: false, showBackdrop: true, page: 'C8Oforms.MobileApplication.Application.dropFilePage', enableBackdropDismiss: true}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))" tooltip="{{'chooseformImport' | translate}}" arrow positionV="top">
+<ion-icon class="class1606988855269" color="{{'btLight'}}" name="ios-cloud-upload">
+</ion-icon>
+</button>
+</div>
+<div class="class1606905363334">
+<div class="class1606905502457">
+<div class="class1606905588980">
+<div class="class1606912602116" (click)="resolveError(actionBeans.STS1605185431262(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1605185431262'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+<svg xmlns='http://www.w3.org/2000/svg' width="160px" height="120px" class='ionicon' viewBox='0 0 512 512'><title>Add</title><path fill='none' stroke='#0cbbe7' stroke-linecap='square' stroke-linejoin='round' stroke-width='32' d='M256 112v288M400 256H112'/></svg></div>
+<p class="class1606907583829">
+Vide
+</p>
+</div>
+<ng-container class="class1606926209148" *ngFor="let item1606926209148 of listen(['fs://c8oforms_fs.view#getTemplates'])?.rows">
+<div class="class1606926552436">
+<div class="class1606926552439" (click)="resolveError(actionBeans.STS1606992860587(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1606992860587'}), {stack:{root: {scope:merge({}, {item1606926209148: item1606926209148}), in:{}, out:$event}}}),{id: item1606926209148?.id}, $event))">
+<img class="class1606926747455" width="" [src]="getAttachmentUrl(item1606926209148?.id, 'wallpaper', null, 'C8Oforms.c8oforms_fs')" height=""/>
+</div>
+<p class="class1606926552448">
+{{item1606926209148?.value?.name}}
+</p>
+</div>
+</ng-container>
+</div>
+</div>
+</ion-col>
+<ion-col class="class1606905364087" col-xl-2>
+</ion-col>
+</ion-row>
+</ng-container>
+<ion-row class="class1559835096807">
+<ion-col class="class1567171531347" col-xl-2>
+</ion-col>
+<ion-col class="class1559836163558" col-md-12 col-8 col-lg-12 col-12 col-sm-12 col-xl-8>
+<div class="class1602515996000" *ngIf="this.local.published">
+</div>
+<div class="class1586278166182">
+<ng-container class="class1605274324311" *ngIf="this.local.count != undefined && (this.query == undefined || this.query == '') && (this.local.searchTags?.length == undefined || this.local.searchTags?.length == 0) && (this.local.searchSubTags?.length == undefined || this.local.searchSubTags?.length ==0)  && (this.local.folder == undefined || this.local.folder == '')">
+<p class="class1605274447772">
+{{this.local.count +'  ' + ('results' | translate)}}
+</p>
+</ng-container>
+<ng-container class="class1605274690832" *ngIf="this.local.count != undefined && (this.query == undefined || this.query == '') && (this.local.searchTags?.length == undefined || this.local.searchTags?.length == 0) && (this.local.searchSubTags?.length == undefined || this.local.searchSubTags?.length ==0)  && (this.local.folder != undefined && this.local.folder != '')">
+<p class="class1605274732071">
+{{this.local.count +'  ' + ('results' | translate) +' '+ ('in_folder' | translate)}}
+<ion-badge class="class1605274732077">
+{{this.local.folder}}
+<ion-icon class="class1605274732086" color="light" name="close" (click)="ATS1605274732095({root: {scope:{}, in:{}, out:$event}})">
+</ion-icon>
+</ion-badge>
+</p>
+</ng-container>
+<ng-container class="class1605274900849" *ngIf="this.local.count != undefined && (this.query != undefined && this.query != '') && (this.local.searchTags?.length == undefined || this.local.searchTags?.length == 0) && (this.local.searchSubTags?.length == undefined || this.local.searchSubTags?.length ==0) && (this.local.folder == undefined || this.local.folder == '')">
+<p class="class1605275009390">
+{{this.local.count + '  ' +( 'search_term_results' | translate)}}
+<ion-badge class="class1605275009396">
+{{this.query}}
+<ion-icon class="class1605275009405" color="light" name="close" (click)="ATS1605275009414({root: {scope:{}, in:{}, out:$event}})">
+</ion-icon>
+</ion-badge>
+</p>
+</ng-container>
+<ng-container class="class1605276146176" *ngIf="this.local.count != undefined && (this.query != undefined && this.query != '') && (this.local.searchTags?.length != undefined && this.local.searchTags?.length > 0) && (this.local.searchSubTags?.length == undefined || this.local.searchSubTags?.length ==0)">
+<p class="class1605276146179">
+{{this.local.count + '  ' +( 'search_term_results' | translate)}}
+<ion-badge class="class1605276146185">
+{{this.query}}
+<ion-icon class="class1605276146194" color="light" name="close" (click)="ATS1605276146203({root: {scope:{}, in:{}, out:$event}})">
+</ion-icon>
+</ion-badge>
+{{'  ' + ('in_folder' | translate)}}
+<ng-container class="class1605276368338" *ngFor="let i90 = index;let item90 of let item1605276368338 of this.local.searchTags">
+<ion-badge class="class1605276368341">
+{{item90}}
+<ion-icon class="class1605276368350" color="light" name="close" (click)="ATS1605276368359({root: {scope:merge({}, {item1605276368338: item1605276368338, item90: item90, i90:i90}), in:{}, out:$event}})">
+</ion-icon>
+</ion-badge>
+</ng-container>
+</p>
+</ng-container>
+<ng-container class="class1605281268477" *ngIf="this.local.count != undefined && (this.query == undefined || this.query == '') && (this.local.searchTags?.length != undefined && this.local.searchTags?.length > 0) && (this.local.searchSubTags?.length == undefined || this.local.searchSubTags?.length ==0)">
+<p class="class1605281268480">
+{{this.local.count +'  ' + ('results' | translate) +' '+ ('in_folder' | translate)}}
+<ng-container class="class1605281268522" *ngFor="let i90 = index;let item90 of let item1605281268522 of this.local.searchTags">
+<ion-badge class="class1605281268525">
+{{item90}}
+<ion-icon class="class1605281268534" color="light" name="close" (click)="ATS1605281268543({root: {scope:merge({}, {item1605281268522: item1605281268522, item90: item90, i90:i90}), in:{}, out:$event}})">
+</ion-icon>
+</ion-badge>
+</ng-container>
+</p>
+</ng-container>
+<ng-container class="class1605281976793" *ngIf="this.local.count != undefined && (this.query == undefined || this.query == '') && (this.local.searchTags?.length == undefined || this.local.searchTags?.length == 0) && (this.local.searchSubTags?.length != undefined && this.local.searchSubTags?.length > 0)">
+<p class="class1605281976796">
+{{this.local.count +'  ' + ('results' | translate) +' '+ ('for_tag' | translate)}}
+<ng-container class="class1605281976802" *ngFor="let i91 = index;let item91 of let item1605281976802 of this.local.searchSubTags">
+<ion-badge class="class1605281976805">
+{{item91}}
+<ion-icon class="class1605281976814" color="light" name="close" (click)="ATS1605281976823({root: {scope:merge({}, {item1605281976802: item1605281976802, item91: item91, i91:i91}), in:{}, out:$event}})">
+</ion-icon>
+</ion-badge>
+</ng-container>
+</p>
+</ng-container>
+<ng-container class="class1605283861435" *ngIf="this.local.count != undefined && (this.query == undefined || this.query == '') && (this.local.searchTags?.length != undefined && this.local.searchTags?.length > 0) && (this.local.searchSubTags?.length != undefined && this.local.searchSubTags?.length > 0)">
+<p class="class1605283919698">
+{{this.local.count +'  ' + ('results' | translate) +' '+ ('in_folder' | translate)}}
+<ng-container class="class1605283919704" *ngFor="let i90 = index;let item90 of let item1605283919704 of this.local.searchTags">
+<ion-badge class="class1605283919707">
+{{item90}}
+<ion-icon class="class1605283919716" color="light" name="close" (click)="ATS1605283919725({root: {scope:merge({}, {item1605283919704: item1605283919704, item90: item90, i90:i90}), in:{}, out:$event}})">
+</ion-icon>
+</ion-badge>
+</ng-container>
+{{('and' | translate) +' '+ ('for_tag' | translate)}}
+<ng-container class="class1605284046578" *ngFor="let i91 = index;let item91 of let item1605284046578 of this.local.searchSubTags">
+<ion-badge class="class1605284046581">
+{{item91}}
+<ion-icon class="class1605284046590" color="light" name="close" (click)="ATS1605284046599({root: {scope:merge({}, {item1605284046578: item1605284046578, item91: item91, i91:i91}), in:{}, out:$event}})">
+</ion-icon>
+</ion-badge>
+</ng-container>
+</p>
+</ng-container>
+<ng-container class="class1605284284660" *ngIf="this.local.count != undefined && (this.query != undefined && this.query != '') && (this.local.searchTags?.length == undefined || this.local.searchTags?.length == 0) && (this.local.searchSubTags?.length != undefined && this.local.searchSubTags?.length > 0)">
+<p class="class1605284284663">
+{{this.local.count + '  ' +( 'search_term_results' | translate)}}
+<ion-badge class="class1605284284669">
+{{this.query}}
+<ion-icon class="class1605284284678" color="light" name="close" (click)="ATS1605284284687({root: {scope:{}, in:{}, out:$event}})">
+</ion-icon>
+</ion-badge>
+{{'  ' + ('for_tag' | translate)}}
+<ng-container class="class1605284354405" *ngFor="let i91 = index;let item91 of let item1605284354405 of this.local.searchSubTags">
+<ion-badge class="class1605284354408">
+{{item91}}
+<ion-icon class="class1605284354417" color="light" name="close" (click)="ATS1605284354426({root: {scope:merge({}, {item1605284354405: item1605284354405, item91: item91, i91:i91}), in:{}, out:$event}})">
+</ion-icon>
+</ion-badge>
+</ng-container>
+</p>
+</ng-container>
+<ng-container class="class1605285044628" *ngIf="this.local.count != undefined && (this.query != undefined && this.query != '') && (this.local.searchTags?.length != undefined && this.local.searchTags?.length > 0) && (this.local.searchSubTags?.length != undefined && this.local.searchSubTags?.length > 0)">
+<p class="class1605285044631">
+{{this.local.count + '  ' +( 'search_term_results' | translate)}}
+<ion-badge class="class1605285128993">
+{{this.query}}
+<ion-icon class="class1605285129002" color="light" name="close" (click)="ATS1605285201054({root: {scope:{}, in:{}, out:$event}})">
+</ion-icon>
+</ion-badge>
+{{' '+ ('in_folder' | translate)}}
+<ng-container class="class1605285044637" *ngFor="let i90 = index;let item90 of let item1605285044637 of this.local.searchTags">
+<ion-badge class="class1605285044640">
+{{item90}}
+<ion-icon class="class1605285044649" color="light" name="close" (click)="ATS1605285044658({root: {scope:merge({}, {item1605285044637: item1605285044637, item90: item90, i90:i90}), in:{}, out:$event}})">
+</ion-icon>
+</ion-badge>
+</ng-container>
+{{('and' | translate) +' '+ ('for_tag' | translate)}}
+<ng-container class="class1605285044676" *ngFor="let i91 = index;let item91 of let item1605285044676 of this.local.searchSubTags">
+<ion-badge class="class1605285044679">
+{{item91}}
+<ion-icon class="class1605285044688" color="light" name="close" (click)="ATS1605285044697({root: {scope:merge({}, {item1605285044676: item1605285044676, item91: item91, i91:i91}), in:{}, out:$event}})">
+</ion-icon>
+</ion-badge>
+</ng-container>
+</p>
+</ng-container>
+<div class="class1606649192233">
+<button class="class1606649879795" clear type="button" icon-only ion-button large (click)="ATS1606650173145({root: {scope:{}, in:{}, out:$event}})">
+<ng-container class="class1606649902124" *ngIf="this?.global?.grid == false else ElseBlock_1606649912084">
+<ion-icon class="class1606649976284" color="greyButton" name="custom-grid">
+</ion-icon>
+</ng-container>
+<ng-template class="class1606649912084" #ElseBlock_1606649912084>
+<ion-icon class="class1606650098921" color="greyButton" name="custom-list">
+</ion-icon>
+</ng-template>
+</button>
+<button class="class1606649796271" clear type="button" icon-only ion-button large (click)="resolveError(actionBeans.SetGlobalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'SetGlobal', actionFunction: 'SetGlobalAction', Value: !this.global.qr, Property: 'qr'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event));resolveError(actionBeans.SetGlobalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'SetGlobal1', actionFunction: 'SetGlobalAction', Value: true, Property: 'grid'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+<ion-icon class="class1606648948116" color="{{this.global.qr == true ? 'convertigo':'greyButton'}}" name="custom-qr_code">
+</ion-icon>
+</button>
+</div>
+</div>
+</ion-col>
+<ion-col class="class1567171538646" col-xl-2>
+</ion-col>
+</ion-row>
+<ion-row class="class1559836225774">
+<ion-col class="class1559836225777" col-xl-2>
+</ion-col>
+<ion-col class="class1559836225780" col-md-12 col-8 col-lg-12 align-self-center col-12 col-sm-12 col-xl-8>
+<ion-grid class="class1559836326864" *ngIf="this.local.spinner == false">
+<ion-row class="class1559836326867" style="height:100%">
+<ng-container class="class1567155641818" *ngIf="router.sharedObject?.grid">
+<ng-container class="class1580912306799" *ngFor="let i = index;let item1 of let item1580912306799 of this.local.response2Array">
+<ng-container class="class1580912506601" *ngIf="item1.key != '_c8o_out_c8o' && ((this.local?.tags == undefined || this.local?.tags?.length == 0) && (this.local?.subTags == undefined || this.local?.subTags?.length == 0)) && (this.query == '' || this.query == undefined) && (this.local?.searchTags == undefined || this.local?.searchTags?.length == 0) && (this.local?.searchSubTags == undefined || this.local?.searchSubTags?.length == 0)">
+<ion-col class="class1580912620903" col-md-4 col-lg-3 col-6 col-sm-6 col-xl-3 align-self-start align-self-baseline [ngStyle]="this?.global?.platform?.name['0'] == 'mobile' ? {'height': '10rem !important;'} : {'height': '20rem !important;'}" (press)="CTS1580912621068(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'showoptions', actionFunction: 'CTS1580912621068'}), {stack:{root: {scope:merge({}, {item1580912306799: item1580912306799, item1: item1, i:i}), in:{}, out:$event}}}),{visible: i}, $event)">
+<div class="class1580912620906" (mouseenter)="CTS1580912621029(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'showoptions', actionFunction: 'CTS1580912621029'}), {stack:{root: {scope:merge({}, {item1580912306799: item1580912306799, item1: item1, i:i}), in:{}, out:$event}}}),{visible: i}, $event)" (mouseleave)="CTS1580912621038(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'removeoptions', actionFunction: 'CTS1580912621038'}), {stack:{root: {scope:merge({}, {item1580912306799: item1580912306799, item1: item1, i:i}), in:{}, out:$event}}}),{visible: i}, $event)" [ngStyle]="{'background-color': this.global['visibleoptions0'][i] ? (this.global.platform?.name['0'] == 'mobile' ? 'rgba(74, 74, 74, 0.25)': '#f9f9f9'): '#ffffff', 'border-radius': this.global['visibleoptions0'][i] ? '4px': '0px'}" (click)="ATS1604916261979({root: {scope:merge({}, {item1580912306799: item1580912306799, item1: item1, i:i}), in:{}, out:$event}})">
+<div class="class1580913073999" [ngStyle]="{'visibility':this.global['visibleoptions'][i] ? 'visible' : 'hidden'}" *ngIf="this.global?.platform?.name['0'] != 'mobile'">
+<div class="class1580913074002">
+</div>
+<div class="class1580913074035" (click)="resolveError(actionBeans.PopoverAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'Popover', actionFunction: 'PopoverAction', data: {'index':i, 'selectedForm': this.list[i]['value']['doc'], that:this}, cssClass: null, showBackdrop: true, page: 'C8Oforms.MobileApplication.Application.popOverPageSelector', enableBackdropDismiss: true, event: (event == undefined ? $event : event)}), {stack:{root: {scope:merge({}, {item1580912306799: item1580912306799, item1: item1, i:i}), in:{}, out:$event}}}),{}, $event))">
+</div>
+</div>
+<div class="class1580912620972">
+<img class="class1580912620999" width="" [src]="'assets/images/svg/icon/folder.svg'" height=""/>
+</div>
+<div class="class1580912621017" text-center text-wrap>
+{{item1.key}}
+</div>
+</div>
+</ion-col>
+</ng-container>
+</ng-container>
+<ng-container class="class1559836326870" *ngFor="let item of let item1559836326870 of this.list;let i = index;">
+<ng-container *ngTemplateOutlet="sc1586272511108;context:{params1586272511108: merge(merge({i: i},{i: i}),{scope:merge({}, {item1559836326870: item1559836326870, item: item})})}"></ng-container>
+</ng-container>
+</ng-container>
+<ng-container class="class1567155678381" *ngIf="!router.sharedObject?.grid">
+<ng-container class="class1581012415862" *ngFor="let i = index;let item1 of let item1581012415862 of this.local.response2Array">
+<ng-container class="class1581012415865" *ngIf="item1.key != '_c8o_out_c8o' && ((this.local?.tags == undefined || this.local?.tags?.length == 0) && (this.local?.subTags == undefined || this.local?.subTags?.length == 0)) && (this.query == '' || this.query == undefined) && (this.local?.searchTags == undefined || this.local?.searchTags?.length == 0) && (this.local?.searchSubTags == undefined || this.local?.searchSubTags?.length == 0)">
+<ion-col class="class1604681432116" col-md-6 col-lg-6 col-12 col-sm-12 col-xl-6 align-self-start align-self-baseline>
+<ion-grid class="class1604681432122" no-padding="true" style="height:100%">
+<ion-row class="class1604681432125" align-items-center style="height:100%" justify-content-center>
+<ion-col class="class1604681432128" col-md-1 col-lg-1 align-self-center col-1 col-sm-1 col-xl-1 (mouseenter)="CTS1604681919414(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'showoptions', actionFunction: 'CTS1604681919414'}), {stack:{root: {scope:merge({}, {item1581012415862: item1581012415862, item1: item1, i:i}), in:{}, out:$event}}}),{visible: i}, $event)" (mouseleave)="CTS1604681919423(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'removeoptions', actionFunction: 'CTS1604681919423'}), {stack:{root: {scope:merge({}, {item1581012415862: item1581012415862, item1: item1, i:i}), in:{}, out:$event}}}),{visible: i}, $event)">
+</ion-col>
+<ion-col class="class1604681432170" col-md-2 col-lg-2 col-2 col-sm-2 col-xl-2 [ngStyle]="{'background-color': this.global['visibleoptions1'][i] ? '#f9f9f9': '#ffffff', 'border-bottom-right-radius': this.global['visibleoptions1'][i] ? '4px': '0px', 'border-top-right-radius': this.global['visibleoptions1'][i] ? '4px': '0px', 'border-right': this.global.selectedItem[i] ? 'solid 1px #25e056': '', 'border-top': this.global.selectedItem[i] ? 'solid 1px #25e056': '', 'border-bottom': this.global.selectedItem[i] ? 'solid 1px #25e056': '', 'border-bottom-left-radius': '0px', 'border-top-left-radius':'0px'}" (click)="ATS1604681432260({root: {scope:merge({}, {item1581012415862: item1581012415862, item1: item1, i:i}), in:{}, out:$event}})" (mouseenter)="CTS1604681991120(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'showoptions', actionFunction: 'CTS1604681991120'}), {stack:{root: {scope:merge({}, {item1581012415862: item1581012415862, item1: item1, i:i}), in:{}, out:$event}}}),{visible: i}, $event)" (mouseleave)="CTS1604681991129(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'removeoptions', actionFunction: 'CTS1604681991129'}), {stack:{root: {scope:merge({}, {item1581012415862: item1581012415862, item1: item1, i:i}), in:{}, out:$event}}}),{visible: i}, $event)">
+<img class="class1604681950788" width="" [src]="'assets/images/svg/icon/folder.svg'" height=""/>
+</ion-col>
+<ion-col class="class1604681432344" col-md-8 col-lg-8 align-self-center col-8 col-sm-8 col-xl-8 [ngStyle]="{'background-color': this.global['visibleoptions1'][i] ? '#f9f9f9': '#ffffff', 'border-bottom-right-radius': this.global['visibleoptions1'][i] ? '4px': '0px', 'border-top-right-radius': this.global['visibleoptions1'][i] ? '4px': '0px', 'border-right': this.global.selectedItem[i] ? 'solid 1px #25e056': '', 'border-top': this.global.selectedItem[i] ? 'solid 1px #25e056': '', 'border-bottom': this.global.selectedItem[i] ? 'solid 1px #25e056': '', 'border-bottom-left-radius': '0px', 'border-top-left-radius':'0px'}" (mouseenter)="CTS1604681878738(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'showoptions', actionFunction: 'CTS1604681878738'}), {stack:{root: {scope:merge({}, {item1581012415862: item1581012415862, item1: item1, i:i}), in:{}, out:$event}}}),{visible: i}, $event)" (mouseleave)="CTS1604681878747(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'removeoptions', actionFunction: 'CTS1604681878747'}), {stack:{root: {scope:merge({}, {item1581012415862: item1581012415862, item1: item1, i:i}), in:{}, out:$event}}}),{visible: i}, $event)">
+<div class="class1604681432350">
+{{item1?.key}}
+</div>
+</ion-col>
+<ion-col class="class1604681432395" col-md-1 col-lg-1 col-1 col-sm-1 col-xl-1 [ngStyle]="{'background-color': this.global['visibleoptions1'][i] ? '#f9f9f9': '#ffffff', 'border-bottom-right-radius': this.global['visibleoptions1'][i] ? '4px': '0px', 'border-top-right-radius': this.global['visibleoptions1'][i] ? '4px': '0px', 'border-right': this.global.selectedItem[i] ? 'solid 1px #25e056': '', 'border-top': this.global.selectedItem[i] ? 'solid 1px #25e056': '', 'border-bottom': this.global.selectedItem[i] ? 'solid 1px #25e056': '', 'border-bottom-left-radius': '0px', 'border-top-left-radius':'0px'}" (mouseenter)="CTS1604681432422(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'showoptions', actionFunction: 'CTS1604681432422'}), {stack:{root: {scope:merge({}, {item1581012415862: item1581012415862, item1: item1, i:i}), in:{}, out:$event}}}),{visible: i}, $event)" (mouseleave)="CTS1604681432431(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'removeoptions', actionFunction: 'CTS1604681432431'}), {stack:{root: {scope:merge({}, {item1581012415862: item1581012415862, item1: item1, i:i}), in:{}, out:$event}}}),{visible: i}, $event)">
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-col>
+</ng-container>
+</ng-container>
+<ng-container class="class1567156428879" *ngFor="let item of let item1567156428879 of this.list;let i = index;">
+<ng-container *ngTemplateOutlet="sc1586351141705;context:{params1586351141705: merge(merge({i: i},{i: i}),{scope:merge({}, {item1567156428879: item1567156428879, item: item})})}"></ng-container>
+</ng-container>
+</ng-container>
+</ion-row>
+</ion-grid>
+<ion-grid class="class1572367654303" style="height:100%" *ngIf="this.local.spinner == true">
+<ion-row class="class1572367654306" align-items-center style="height:100%" justify-content-center>
+<ion-col class="class1572367654309" col-12 align-self-center>
+<div class="class1572367654312">
+<div  class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div><ng-container class="class1606989297545" *ngIf="false">
+<span class="class1606989313835" [duration]="3000" topOffset="0" arrow tooltip="a tooltip to display" leftOffset="0" event="hover" positionV="top" positionH="right">
+</span>
+</ng-container>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-col>
+<ion-col class="class1559836225786" col-xl-2>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
+
+<ion-footer class="class1566986230524">
+<ng-container class="class1566986395683" *ngIf="getSizeObject(this?.global?.selectedItem) > 0">
+<div class="class1566998418536">
+<ion-grid class="class1567008012476" no-padding="false">
+<ion-row class="class1567008016938">
+<ion-col class="class1567008021702" col-lg-1 col-xl-1>
+</ion-col>
+<ion-col class="class1567008023408" col-md-12 col-lg-10 col-12 col-sm-12 col-xl-10>
+<ng-container class="class1606645530704" *ngIf="!this.global?.mobilePlat else ElseBlock_1606645547640">
+<div class="class1606647086128" (click)="CTS1606647086137(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'DeselectAll', actionFunction: 'CTS1606647086137'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)">
+<button class="class1606647086140" clear type="button" icon-only ion-button large>
+<ion-icon class="class1606647086143" color="danger" name="close-circle">
+</ion-icon>
+</button>
+</div>
+<div class="class1606647104345">
+<ion-badge class="class1606647104351" color="greyFab">
+{{getSizeObjectFormated(this?.global?.selectedItem)}}
+</ion-badge>
+</div>
+<div class="class1606647125170">
+<ng-container class="class1606647125176" *ngIf="getSizeObject(this?.global?.selectedItem) == 1">
+{{ 'elem_selected' | translate }}
+</ng-container>
+<ng-container class="class1606647125182" *ngIf="getSizeObject(this?.global?.selectedItem) > 1">
+{{ 'elems_selected' | translate }}
+</ng-container>
+</div>
+<div class="class1606647236996">
+<button class="class1606647237002" clear icon-start type="button" color="" round icon-only ion-button large (click)="resolveError(actionBeans.STS1567086142984(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1567086142984'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{arrayDocId: this?.global?.selectedItem, that: this}, $event))">
+<ion-icon class="class1606647237008" color="btLight" name="star">
+</ion-icon>
+</button>
+<button class="class1606647237023" clear icon-start type="button" color="" round icon-only ion-button large (click)="resolveError(actionBeans.STS1567065814961(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1567065814961'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{arrayDocId: this?.global?.selectedItem, that: this}, $event))">
+<ion-icon class="class1606647237029" color="btLight" name="trash">
+</ion-icon>
+</button>
+</div>
+</ng-container>
+<ng-template class="class1606645547640" #ElseBlock_1606645547640>
+<div class="class1606645599231" (click)="CTS1606645599258(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'DeselectAll', actionFunction: 'CTS1606645599258'}), {stack:{root: {scope:merge({}, {ElseBlock_1606645547640: ElseBlock_1606645547640}), in:{}, out:$event}}}),{}, $event)">
+<button class="class1606645819275" clear type="button" icon-only ion-button large>
+<ion-icon class="class1606645826474" color="danger" name="close-circle">
+</ion-icon>
+</button>
+</div>
+<div class="class1606645636483">
+<ion-badge class="class1606646116442" color="greyFab">
+{{getSizeObjectFormated(this?.global?.selectedItem)}}
+</ion-badge>
+</div>
+<div class="class1606645671818">
+<ng-container class="class1606645671824" *ngIf="getSizeObject(this?.global?.selectedItem) == 1">
+{{ 'selected' | translate }}
+</ng-container>
+<ng-container class="class1606645671830" *ngIf="getSizeObject(this?.global?.selectedItem) > 1">
+{{ 'selecteds' | translate }}
+</ng-container>
+</div>
+<div class="class1606645671836">
+<button class="class1606645671842" clear icon-start type="button" color="" round icon-only ion-button large (click)="resolveError(actionBeans.STS1567086142984(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1567086142984'}), {stack:{root: {scope:merge({}, {ElseBlock_1606645547640: ElseBlock_1606645547640}), in:{}, out:$event}}}),{arrayDocId: this?.global?.selectedItem, that: this}, $event))">
+<ion-icon class="class1606645671848" color="btLight" name="star">
+</ion-icon>
+</button>
+<button class="class1606645671866" clear icon-start type="button" color="" round icon-only ion-button large (click)="resolveError(actionBeans.STS1567065814961(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'InvokeSharedAction', actionFunction: 'STS1567065814961'}), {stack:{root: {scope:merge({}, {ElseBlock_1606645547640: ElseBlock_1606645547640}), in:{}, out:$event}}}),{arrayDocId: this?.global?.selectedItem, that: this}, $event))">
+<ion-icon class="class1606645671872" color="btLight" name="trash">
+</ion-icon>
+</button>
+</div>
+</ng-template>
+</ion-col>
+<ion-col class="class1567008052623" col-lg-1 col-xl-1>
+</ion-col>
+</ion-row>
+</ion-grid>
+</div>
+</ng-container>
+</ion-footer>
+

@@ -1,0 +1,154 @@
+<!-- ====== SHARED TEMPLATES ====== -->
+<!-- 'sharedHeaderFileWebFile' shared component template -->
+<ng-template #sc1571668382082 let-params1571668382082="params1571668382082" >
+<ng-container class="class1571668382088" *ngIf="true">
+<ion-grid class="class1571668382091">
+<ion-row class="class1571668382094">
+<ion-col class="class1571668382100" col-auto>
+<ng-container *ngTemplateOutlet="sc1571075899569;context:{params1571075899569: merge(merge({},{}),{scope:merge(merge({}, params1571668382082.scope), {params1571668382082: params1571668382082})})}"></ng-container>
+<ng-container *ngTemplateOutlet="sc1571668487801;context:{params1571668487801: merge(merge({},{}),{scope:merge(merge({}, params1571668382082.scope), {params1571668382082: params1571668382082})})}"></ng-container>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-container>
+</ng-template >
+<!-- 'sharedHeaderTextInsertFile' shared component template -->
+<ng-template #sc1571668487801 let-params1571668487801="params1571668487801" >
+<ng-container class="class1606503439275" *ngIf="this.navParams?.data?.import != true else ElseBlock_1606503476909">
+<div class="class1571668487804">
+{{'insertFile' | translate}}
+</div>
+</ng-container>
+<ng-template class="class1606503476909" #ElseBlock_1606503476909>
+<div class="class1606503504643">
+{{'chooseformImport' | translate}}
+</div>
+</ng-template>
+</ng-template >
+<!-- 'sharedHeaderFile' shared component template -->
+<ng-template #sc1571668344011 let-params1571668344011="params1571668344011" >
+<ion-grid class="class1571668344014">
+<ion-row class="class1571668344017" style="height:100%">
+<ion-col class="class1571668344023" col-md-12 col-lg-12 col-12 col-sm-12 col-xl-12>
+<ng-container *ngTemplateOutlet="sc1571668382082;context:{params1571668382082: merge(merge({mobile: this.global?.platform?.name['0'] == 'mobile' ? true : false},{}),{scope:merge(merge({}, params1571668344011.scope), {params1571668344011: params1571668344011})})}"></ng-container>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ng-template >
+<!-- 'sharedHeaderImageConvertigo' shared component template -->
+<ng-template #sc1571075899569 let-params1571075899569="params1571075899569" >
+<img class="class1571075937119" width="" [src]="'assets/images/svg/logo/logo_convertigo_blue.svg'" height=""/>
+</ng-template >
+<!-- ============================== -->
+
+<ion-header class="class1550681175613">
+<ng-container *ngTemplateOutlet="sc1571668344011;context:{params1571668344011: merge(merge({},{}),{scope:{}})}"></ng-container>
+</ion-header>
+
+<ion-content class="class1550680694160">
+<div class="class1550843557848" (dragover)="CTS1550842982423(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'allowDrop', actionFunction: 'CTS1550842982423'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)" (drop)="CTS1550842982429(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'drop', actionFunction: 'CTS1550842982429'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)" id="__C8oCOntent" (dragleave)="CTS1550843824571(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'dragleave', actionFunction: 'CTS1550843824571'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)">
+<ng-container class="class1550827362232" *ngIf="this.files.length > 0">
+<ion-list class="class1550827425164">
+<ng-container class="class1550827442238" *ngFor="let item1550827442238 of this.files;let i = index">
+<ion-item class="class1550841253394">
+<ion-icon class="class1550841451922" color="primary" name="document">
+</ion-icon>
+&nbsp;&nbsp;{{item1550827442238.name}}
+&nbsp;&nbsp;<ion-note class="class1550842226436">
+{{FileConvertSize(item1550827442238.size)}}
+</ion-note>
+<button class="class1550842413297" clear icon-start type="false" color="dark" ion-button small (click)="CTS1550842695975(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1550842695975'}), {stack:{root: {scope:merge({}, {item1550827442238: item1550827442238}), in:{}, out:$event}}}),{i: i}, $event)" item-end>
+<ion-icon class="class1550842413300" name="close">
+</ion-icon>
+</button>
+</ion-item>
+</ng-container>
+</ion-list>
+<div class="class1550844560821">
+<ng-container class="class1551089185021" *ngIf="this.multiple">
+<div class="image-upload class1550844560824" text-center>
+<label class="class1586435018202" for="file-input" [ngClass]="['button', 'button-md', 'button-default', 'button-default-md']">
+{{'selectFileComp' | translate}}
+</label>
+<input class="class1550844560839" type="file" id="file-input" (change)="ATS1550844560851({root: {scope:{}, in:{}, out:$event}})" multiple/>
+</div>
+</ng-container>
+<ng-container class="class1551089223614" *ngIf="this.multiple == false && this.navParams.data['import'] == undefined">
+<div class="class1551089324587" text-center>
+<h1 class="class1551089324590">
+{{'maxNumber' | translate}}
+</h1>
+</div>
+<div class="class1571672597865" text-center>
+<button class="class1571672560065" type="button" ion-button [disabled]="true">
+{{'selectFileComp' | translate}}
+</button>
+</div>
+</ng-container>
+</div>
+</ng-container>
+<ng-container class="class1550827397067" *ngIf="this.files.length ==0">
+<div class="class1550745120574">
+<div class="class1550743982605">
+<ng-container class="class1606503266339" *ngIf="!this.global?.mobilePlat">
+<ion-item class="class1550743839060" item-start no-lines>
+<div class="class1550743921304" text-center>
+<h1 class="class1550743864082">
+{{'dragHere' | translate}}
+</h1>
+</div>
+</ion-item>
+<ion-item class="class1550744446838" item-start no-lines>
+<div class="class1550744446841" text-center>
+<h1 class="class1550744446844">
+{{'-- ' + ('or' | translate) + ' --'}}
+</h1>
+</div>
+</ion-item>
+</ng-container>
+<div class="class1550824678510">
+<div class="image-upload class1550744642598" text-center>
+<label class="class1550826498347" for="file-input" [ngClass]="['button', 'button-md', 'button-default', 'button-default-md']">
+{{'selectFileComp' | translate}}
+</label>
+<ng-container class="class1551088562298" *ngIf="this.multiple">
+<input class="class1550769987021" type="file" id="file-input" (change)="CTS1550827125213(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'AddFIles', actionFunction: 'CTS1550827125213'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)" multiple/>
+</ng-container>
+<ng-container class="class1551088592324" *ngIf="this.multiple == false && this.navParams.data['import'] == undefined">
+<input class="class1551090330459" type="file" id="file-input" (change)="ATS1551090330471({root: {scope:{}, in:{}, out:$event}})" accept="file"/>
+</ng-container>
+<ng-container class="class1574357701999" *ngIf="this.navParams.data['import'] != undefined">
+<input class="class1574357702002" type="file" id="file-input" (change)="ATS1574357702014({root: {scope:{}, in:{}, out:$event}})" accept=".c8oforms"/>
+</ng-container>
+</div>
+<div class="image-upload">
+    <input id="file-input" type="file"/>
+</div></div>
+</div>
+</div>
+</ng-container>
+</div>
+</ion-content>
+
+<ion-footer class="class1550740387799" shadow>
+<div class="class1550742585665">
+<div class="class1550742466160">
+<button class="class1571672683357" type="button" ion-button (click)="ATS1571672728758({root: {scope:{}, in:{}, out:$event}})">
+{{'import' | translate}}
+</button>
+<button class="class1571672702219" type="button" ion-button (click)="resolveError(actionBeans.CloseModalAction(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CloseModal', actionFunction: 'CloseModalAction', data: null}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event))">
+{{'Cancel' | translate}}
+</button>
+</div>
+<ng-container class="class1606503360823" *ngIf="this.navParams?.data?.import != true">
+<div class="class1550742474856">
+<ion-item class="class1550742762978" item-right no-lines>
+<div class="class1550742740582" text-nowrap>
+{{'copie' | translate}}
+</div>
+</ion-item>
+</div>
+</ng-container>
+</div>
+</ion-footer>
+

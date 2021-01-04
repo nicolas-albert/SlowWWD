@@ -1,0 +1,27 @@
+<ion-content class="class1586163442857" padding>
+<ion-grid class="class1586167281268">
+<ion-row class="class1586167285603">
+<ion-col class="class1586167288261">
+<div class="image-upload class1586167323875" text-center>
+<label class="class1586432279886" for="file-input" [ngClass]="['button', 'button-md', 'button-default', 'button-default-md']">
+{{'selectImageComp' | translate}}
+</label>
+<input class="class1586167371009" type="file" id="file-input" (change)="CTS1586175070309(this,merge(merge({},{tplVersion: '7.8.0.3', actionName: 'CustomAction', actionFunction: 'CTS1586175070309'}), {stack:{root: {scope:{}, in:{}, out:$event}}}),{}, $event)" accept="image/*"/>
+<div class="image-upload">
+    <input id="file-input" type="file"/>
+</div></div>
+</ion-col>
+</ion-row>
+<ion-row class="class1586182722155">
+<ion-col class="class1586182722158">
+<ng-container class="class1586190758089" *ngIf="this.global.showO && this.global.filePrev == undefined">
+<img class="class1586190862953" width="" [src]="getAttachmentUrl(this.global.imgIndex, 'wallpaper', null, 'C8Oforms.c8oforms_fs')" height=""/>
+</ng-container>
+<ng-container class="class1586190784669" *ngIf="this.global.filePrev != undefined">
+<img class="class1586182731844" width="" [src]="this.global.filePrev" height=""/>
+</ng-container>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
+
